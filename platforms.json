@@ -45,6 +45,20 @@
       ],
       "allowMultiple": true,
       "credits": "This add on was created by XXX, more info can be found on their github"
+    },
+    {
+      "accessory": "Sonos2",
+      "textFields": [
+        "name"
+      ],
+      "hiddenFields": {},
+      "image": "https://github.com/SmarterHomeApp/Smarter-Home/blob/master/Images/Sonos.png?raw=true",
+      "commands": [
+        "cp config.json config.json.backup",
+        "sudo npm -g homebridge-sonos"
+      ],
+      "allowMultiple": true,
+      "credits": "This add on was created by XXX, more info can be found on their github"
     }
   ]
 }

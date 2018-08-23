@@ -1,51 +1,50 @@
 {
   "Platforms": [
     {
-      "Name": "Alexa",
-      "Type": "Platform",
-      "Notes": "Please create an account here:\n next add the homebridge accessory to your amazon alexa and sign in using the same credentials. finally enter those same credentials below",
-      "TextFields": [
-        "Username",
-        "Password"
+      "platform": "Alexa",
+      "notes": "Please create an account here:\n next add the homebridge accessory to your amazon alexa and sign in using the same credentials. finally enter those same credentials below",
+      "textFields": [
+        "username",
+        "password"
       ],
-      "HiddenFields": {},
-      "Commands": [
+      "hiddenFields": {
+        "name": "Alexa"
+      },
+      "commands": [
         "cp config.json config.json.backup",
         "sudo npm -g homebridge-alexa"
       ],
-      "Image": "Smarter-Home/Images/Alexa.png",
-      "AllowMultiple": false,
-      "Credits": "This add on was created by XXX, more info can be found on their github"
+      "image": "https://github.com/SmarterHomeApp/Smarter-Home/blob/master/Images/Alexa.png?raw=true",
+      "allowMultiple": false,
+      "credits": "This add on was created by XXX, more info can be found on their github"
     },
     {
-      "Name": "VantageControls",
-      "Type": "Platform",
-      "TextFields": [
-        "IP Address"
+      "platform": "VantageControls",
+      "textFields": [
+        "ipaddress"
       ],
-      "HiddenFields": {},
-      "Image": "url",
-      "Commands": [
+      "hiddenFields": {},
+      "image": "https://github.com/SmarterHomeApp/Smarter-Home/blob/master/Images/VantageControls.png?raw=true",
+      "commands": [
         "cp config.json config.json.backup",
         "sudo npm -g homebridge-alexa"
       ],
-      "AllowMultiple": true,
-      "Credits": "This add on was created by XXX, more info can be found on their github"
+      "allowMultiple": true,
+      "credits": "This add on was created by XXX, more info can be found on their github"
     },
     {
-      "name": "Sonos",
-      "Type": "Accessory",
-      "TextFields": [
-        "Name"
+      "accessory": "Sonos",
+      "textFields": [
+        "name"
       ],
-      "HiddenFields": {},
-      "Image": "url",
-      "Commands": [
+      "hiddenFields": {},
+      "image": "https://github.com/SmarterHomeApp/Smarter-Home/blob/master/Images/Sonos.png?raw=true",
+      "commands": [
         "cp config.json config.json.backup",
         "sudo npm -g homebridge-sonos"
       ],
-      "AllowMultiple": true,
-      "Credits": "This add on was created by XXX, more info can be found on their github"
+      "allowMultiple": true,
+      "credits": "This add on was created by XXX, more info can be found on their github"
     }
   ]
 }

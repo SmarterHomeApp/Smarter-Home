@@ -1,0 +1,45 @@
+{
+  "Platforms": [
+    {
+      "Name": "Alexa",
+      "Type": "Platform",
+      "Notes":"Please create an account here:\n next add the homebridge accessory to your amazon alexa and sign in using the same credentials. finally enter those same credentials below",
+      "TextFields": {
+        "Username": "Username",
+        "Password": "Password"
+      },
+      "Commands": [
+        "cp config.json config.json.backup",
+        "sudo npm -g homebridge-alexa"
+      ],
+      "AllowMultiple": false,
+      "Credits":"This add on was created by XXX, more info can be found on their github"
+    },
+    {
+      "Name": "Vantage",
+      "Type": "Platform",
+      "TextFields": {
+        "IP Address": "192.168.1.1"
+      },
+      "Commands": [
+        "cp config.json config.json.backup",
+        "sudo npm -g homebridge-alexa"
+      ],
+      "AllowMultiple": true,
+      "Credits":"This add on was created by XXX, more info can be found on their github"
+    },
+    {
+      "name": "Sonos",
+      "Type": "Accessory",
+      "TextFields": {
+        "Name": "Family Room"
+      },
+      "Commands": [
+        "cp config.json config.json.backup",
+        "sudo npm -g homebridge-sonos"
+      ],
+      "AllowMultiple": true,
+      "Credits":"This add on was created by XXX, more info can be found on their github"
+    }
+  ]
+}

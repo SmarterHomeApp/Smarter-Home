@@ -8,11 +8,12 @@
         "Username",
         "Password"
       ],
+      "HiddenFields": {},
       "Commands": [
         "cp config.json config.json.backup",
         "sudo npm -g homebridge-alexa"
       ],
-      "Image": "url",
+      "Image": "Smarter-Home/Images/Alexa.png",
       "AllowMultiple": false,
       "Credits": "This add on was created by XXX, more info can be found on their github"
     },
@@ -22,6 +23,7 @@
       "TextFields": [
         "IP Address"
       ],
+      "HiddenFields": {},
       "Image": "url",
       "Commands": [
         "cp config.json config.json.backup",
@@ -36,6 +38,7 @@
       "TextFields": [
         "Name"
       ],
+      "HiddenFields": {},
       "Image": "url",
       "Commands": [
         "cp config.json config.json.backup",

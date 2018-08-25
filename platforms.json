@@ -35,9 +35,13 @@
     {
       "accessory": "Sonos",
       "textFields": [
-        "name"
+        "name",
+        "room"
       ],
-      "hiddenFields": {},
+      "hiddenFields": {
+        "mute":true,
+        "manufacturer": "Sonos"
+      },
       "image": "https://github.com/SmarterHomeApp/Smarter-Home/blob/master/Images/Sonos.png?raw=true",
       "commands": [
         "cp config.json config.json.backup",

@@ -2,7 +2,7 @@
   "Platforms": [
     {
       "platform": "Alexa",
-      "notes": "Please create an account here:\n next add the homebridge accessory to your amazon alexa and sign in using the same credentials. finally enter those same credentials below",
+      "notes": "Please create an account here:  https://homebridge.cloudwatch.net\n Next add the \"homebridge\" skill to your amazon alexa and sign in using the same credentials\nFinally enter those same credentials below",
       "textFields": [
         "username",
         "password"
@@ -11,11 +11,10 @@
         "name": "Alexa"
       },
       "commands": [
-        "sudo npm -g homebridge-alexa"
       ],
       "image": "https://github.com/SmarterHomeApp/Smarter-Home/blob/master/Images/Alexa.png?raw=true",
       "allowMultiple": false,
-      "credits": "This add on was created by XXX, more info can be found on their github"
+      "credits": "This add on was created by NorthernMan54, more info can be found on their github: https://github.com/NorthernMan54/homebridge-alexa"
     },
     {
       "platform": "VantageControls",
@@ -27,7 +26,7 @@
       "commands": [
       ],
       "allowMultiple": true,
-      "credits": "This add on was created by XXX, more info can be found on their github"
+      "credits": ""
     },
     {
       "accessory": "Sonos",
@@ -44,7 +43,7 @@
         "sudo npm -g homebridge-sonos"
       ],
       "allowMultiple": true,
-      "credits": "This add on was created by XXX, more info can be found on their github"
+      "credits": "This add on was created by nfaria, more info can be found on their github: https://github.com/nfarina/homebridge-sonos"
     }
   ]
 }

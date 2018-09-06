@@ -39,7 +39,7 @@ class VantageInfusion {
 				var lines = data.toString().split('\n');
 				for (var i = 0; i < lines.length; i++) {
 					var dataItem = lines[i].split(" ");
-					console.log(dataItem);
+					// console.log(dataItem);
 					if (lines[i].startsWith("S:LOAD ") || lines[i].startsWith("R:GETLOAD ")) {
 						/* Live update about load level (even if it's a RGB load') */
 						this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
@@ -62,7 +62,7 @@ class VantageInfusion {
 							modeVal = 2;
 						else
 							modeVal = 3;
-						console.log(parseInt(modeVal));
+						// console.log(parseInt(modeVal));
 						this.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), parseFloat(dataItem[3]));
 					}
 
@@ -207,8 +207,8 @@ class VantageInfusion {
 	}
 
 	Thermostat_SetIndoorTemperature(vid, value, mode) {
-		console.log("lets set this shit!!!");
-		console.log(mode)
+		// console.log("lets set this shit!!!");
+		// console.log(mode)
 		if (mode == 1)
 			this.command.write(sprintf("THERMTEMP %s HEAT %s\n", vid, value))
 		else if (mode == 2)
@@ -290,9 +290,6 @@ class VantagePlatform {
 		});
 
 		this.infusion.on('thermostatIndoorModeChange', (vid, mode, targetTemp) => {
-			console.log("changing mode");
-			console.log(mode);
-			console.log(targetTemp)
 			this.items.forEach(function (accessory) {
 				//console.log(accessory)
 				if (accessory.address == vid) {
@@ -307,9 +304,11 @@ class VantagePlatform {
 							accessory.thermostatService.getCharacteristic(Characteristic.TargetTemperature).getValue(null, accessory.targetTemp);
 						}
 						else if (mode == 1) {
+							accessory.targetTemp = accessory.heating
 							accessory.thermostatService.getCharacteristic(Characteristic.HeatingThresholdTemperature).getValue(null, accessory.heating);
 						}
 						else if (mode == 2) {
+							accessory.targetTemp = accessory.cooling
 							accessory.thermostatService.getCharacteristic(Characteristic.CoolingThresholdTemperature).getValue(null, accessory.cooling);
 						}
 					}
@@ -318,8 +317,6 @@ class VantagePlatform {
 		});
 
 		this.infusion.on('thermostatIndoorTemperatureChange', (vid, value) => {
-			console.log("indoor thermo?");
-			console.log(value);
 			this.items.forEach(function (accessory) {
 				//console.log(accessory)
 				if (accessory.address == vid) {
@@ -364,7 +361,7 @@ class VantagePlatform {
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
-					if (thisItem.ObjectType == "Blind") {
+					/*if (thisItem.ObjectType == "Blind") {
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "") thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
@@ -375,7 +372,7 @@ class VantagePlatform {
 						this.items.push(new VantageBlind(this.log, this, name, thisItem.VID, "blind"));
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
-					}
+					}*/
 				}
 			}
 			this.log.warn("VantagePlatform for InFusion Controller (end configuration store)");
@@ -466,7 +463,7 @@ class VantageThermostat {
 				callback(null);
 			})
 			.on('get', (callback) => {
-				this.log(sprintf("getCurrentState %s = %f", this.address, this.mode));
+				this.log(sprintf("TargetHeatingCoolingState %s = %f", this.address, this.mode));
 				callback(null, this.mode);
 			});
 
@@ -474,19 +471,18 @@ class VantageThermostat {
 
 		this.thermostatService.getCharacteristic(Characteristic.HeatingThresholdTemperature)
 			.on('get', (callback) => {
-				this.log(sprintf("getCurrentState %s = %f", this.address, this.heating));
+				this.log(sprintf("HeatingThresholdTemperature %s = %f", this.address, this.heating));
 				callback(null, this.heating);
 			});
 
 		this.thermostatService.getCharacteristic(Characteristic.CoolingThresholdTemperature)
 			.on('get', (callback) => {
-				this.log(sprintf("getCurrentState %s = %f", this.address, this.cooling));
+				this.log(sprintf("CoolingThresholdTemperature %s = %f", this.address, this.cooling));
 				callback(null, this.cooling);
 			});
 
 		this.thermostatService.getCharacteristic(Characteristic.TargetTemperature)
 			.on('set', (level, callback) => {
-				console.log("lets set this themostat");
 				this.targetTemp = parseFloat(level)
 				this.log(sprintf("setTemperature %s = %s and current temp = %f", this.address, level, this.mode));
 				this.parent.infusion.Thermostat_SetIndoorTemperature(this.address, this.targetTemp, this.mode)
@@ -517,6 +513,7 @@ class VantageThermostat {
 		if (this.mode == 1) {
 			this.parent.infusion.Thermostat_GetHeating(this.address);
 			this.targetTemp = this.heating
+			this.log(sprintf("getting heating %.1f = %.1f", this.heating, this.targetTemp));
 		}
 		else if (this.mode == 2) {
 			this.parent.infusion.Thermostat_GetCooling(this.address);

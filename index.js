@@ -125,29 +125,55 @@ class VantageInfusion {
 			 * List interfaces, list configuration and then check if a specific interface 
 			 * is supported by the recognized devices. 
 			 */
+			console.log("load dc file")
 
 			var buffer = "";
+			var xmlResult = ""
 			configuration.on('data', (data) => {
 				buffer = buffer + data.toString().replace("\ufeff", "");
+
 				try {
 					buffer = buffer.replace('<?File Encode="Base64" /', '<File>');
 					buffer = buffer.replace('?>', '</File>');
+
+					if (buffer.includes("</File>")) {
+						console.log("end");
+						var start = buffer.split("<File>")
+						var end = buffer.split("</File>")
+
+						buffer = buffer.match("<File>" + "(.*?)" + "</File>");
+						buffer = buffer[1]
+						var newtext = new Buffer(buffer, 'base64');
+						newtext = newtext.toString()
+						newtext = newtext.replace(/[\r\n]/g, '');
+						var init = newtext.split("<Objects>")
+						newtext = newtext.match("<Objects>" + "(.*?)" + "</Objects>");
+						if (newtext == null) {
+							console.log("null");
+						}
+						xmlResult = new Buffer(init[0] + "<Objects>" + newtext[1] + "</Objects></Project>");
+						xmlResult = xmlResult.toString('base64');
+						buffer = "<smarterHome>" + start[0] + "<File>" + xmlResult + "</File>" + end[end.length - 1] + "</smarterHome>"
+					}
 					libxmljs.parseXml(buffer);
 				} catch (e) {
 					return false;
 				}
+				console.log("parse Json")
 				var parsed = JSON.parse(parser.toJson(buffer));
-				if (parsed.IIntrospection !== undefined) {
-					var interfaces = parsed.IIntrospection.GetInterfaces.return.Interface;
-					for (var i = 0; i < interfaces.length; i++) {
-						this.interfaces[interfaces[i].Name] = interfaces[i].IID;
+				if (parsed.smarterHome !== undefined) {
+					if (parsed.smarterHome.IIntrospection !== undefined) {
+						var interfaces = parsed.smarterHome.IIntrospection.GetInterfaces.return.Interface;
+						for (var i = 0; i < interfaces.length; i++) {
+							this.interfaces[interfaces[i].Name] = interfaces[i].IID;
+						}
 					}
-				}
-				if (parsed.IBackup !== undefined) {
-					var xmlconfiguration = Buffer.from(parsed.IBackup.GetFile.return.File, 'base64').toString("ascii"); // Ta-da
-					fs.writeFileSync("/tmp/vantage.dc", xmlconfiguration); /* TODO: create a platform-independent temp file */
-					this.emit("endDownloadConfiguration", xmlconfiguration);
-					configuration.destroy();
+					if (parsed.smarterHome.IBackup !== undefined) {
+						var xmlconfiguration = Buffer.from(parsed.smarterHome.IBackup.GetFile.return.File, 'base64').toString("ascii"); // Ta-da
+						fs.writeFileSync("/tmp/vantage.dc", xmlconfiguration); /* TODO: create a platform-independent temp file */
+						this.emit("endDownloadConfiguration", xmlconfiguration);
+						configuration.destroy();
+					}
 				}
 				buffer = "";
 			});

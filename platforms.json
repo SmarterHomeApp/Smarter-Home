@@ -25,8 +25,24 @@
       "hiddenFields": {},
       "image": "https://github.com/SmarterHomeApp/Smarter-Home/blob/master/Images/VantageControls.png?raw=true",
       "commands": [
+        "sudo wget https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/index.js",
+        "sudo mv index.js /usr/lib/node_modules/homebridge-vantage/index.js"
       ],
       "allowMultiple": true,
+      "credits": ""
+    },
+    {
+      "platform": "BelkinWeMo",
+      "textFields": [
+        "name"
+      ],
+      "notes": "This platform allows you to control your WeMo Devices through Siri",
+      "hiddenFields": {},
+      "image": "https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/Images/BelkinWeMo.png",
+      "commands": [
+        "npm install -g homebridge-platform-wemo"
+      ],
+      "allowMultiple": false,
       "credits": ""
     },
     {

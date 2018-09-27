@@ -40,7 +40,7 @@
       "hiddenFields": {},
       "image": "https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/Images/BelkinWeMo.png",
       "commands": [
-        "npm install -g homebridge-platform-wemo"
+        "sudo npm install -g homebridge-platform-wemo"
       ],
       "allowMultiple": false,
       "credits": ""

@@ -8,7 +8,8 @@
         "password"
       ],
       "hiddenFields": {
-        "name": "Alexa"
+        "name": "Alexa",
+        "pin": "342-52-220"
       },
       "commands": [
       ],
@@ -43,7 +44,7 @@
         "sudo npm install -g homebridge-platform-wemo"
       ],
       "allowMultiple": false,
-      "credits": ""
+      "credits": "This platform was made by rudders, more info can be found on their github: https://github.com/rudders/homebridge-platform-wemo"
     },
     {
       "accessory": "Sonos",

@@ -59,7 +59,7 @@
       },
       "image": "https://github.com/SmarterHomeApp/Smarter-Home/blob/master/Images/Sonos.png?raw=true",
       "commands": [
-        "sudo npm -g homebridge-sonos"
+        "sudo npm install -g homebridge-sonos"
       ],
       "allowMultiple": true,
       "credits": "This add on was created by nfaria, more info can be found on their github: https://github.com/nfarina/homebridge-sonos"

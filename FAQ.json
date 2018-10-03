@@ -1,0 +1,32 @@
+{
+  "FAQ": [
+    {
+      "Question": "My device is not being added to my local network",
+      "Answer": "If your device is powered on and is no longer broadcasting the \"SmarterHome-XXX\" network, then it is connected to the network. Please try refreshing to search for your device. We have also seen that some routers block devices from searching for other devices on the network. If this is the case, please login to your router and look for the smarter home device. After finding your smarter home device on the network, please manually enter the IP address in the device details tab in settings"
+    },
+    {
+      "Question": "My phone displays incorrect password when connecting to SmarterHome-XXX network",
+      "Answer": "Sometimes iPhone will show incorrect password when connecting to a network that does not provide an internet connection. After typing the password: \"smarterhome\" in your wifi settings, you can hit \"join\" in the upper right and the connection should then be established"
+    },
+    {
+      "Question": "My device is installed, but nothing is showing in the Home app",
+      "Answer": "First ensure that the service is running using \"Check system status\" in the advanced settings tab. If the service is not running, then there is most likely an issue with one or more of your added accessories. If this is the case, please delete your last installed accessory and try re-adding it.\n If the service is running and you are still not seeing the accessory in the Home app, then make sure the textfields for that accessory are entered correctly and try again. Note in some cases we have found issues with routers and you may need to disable IGMP snooping in your router's settings"
+    },
+    {
+      "Question": "My Home accessories are no longer responding",
+      "Answer": "You need to be on the same network for your devices to respond. Alternatively, if you have an Apple TV you can link it to your account and then communicate with your devices from anywhere using Siri"
+    },
+    {
+      "Question": "Alexa not finding any devices",
+      "Answer": "Make sure you have enabled the \"homebridge\" skill in Alexa and have created an account on cloudwatch and the username and password matches. If you are setting Alexa up in multiple homes, you need to make sure the Alexa is set up using a different account and different user name and password in the \"homebridge\" skill"
+    },
+    {
+      "Question": "What devices are supported",
+      "Answer": "The devices supported can be found in the add accessories table of the app. If you would like us to add a new accessory type please send an email to smarterhomeapp@gmail.com with the type of device you would like to add, and we will do our best to add it to the list"
+    },
+    {
+      "Question": "Still don't see the answer to your question?",
+      "Answer": "Please send an email to smarterhomeapp@gmail.com describing the problem you are having and we will get back to you as soon as possible"
+    }
+  ]
+}

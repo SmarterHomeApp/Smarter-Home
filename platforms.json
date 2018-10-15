@@ -45,24 +45,6 @@
       ],
       "allowMultiple": false,
       "credits": "This platform was made by rudders, more info can be found on their github: https://github.com/rudders/homebridge-platform-wemo"
-    },
-    {
-      "accessory": "Sonos",
-      "textFields": [
-        "name",
-        "room"
-      ],
-      "notes": "This platform allows you to mute or unmute your Sonos through Siri",
-      "hiddenFields": {
-        "mute":true,
-        "manufacturer": "Sonos"
-      },
-      "image": "https://github.com/SmarterHomeApp/Smarter-Home/blob/master/Images/Sonos.png?raw=true",
-      "commands": [
-        "sudo npm install -g homebridge-sonos"
-      ],
-      "allowMultiple": true,
-      "credits": "This add on was created by nfaria, more info can be found on their github: https://github.com/nfarina/homebridge-sonos"
     }
   ]
 }

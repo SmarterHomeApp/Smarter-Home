@@ -361,27 +361,56 @@ class VantagePlatform {
 			this.log.debug("VantagePlatform for InFusion Controller (end configuration download)");
 			var parsed = JSON.parse(parser.toJson(configuration));
 			//this.log("input=    %s",configuration);
+			var dict = {};
+			var Areas = parsed.Project.Objects.Object.filter(function (el) {
+				var key = Object.keys(el)[0]
+				return key == "Area"
+			});
+			var Area = {};
+			for (var i = 0; i < Areas.length; i++) {
+				var item = Areas[i].Area
+				Area[item.VID] = item
+			}
 			for (var i = 0; i < parsed.Project.Objects.Object.length; i++) {
 				var thisItemKey = Object.keys(parsed.Project.Objects.Object[i])[0];
 				var thisItem = parsed.Project.Objects.Object[i][thisItemKey];
 				if (thisItem.ExcludeFromWidgets === undefined || thisItem.ExcludeFromWidgets == "False" || thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind") {
 					if (thisItem.DeviceCategory == "HVAC" || thisItem.ObjectType == "Thermostat") {
-						if (thisItem.DName !== undefined && thisItem.DName != "") thisItem.Name = thisItem.DName;
+						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
-						this.log(sprintf("New HVAC added (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
+						this.log(sprintf("New HVAC added (VID=%s, Name=%s, Thermostat)", thisItem.VID, thisItem.Name));
 						//added
-						var name = "VID" + thisItem.VID + " " + thisItem.Name
+						var name = thisItem.Name
+						name = name.toString()
+						if (dict[name.toLowerCase()] === undefined && name != "")
+							dict[name.toLowerCase()] = name
+						else {
+							name = thisItem.Name + " VID" + thisItem.VID
+							dict[name.toLowerCase()] = name
+						}
 						this.items.push(new VantageThermostat(this.log, this, name, thisItem.VID, "thermostat"));
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
 					if (thisItem.LoadType == "Incandescent" || thisItem.DeviceCategory == "Lighting") {
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
-						if (thisItem.DName !== undefined && thisItem.DName != "") thisItem.Name = thisItem.DName;
+						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
 						//this.log(sprintf("New load asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						//added below
-						var name = "VID" + thisItem.VID + " " + thisItem.Name
+						var name = thisItem.Name
+						name = name.toString()
+						if (thisItem.Area !== undefined && thisItem.Area != "") {
+							var areaVID = thisItem.Area
+							if (Area[areaVID] !== undefined && Area[areaVID].Name !== undefined && Area[areaVID].Name != "")
+								name = Area[areaVID].Name + " " + name
+						}
+						if (dict[name.toLowerCase()] === undefined && name != "")
+							dict[name.toLowerCase()] = name
+						else {
+							name = thisItem.Name + " VID" + thisItem.VID
+							dict[name.toLowerCase()] = name
+						}
 						this.log(sprintf("New load added (VID=%s, Name=%s, DIMMER)", thisItem.VID, thisItem.Name));
 						this.items.push(new VantageLoad(this.log, this, name, thisItem.VID, "dimmer"));
 						this.pendingrequests = this.pendingrequests - 1;
@@ -389,11 +418,20 @@ class VantagePlatform {
 					}
 					/*if (thisItem.ObjectType == "Blind") {
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
-						if (thisItem.DName !== undefined && thisItem.DName != "") thisItem.Name = thisItem.DName;
+						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
-						//this.log(sprintf("New load asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
+						//this.log(sprintf("New load asked (VID=%s, Name=%s, Dimmer)", thisItem.VID, thisItem.Name));
 						//added below
-						var name = "VID" + thisItem.VID + " " + thisItem.Name
+						var name = thisItem.Name
+						name = name.toString()
+						name = name.toLowerCase()
+						if(dict[name.toLowerCase()] === undefined && name != "")
+							dict[name.toLowerCase()] = name
+						else{
+							name = thisItem.Name + " VID" + thisItem.VID
+							dict[name.toLowerCase()] = name
+						}
+						// var name = "VID" + thisItem.VID + " " + thisItem.Name
 						this.log(sprintf("New Blind added (VID=%s, Name=%s, DIMMER)", thisItem.VID, thisItem.Name));
 						this.items.push(new VantageBlind(this.log, this, name, thisItem.VID, "blind"));
 						this.pendingrequests = this.pendingrequests - 1;

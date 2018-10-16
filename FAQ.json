@@ -21,8 +21,8 @@
       "Answer": "Make sure you have enabled the \"homebridge\" skill in Alexa and have created an account on cloudwatch and the username and password matches. If you are setting Alexa up in multiple homes, you need to make sure the Alexa is set up using a different account and different user name and password in the \"homebridge\" skill"
     },
     {
-      "Question": "The QR code no longer works",
-      "Answer": "If you already have an accessory added to the home app, then any new accessory will automatically show up. If for some reason you removed the home app and want to re-add the device, you will have to run the following commands from the advanced settings in the Smarter Home App: \"Delete persist folder\",\"Delete accessories folder\",\"Turn off service\",\"Turn on service\", and then try re-adding the device in the Home app using the passcode"
+      "Question": "QR code no longer works or Accessory not showing up in Home app",
+      "Answer": "If you already have the Smarter Home accessory added to the home app, then any new accessory will automatically show up. If for some reason you removed the home app and want to re-add the device, you will have to run the following commands from the advanced settings in the Smarter Home App: \"Delete persist folder\",\"Delete accessories folder\",\"Turn off service\",\"Turn on service\", and then try re-adding the device in the Home app using the passcode"
      },
     {
       "Question": "What devices are supported",

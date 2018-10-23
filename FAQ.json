@@ -1,6 +1,10 @@
 {
   "FAQ": [
     {
+      "Question": "Where can I buy a smarter home device",
+      "Answer": "You can find more details about the device at https://www.smarterhome.io"
+    },
+    {
       "Question": "My device is not being added to my local network",
       "Answer": "If your device is powered on and is no longer broadcasting the \"SmarterHome-XXX\" network, then it is connected to the network. Please try refreshing to search for your device. We have also seen that some routers block devices from searching for other devices on the network. If this is the case, please login to your router and look for the smarter home device. After finding your smarter home device on the network, please manually enter the IP address in the device details tab in settings"
     },
@@ -24,6 +28,10 @@
       "Question": "QR code no longer works or Accessory not showing up in Home app",
       "Answer": "If you already have the Smarter Home accessory added to the home app, then any new accessory will automatically show up. If for some reason you removed the home app and want to re-add the device, you will have to run the following commands from the advanced settings in the Smarter Home App: \"Delete persist folder\",\"Delete accessories folder\",\"Turn off service\",\"Turn on service\", and then try re-adding the device in the Home app using the passcode"
      },
+     {
+      "Question": "What are the other ports on the device for",
+      "Answer": "The other ports are used for debugging purposes and have no functionality during normal use"
+    },
     {
       "Question": "What devices are supported",
       "Answer": "The devices supported can be found in the add accessories table of the app. If you would like us to add a new accessory type please send an email to smarterhomeapp@gmail.com with the type of device you would like to add, and we will do our best to add it to the list"

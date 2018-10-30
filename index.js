@@ -40,6 +40,10 @@ class VantageInfusion {
 				for (var i = 0; i < lines.length; i++) {
 					var dataItem = lines[i].split(" ");
 					// console.log(dataItem);
+					if (lines[i].startsWith("S:BLIND") || lines[i].startsWith("R:GETBLIND")) {
+						/* Live update about load level (even if it's a RGB load') */
+						this.emit("blindStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
+					}
 					if (lines[i].startsWith("S:LOAD ") || lines[i].startsWith("R:GETLOAD ")) {
 						/* Live update about load level (even if it's a RGB load') */
 						this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
@@ -257,7 +261,7 @@ class VantageInfusion {
 	/** blind commands*/
 	setBlindPos(vid, pos) {
 		// TODO: reduce feedback (or command) rate
-		his.command.write(sprintf("BLIND %s POS %s\n", vid, pos));
+		this.command.write(sprintf("BLIND %s POS %s\n", vid, pos));
 	}
 	getBlindPos(vid) {
 		// TODO: reduce feedback (or command) rate
@@ -298,6 +302,19 @@ class VantagePlatform {
 						if (accessory.type == "rgb" || accessory.type == "dimmer") {
 							accessory.lightBulbService.getCharacteristic(Characteristic.Brightness).getValue(null, accessory.bri);
 						}
+					}
+				}
+			}.bind(this));
+		});
+
+		this.infusion.on('blindStatusChange', (vid, value) => {
+			this.items.forEach(function (accessory) {
+				if (accessory.address == vid) {
+					this.log(sprintf("blindStatusChange (VID=%s, Name=%s, Pos:%d)", vid, accessory.name, value));
+					accessory.pos = parseInt(value);
+					if (accessory.blindService !== undefined) {
+						/* Is it ready? */
+						accessory.blindService.getCharacteristic(Characteristic.CurrentPosition).getValue(null, accessory.pos);
 					}
 				}
 			}.bind(this));
@@ -416,7 +433,7 @@ class VantagePlatform {
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
-					/*if (thisItem.ObjectType == "Blind") {
+					if (thisItem.ObjectType == "Blind") {
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
@@ -424,7 +441,11 @@ class VantagePlatform {
 						//added below
 						var name = thisItem.Name
 						name = name.toString()
-						name = name.toLowerCase()
+						if (thisItem.Area !== undefined && thisItem.Area != "") {
+							var areaVID = thisItem.Area
+							if (Area[areaVID] !== undefined && Area[areaVID].Name !== undefined && Area[areaVID].Name != "")
+								name = Area[areaVID].Name + " " + name
+						}
 						if(dict[name.toLowerCase()] === undefined && name != "")
 							dict[name.toLowerCase()] = name
 						else{
@@ -436,7 +457,7 @@ class VantagePlatform {
 						this.items.push(new VantageBlind(this.log, this, name, thisItem.VID, "blind"));
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
-					}*/
+					}
 				}
 			}
 			this.log.warn("VantagePlatform for InFusion Controller (end configuration store)");
@@ -683,6 +704,7 @@ class VantageBlind {
 		this.address = vid;
 		this.log = log;
 		this.pos = 100;
+		this.type = type;
 		this.posState = 2; //decreasing=0, increasing=1, stopped=2
 	}
 

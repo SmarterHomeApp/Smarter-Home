@@ -30,7 +30,7 @@
         "sudo wget https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/index.js",
         "sudo mv index.js /usr/lib/node_modules/homebridge-vantage/index.js"
       ],
-      "allowMultiple": true,
+      "allowMultiple": false,
       "credits": ""
     },
     {

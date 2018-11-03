@@ -22,7 +22,7 @@
       "textFields": [
         "ipaddress"
       ],
-      "notes": "This platform allows you to control your Vantage Infusion loads and thermostats through Siri ",
+      "notes": "This platform allows you to control your Vantage Infusion loads, thermostats, and blinds through Siri ",
       "hiddenFields": {},
       "image": "https://github.com/SmarterHomeApp/Smarter-Home/blob/master/Images/VantageControls.png?raw=true",
       "commands": [

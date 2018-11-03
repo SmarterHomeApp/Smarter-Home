@@ -26,6 +26,7 @@
       "hiddenFields": {},
       "image": "https://github.com/SmarterHomeApp/Smarter-Home/blob/master/Images/VantageControls.png?raw=true",
       "commands": [
+        "sudo rm /tmp/vantage.dc",
         "sudo wget https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/index.js",
         "sudo mv index.js /usr/lib/node_modules/homebridge-vantage/index.js"
       ],

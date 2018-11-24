@@ -46,6 +46,23 @@
       ],
       "allowMultiple": false,
       "credits": "This platform was made by rudders, more info can be found on their github: https://github.com/rudders/homebridge-platform-wemo"
+    },
+    {
+      "platform": "LiftMaster2",
+      "textFields": [
+        "username",
+        "password"
+      ],
+      "notes": "This platform allows you to control your lift master gates and garage doors through Siri",
+      "hiddenFields": {},
+      "image": "https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/Images/liftmaster.png",
+      "commands": [
+        "sudo su - root",
+        "npm install -g git+https://github.com/luisiam/homebridge-liftmaster2.git",
+        "exit"
+      ],
+      "allowMultiple": false,
+      "credits": "This platform was made by luisiam, more info can be found on their github: https://github.com/luisiam/homebridge-liftmaster2"
     }
   ]
 }

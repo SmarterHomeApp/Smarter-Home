@@ -409,7 +409,9 @@ class VantagePlatform {
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
-					if (thisItem.LoadType == "Incandescent" || thisItem.DeviceCategory == "Lighting") {
+					if (thisItem.LoadType == "Incandescent" || thisItem.LoadType.includes("Flour") || thisItem.LoadType == "Magnetic Low Voltage"
+					 || thisItem.LoadType == "Electronic Low Voltage" || thisItem.LoadType == "Motor" || thisItem.LoadType == "Halogen" || thisItem.DeviceCategory == "Lighting") {
+
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;

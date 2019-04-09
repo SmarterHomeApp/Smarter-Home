@@ -412,7 +412,7 @@ class VantagePlatform {
 					if (thisItem.LoadType == "Incandescent" || thisItem.LoadType == "Fluor. Mag non-Dim"  || thisItem.LoadType == "Fluor. Magnetic Dim" 
 					 || thisItem.LoadType == "Fluor. Electronic non-Dim"  || thisItem.LoadType == "Fluor. Electronic Dim" 
 					 || thisItem.LoadType == "Magnetic Low Voltage"	 || thisItem.LoadType == "Electronic Low Voltage" || thisItem.LoadType == "Motor" 
-					 || thisItem.LoadType == "Halogen" || thisItem.DeviceCategory == "Lighting") {
+					 || thisItem.LoadType == "Halogen" || thisItem.LoadType == "LED Dim" || thisItem.LoadType == "LED" || thisItem.DeviceCategory == "Lighting") {
 
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;

@@ -12,7 +12,6 @@
         "pin": "342-52-220"
       },
       "commands": [
-        "sudo npm install -g homebridge-alexa"
       ],
       "image": "https://github.com/SmarterHomeApp/Smarter-Home/blob/master/Images/Alexa.png?raw=true",
       "allowMultiple": false,

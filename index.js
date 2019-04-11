@@ -409,10 +409,10 @@ class VantagePlatform {
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
-					if (thisItem.LoadType == "Incandescent" || thisItem.LoadType == "Fluor. Mag non-Dim"  || thisItem.LoadType == "Fluor. Magnetic Dim" 
+					if ((thisItem.ObjectType == "Load" && (thisItem.LoadType == "Incandescent" || thisItem.LoadType == "Fluor. Mag non-Dim"  || thisItem.LoadType == "Fluor. Magnetic Dim" 
 					 || thisItem.LoadType == "Fluor. Electronic non-Dim"  || thisItem.LoadType == "Fluor. Electronic Dim" 
 					 || thisItem.LoadType == "Magnetic Low Voltage"	 || thisItem.LoadType == "Electronic Low Voltage" || thisItem.LoadType == "Motor" 
-					 || thisItem.LoadType == "Halogen" || thisItem.LoadType == "LED Dim" || thisItem.LoadType == "LED" 
+					 || thisItem.LoadType == "Halogen" || thisItem.LoadType == "LED Dim" || thisItem.LoadType == "LED" || thisItem.LoadType == "Low Voltage Relay"))
 					 || thisItem.DeviceCategory == "Lighting") {
 
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
@@ -433,8 +433,14 @@ class VantagePlatform {
 							name = thisItem.Name + " VID" + thisItem.VID
 							dict[name.toLowerCase()] = name
 						}
-						this.log(sprintf("New load added (VID=%s, Name=%s, DIMMER)", thisItem.VID, thisItem.Name));
-						this.items.push(new VantageLoad(this.log, this, name, thisItem.VID, "dimmer"));
+						if(thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "Motor" || thisItem.DeviceCategory == "Lighting"){
+							this.log(sprintf("New load added (VID=%s, Name=%s, NON-DIMMER)", thisItem.VID, thisItem.Name));
+							this.items.push(new VantageLoad(this.log, this, name, thisItem.VID, "non-dimmer"));
+						}
+						else {
+							this.log(sprintf("New load added (VID=%s, Name=%s, DIMMER)", thisItem.VID, thisItem.Name));
+							this.items.push(new VantageLoad(this.log, this, name, thisItem.VID, "dimmer"));
+						}
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
@@ -442,7 +448,6 @@ class VantagePlatform {
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
-						//this.log(sprintf("New load asked (VID=%s, Name=%s, Dimmer)", thisItem.VID, thisItem.Name));
 						//added below
 						var name = thisItem.Name
 						name = name.toString()
@@ -458,7 +463,7 @@ class VantagePlatform {
 							dict[name.toLowerCase()] = name
 						}
 						// var name = "VID" + thisItem.VID + " " + thisItem.Name
-						this.log(sprintf("New Blind added (VID=%s, Name=%s, DIMMER)", thisItem.VID, thisItem.Name));
+						this.log(sprintf("New Blind added (VID=%s, Name=%s, BLIND)", thisItem.VID, thisItem.Name));
 						this.items.push(new VantageBlind(this.log, this, name, thisItem.VID, "blind"));
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();

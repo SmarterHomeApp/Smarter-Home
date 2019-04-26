@@ -300,11 +300,12 @@ class VantagePlatform {
 				if (accessory.address == vid) {
 					if (accessory.type == "relay") {
 						this.log(sprintf("relayStatusChange (VID=%s, Name=%s, Val:%d)", vid, accessory.name, value));
-						accessory.level = parseInt(value);
+						accessory.bri = parseInt(value);
+						accessory.power = ((accessory.bri) > 0);
 						//console.log(accessory);
 						if (accessory.switchService !== undefined) {
 							/* Is it ready? */
-							accessory.switchService.getCharacteristic(Characteristic.On).getValue(null, accessory.level);
+							accessory.switchService.getCharacteristic(Characteristic.On).getValue(null, accessory.power);
 						}
 					}
 					else {

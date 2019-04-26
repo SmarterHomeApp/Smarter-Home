@@ -268,6 +268,12 @@ class VantageInfusion {
 		this.command.write(sprintf("GETBLIND %s \n", vid));
 	}
 
+	/** relay commands*/
+	setRelay(vid, level) {
+		// TODO: reduce feedback (or command) rate
+		this.command.write(sprintf("LOAD %s %s\n", vid, level));
+	}
+
 }
 
 
@@ -292,15 +298,26 @@ class VantagePlatform {
 		this.infusion.on('loadStatusChange', (vid, value) => {
 			this.items.forEach(function (accessory) {
 				if (accessory.address == vid) {
-					this.log(sprintf("loadStatusChange (VID=%s, Name=%s, Bri:%d)", vid, accessory.name, value));
-					accessory.bri = parseInt(value);
-					accessory.power = ((accessory.bri) > 0);
-					//console.log(accessory);
-					if (accessory.lightBulbService !== undefined) {
-						/* Is it ready? */
-						accessory.lightBulbService.getCharacteristic(Characteristic.On).getValue(null, accessory.power);
-						if (accessory.type == "rgb" || accessory.type == "dimmer") {
-							accessory.lightBulbService.getCharacteristic(Characteristic.Brightness).getValue(null, accessory.bri);
+					if (accessory.type == "relay") {
+						this.log(sprintf("relayStatusChange (VID=%s, Name=%s, Val:%d)", vid, accessory.name, value));
+						accessory.level = parseInt(value);
+						//console.log(accessory);
+						if (accessory.switchService !== undefined) {
+							/* Is it ready? */
+							accessory.switchService.getCharacteristic(Characteristic.On).getValue(null, accessory.level);
+						}
+					}
+					else {
+						this.log(sprintf("loadStatusChange (VID=%s, Name=%s, Bri:%d)", vid, accessory.name, value));
+						accessory.bri = parseInt(value);
+						accessory.power = ((accessory.bri) > 0);
+						//console.log(accessory);
+						if (accessory.lightBulbService !== undefined) {
+							/* Is it ready? */
+							accessory.lightBulbService.getCharacteristic(Characteristic.On).getValue(null, accessory.power);
+							if (accessory.type == "rgb" || accessory.type == "dimmer") {
+								accessory.lightBulbService.getCharacteristic(Characteristic.Brightness).getValue(null, accessory.bri);
+							}
 						}
 					}
 				}
@@ -399,6 +416,7 @@ class VantagePlatform {
 						//added
 						var name = thisItem.Name
 						name = name.toString()
+						name = name.replace('-', '');
 						if (dict[name.toLowerCase()] === undefined && name != "")
 							dict[name.toLowerCase()] = name
 						else {
@@ -409,11 +427,11 @@ class VantagePlatform {
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
-					if ((thisItem.ObjectType == "Load" && (thisItem.LoadType == "Incandescent" || thisItem.LoadType == "Fluor. Mag non-Dim"  || thisItem.LoadType == "Fluor. Magnetic Dim" 
-					 || thisItem.LoadType == "Fluor. Electronic non-Dim"  || thisItem.LoadType == "Fluor. Electronic Dim" 
-					 || thisItem.LoadType == "Magnetic Low Voltage"	 || thisItem.LoadType == "Electronic Low Voltage" || thisItem.LoadType == "Motor" 
-					 || thisItem.LoadType == "Halogen" || thisItem.LoadType == "LED Dim" || thisItem.LoadType == "LED" || thisItem.LoadType == "Low Voltage Relay"))
-					 || thisItem.DeviceCategory == "Lighting") {
+					if (thisItem.ObjectType == "Load" && (thisItem.LoadType == "Incandescent" || thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "Fluor. Magnetic Dim"
+						|| thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Fluor. Electronic Dim"
+						|| thisItem.LoadType == "Magnetic Low Voltage" || thisItem.LoadType == "Electronic Low Voltage" || thisItem.LoadType == "Motor"
+						|| thisItem.LoadType == "Halogen" || thisItem.LoadType == "LED Dim" || thisItem.LoadType == "LED" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "High Voltage Relay"
+						|| thisItem.DeviceCategory == "Lighting")) {
 
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
@@ -427,15 +445,24 @@ class VantagePlatform {
 							if (Area[areaVID] !== undefined && Area[areaVID].Name !== undefined && Area[areaVID].Name != "")
 								name = Area[areaVID].Name + " " + name
 						}
+						// if (thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "High Voltage Relay")
+						// 	name = name + " RELAY"
+						name = name.replace('-', '');
 						if (dict[name.toLowerCase()] === undefined && name != "")
 							dict[name.toLowerCase()] = name
 						else {
 							name = thisItem.Name + " VID" + thisItem.VID
 							dict[name.toLowerCase()] = name
 						}
-						if(thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "Motor" || thisItem.DeviceCategory == "Lighting"){
-							this.log(sprintf("New load added (VID=%s, Name=%s, NON-DIMMER)", thisItem.VID, thisItem.Name));
-							this.items.push(new VantageLoad(this.log, this, name, thisItem.VID, "non-dimmer"));
+						if (thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "Motor" || thisItem.DeviceCategory == "Lighting" || thisItem.LoadType == "High Voltage Relay") {
+							if (thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "High Voltage Relay") {
+								this.log(sprintf("New relay added (VID=%s, Name=%s, RELAY)", thisItem.VID, thisItem.Name));
+								this.items.push(new VantageSwitch(this.log, this, name, thisItem.VID, "relay"));
+							}
+							else {
+								this.log(sprintf("New load added (VID=%s, Name=%s, NON-DIMMER)", thisItem.VID, thisItem.Name));
+								this.items.push(new VantageLoad(this.log, this, name, thisItem.VID, "non-dimmer"));
+							}
 						}
 						else {
 							this.log(sprintf("New load added (VID=%s, Name=%s, DIMMER)", thisItem.VID, thisItem.Name));
@@ -456,9 +483,10 @@ class VantagePlatform {
 							if (Area[areaVID] !== undefined && Area[areaVID].Name !== undefined && Area[areaVID].Name != "")
 								name = Area[areaVID].Name + " " + name
 						}
-						if(dict[name.toLowerCase()] === undefined && name != "")
+						name = name.replace('-', '');
+						if (dict[name.toLowerCase()] === undefined && name != "")
 							dict[name.toLowerCase()] = name
-						else{
+						else {
 							name = thisItem.Name + " VID" + thisItem.VID
 							dict[name.toLowerCase()] = name
 						}
@@ -671,7 +699,7 @@ class VantageLoad {
 				})
 				.on('get', (callback) => {
 					//console.log("wtf");
-					this.log(sprintf("getBrightness %s = %d", this.address, this.bri));
+					this.log.debug(sprintf("getBrightness %s = %d", this.address, this.bri));
 					callback(null, this.bri);
 				});
 		}
@@ -755,5 +783,49 @@ class VantageBlind {
 
 		this.parent.infusion.getBlindPos(this.address);
 		return [service, this.blindService];
+	}
+}
+
+
+class VantageSwitch {
+	constructor(log, parent, name, vid, type) {
+		this.displayName = name;
+		this.UUID = UUIDGen.generate(vid);
+		this.name = name;
+		this.parent = parent;
+		this.address = vid;
+		this.log = log;
+		this.type = type;
+		this.bri = 100;
+		this.power = false;
+	}
+
+	getServices() {
+		var service = new Service.AccessoryInformation();
+		service.setCharacteristic(Characteristic.Name, this.name)
+			.setCharacteristic(Characteristic.Manufacturer, "Vantage Controls")
+			.setCharacteristic(Characteristic.Model, "Switch")
+			.setCharacteristic(Characteristic.SerialNumber, "VID " + this.address);
+
+		this.switchService = new Service.Switch(this.name);
+
+		//console.log(this.lightBulbService); //here
+		this.switchService.getCharacteristic(Characteristic.On)
+			.on('set', (level, callback) => {
+				this.log.debug(sprintf("setPower %s = %s", this.address, level));
+				this.power = (level > 0);
+				if (this.power && this.bri == 0) {
+					this.bri = 100;
+				}
+				this.parent.infusion.setRelay(this.address, this.power * this.bri);
+				callback(null);
+			})
+			.on('get', (callback) => {
+				this.log.debug(sprintf("getPower %s = %s", this.address, this.power));
+				callback(null, this.power);
+			});
+
+		this.parent.infusion.getLoadStatus(this.address);
+		return [service, this.switchService];
 	}
 }

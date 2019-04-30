@@ -406,10 +406,11 @@ class VantagePlatform {
 				var item = Areas[i].Area
 				Area[item.VID] = item
 			}
+			var blindItems = {};
 			for (var i = 0; i < parsed.Project.Objects.Object.length; i++) {
 				var thisItemKey = Object.keys(parsed.Project.Objects.Object[i])[0];
 				var thisItem = parsed.Project.Objects.Object[i][thisItemKey];
-				if (thisItem.ExcludeFromWidgets === undefined || thisItem.ExcludeFromWidgets == "False" || thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind") {
+				if (thisItem.ExcludeFromWidgets === undefined || thisItem.ExcludeFromWidgets == "False" || thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind") {
 					if (thisItem.DeviceCategory == "HVAC" || thisItem.ObjectType == "Thermostat") {
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
@@ -472,7 +473,7 @@ class VantagePlatform {
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
-					if (thisItem.ObjectType == "Blind") {
+					if (thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind") {
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
@@ -491,12 +492,24 @@ class VantagePlatform {
 							name = thisItem.Name + " VID" + thisItem.VID
 							dict[name.toLowerCase()] = name
 						}
+						if (thisItem.ObjectType == "RelayBlind") {
+							blindItems[thisItem.OpenLoad] = thisItem.OpenLoad
+							blindItems[thisItem.CloseLoad] = thisItem.CloseLoad
+							if (thisItem.PowerLoad != "0")
+								blindItems[thisItem.PowerLoad] = thisItem.PowerLoad
+						}
 						// var name = "VID" + thisItem.VID + " " + thisItem.Name
 						this.log(sprintf("New Blind added (VID=%s, Name=%s, BLIND)", thisItem.VID, thisItem.Name));
 						this.items.push(new VantageBlind(this.log, this, name, thisItem.VID, "blind"));
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
+				}
+			}
+			for (var i = 0; i < this.items.length; i++) {
+				if (blindItems[this.items[i].address]) {
+					this.items.splice(i, 1);
+					i--;
 				}
 			}
 			this.log.warn("VantagePlatform for InFusion Controller (end configuration store)");

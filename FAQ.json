@@ -33,6 +33,10 @@
       "Answer": "The other ports are used for debugging purposes and have no functionality during normal use"
     },
     {
+      "Question": "Do I need to make any changes to my Vantage system for this to work?",
+      "Answer": "No. The device reads the DC file that is backed up on the SD card of your Vantage Controller. Simply make sure you have the file backed up"
+    },
+    {
       "Question": "What devices are supported",
       "Answer": "The devices supported can be found in the add accessories table of the app. If you would like us to add a new accessory type please send an email to smarterhomeapp@gmail.com with the type of device you would like to add, and we will do our best to add it to the list"
     },

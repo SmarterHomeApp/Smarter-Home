@@ -133,6 +133,10 @@ class VantageInfusion {
 
 			var buffer = "";
 			var xmlResult = ""
+			var readObjects = []
+			var writeCount = 0
+			var objectDict = {}
+			var types = ["Area", "Load", "Thermostat", "Blind", "RelayBlind"]
 			configuration.on('data', (data) => {
 				buffer = buffer + data.toString().replace("\ufeff", "");
 
@@ -179,11 +183,50 @@ class VantageInfusion {
 						configuration.destroy();
 					}
 				}
+				else if (parsed.IConfiguration != undefined) {
+					if (parsed.IConfiguration.OpenFilter != undefined) {
+						var objectValue = parsed.IConfiguration.OpenFilter.return
+						if (objectDict[objectValue] == undefined) {
+							buffer = ""
+							objectDict[objectValue] = objectValue
+							writeCount++
+							configuration.write("<IConfiguration><GetFilterResults><call><Count>1000</Count><WholeObject>true</WholeObject><hFilter>" + objectValue + "</hFilter></call></GetFilterResults></IConfiguration>\n")
+						}
+
+					}
+					else if (parsed.IConfiguration.GetFilterResults != undefined) {
+						var elements = parsed.IConfiguration.GetFilterResults.return.Object
+						if (elements != undefined) {
+							for (var i = 0; i < elements.length; i++) {
+								var element = elements[i][types[writeCount - 1]]
+								element["ObjectType"] = types[writeCount - 1]
+								var elemDict = {};
+								elemDict[types[writeCount - 1]] = element
+								readObjects.push(elemDict)
+							}
+						}
+
+						buffer = ""
+						if (writeCount >= types.length) {
+							var result = {}
+							result["Project"] = {}
+							result["Project"]["Objects"] = {}
+							result["Project"]["Objects"]["Object"] = readObjects
+							var options = { sanitize: true };
+							result = parser.toXml(result, options)
+							fs.writeFileSync("/tmp/vantage.dc", result); /* TODO: create a platform-independent temp file */
+							this.emit("endDownloadConfiguration", result);
+							configuration.destroy();
+						}
+						else
+							configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + types[writeCount] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+					}
+				}
 				buffer = "";
 			});
 
 			/* Aehm, async method becomes sync... */
-			configuration.write("<IIntrospection><GetInterfaces><call></call></GetInterfaces></IIntrospection>\n");
+			//configuration.write("<IIntrospection><GetInterfaces><call></call></GetInterfaces></IIntrospection>\n");
 
 			if (fs.existsSync('/tmp/vantage.dc') && this.usecache) {
 				fs.readFile('/tmp/vantage.dc', 'utf8', function (err, data) {
@@ -191,8 +234,16 @@ class VantageInfusion {
 						this.emit("endDownloadConfiguration", data);
 					}
 				}.bind(this));
+			} else if (fs.existsSync('/home/pi/vantage.dc') && this.usecache) {
+				fs.readFile('/home/pi/vantage.dc', 'utf8', function (err, data) {
+					if (!err) {
+						this.emit("endDownloadConfiguration", data);
+					}
+				}.bind(this));
 			} else {
-				configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
+				configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + types[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+
+				//configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
 			}
 		});
 	}
@@ -410,7 +461,7 @@ class VantagePlatform {
 			for (var i = 0; i < parsed.Project.Objects.Object.length; i++) {
 				var thisItemKey = Object.keys(parsed.Project.Objects.Object[i])[0];
 				var thisItem = parsed.Project.Objects.Object[i][thisItemKey];
-				if (thisItem.ExcludeFromWidgets === undefined || thisItem.ExcludeFromWidgets == "False" || thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind") {
+				if (thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind") {
 					if (thisItem.DeviceCategory == "HVAC" || thisItem.ObjectType == "Thermostat") {
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;

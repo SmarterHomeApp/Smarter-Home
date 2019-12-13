@@ -16,11 +16,13 @@ module.exports = function (homebridge) {
 };
 
 class VantageInfusion {
-	constructor(ipaddress, accessories, usecache) {
+	constructor(ipaddress, accessories, usecache, omit, range) {
 		util.inherits(VantageInfusion, events.EventEmitter);
 		this.ipaddress = ipaddress;
 		this.usecache = usecache || true;
 		this.accessories = accessories || [];
+		this.omit = omit
+		this.range = range
 		this.command = {};
 		this.interfaces = {};
 		this.StartCommand();
@@ -337,7 +339,15 @@ class VantagePlatform {
 		this.ipaddress = config.ipaddress;
 		this.lastDiscovery = null;
 		this.items = [];
-		this.infusion = new VantageInfusion(config.ipaddress, this.items, false);
+		if(config.omit == undefined)
+			this.omit = ""
+		else
+			this.omit = config.omit
+		if(config.range == undefined)
+			this.range = ""
+		else
+			this.range = config.range
+		this.infusion = new VantageInfusion(config.ipaddress, this.items, false, this.omit, this.range);
 		this.infusion.Discover();
 		this.pendingrequests = 0;
 		this.ready = false;
@@ -458,10 +468,26 @@ class VantagePlatform {
 				Area[item.VID] = item
 			}
 			var blindItems = {};
+			var range = this.range
+			var omit = this.omit
+			if(range != ""){
+				range = range.replace(' ', '');
+				range = range.split(",")
+				if(range.count != 2)
+					range = ["0","999999999"]
+			}
+			else
+				range = ["0","999999999"]
+			if(omit != ""){
+				omit = omit.replace(' ', '');
+				omit = omit.split(",")
+			}
+
 			for (var i = 0; i < parsed.Project.Objects.Object.length; i++) {
 				var thisItemKey = Object.keys(parsed.Project.Objects.Object[i])[0];
 				var thisItem = parsed.Project.Objects.Object[i][thisItemKey];
-				if (thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind") {
+				if (!omit.includes(thisItem.VID) && (parseInt(thisItem.VID)>= parseInt(range[0])) && (parseInt(thisItem.VID)<= parseInt(range[1])) && 
+				(thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind")) {
 					if (thisItem.DeviceCategory == "HVAC" || thisItem.ObjectType == "Thermostat") {
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;

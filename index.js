@@ -473,7 +473,7 @@ class VantagePlatform {
 			if(range != ""){
 				range = range.replace(' ', '');
 				range = range.split(",")
-				if(range.count != 2)
+				if(range.length != 2)
 					range = ["0","999999999"]
 			}
 			else

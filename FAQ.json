@@ -34,7 +34,7 @@
     },
     {
       "Question": "Do I need to make any changes to my Vantage system for this to work?",
-      "Answer": "No. The device reads the DC file that is backed up on the SD card of your Vantage Controller. Simply make sure you have the file backed up"
+      "Answer": "No. The device reads the DC file directly from your Vantage Controller"
     },
     {
       "Question": "What devices are supported",

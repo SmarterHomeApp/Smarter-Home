@@ -23,7 +23,7 @@
       "textFields": [
         "ipaddress"
       ],
-      "notes": "This platform allows you to control your Vantage Infusion loads, thermostats, and blinds through Siri",
+      "notes": "This platform allows you to control your Vantage Infusion loads, thermostats, and blinds through Siri\n\nIf you wish to add loads within a range of VIDs, please enter the range below as \"startVID,endVID\"\nif you want to omit certain loads, enter the load VIDs seperated by a comma eg: \"15,23,155\"",
       "hiddenFields": {},
       "optional":[
         "range",

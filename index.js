@@ -138,7 +138,7 @@ class VantageInfusion {
 			var readObjects = []
 			var writeCount = 0
 			var objectDict = {}
-			var types = ["Area", "Load", "Thermostat", "Blind", "RelayBlind"]
+			var types = ["Area", "Load", "Thermostat", "Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD"]
 			configuration.on('data', (data) => {
 				buffer = buffer + data.toString().replace("\ufeff", "");
 
@@ -487,7 +487,7 @@ class VantagePlatform {
 				var thisItemKey = Object.keys(parsed.Project.Objects.Object[i])[0];
 				var thisItem = parsed.Project.Objects.Object[i][thisItemKey];
 				if (!omit.includes(thisItem.VID) && (parseInt(thisItem.VID)>= parseInt(range[0])) && (parseInt(thisItem.VID)<= parseInt(range[1])) && 
-				(thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind")) {
+				(thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind" || thisItem.ObjectType == "Lutron.Shade_x2F_Blind_Child_CHILD")) {
 					if (thisItem.DeviceCategory == "HVAC" || thisItem.ObjectType == "Thermostat") {
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
@@ -495,11 +495,17 @@ class VantagePlatform {
 						//added
 						var name = thisItem.Name
 						name = name.toString()
+						if (thisItem.Area !== undefined && thisItem.Area != "") {
+							var areaVID = thisItem.Area
+							if (Area[areaVID] !== undefined && Area[areaVID].Name !== undefined && Area[areaVID].Name != "")
+								name = Area[areaVID].Name + " " + name
+						}
+
 						name = name.replace('-', '');
 						if (dict[name.toLowerCase()] === undefined && name != "")
 							dict[name.toLowerCase()] = name
 						else {
-							name = thisItem.Name + " VID" + thisItem.VID
+							name = name + " VID" + thisItem.VID
 							dict[name.toLowerCase()] = name
 						}
 						this.items.push(new VantageThermostat(this.log, this, name, thisItem.VID, "thermostat"));
@@ -530,7 +536,7 @@ class VantagePlatform {
 						if (dict[name.toLowerCase()] === undefined && name != "")
 							dict[name.toLowerCase()] = name
 						else {
-							name = thisItem.Name + " VID" + thisItem.VID
+							name = name + " VID" + thisItem.VID
 							dict[name.toLowerCase()] = name
 						}
 						if (thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "Motor" || thisItem.DeviceCategory == "Lighting" || thisItem.LoadType == "High Voltage Relay") {
@@ -550,7 +556,7 @@ class VantagePlatform {
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
-					if (thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind") {
+					if (thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind" || thisItem.ObjectType == "Lutron.Shade_x2F_Blind_Child_CHILD") {
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
@@ -566,7 +572,7 @@ class VantagePlatform {
 						if (dict[name.toLowerCase()] === undefined && name != "")
 							dict[name.toLowerCase()] = name
 						else {
-							name = thisItem.Name + " VID" + thisItem.VID
+							name = name + " VID" + thisItem.VID
 							dict[name.toLowerCase()] = name
 						}
 						if (thisItem.ObjectType == "RelayBlind") {

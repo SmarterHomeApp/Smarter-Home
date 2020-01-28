@@ -138,7 +138,7 @@ class VantageInfusion {
 			var readObjects = []
 			var writeCount = 0
 			var objectDict = {}
-			var types = ["Area", "Load", "Thermostat", "Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD"]
+			var types = ["Area", "Load", "Thermostat", "Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind"]
 			configuration.on('data', (data) => {
 				buffer = buffer + data.toString().replace("\ufeff", "");
 
@@ -339,11 +339,11 @@ class VantagePlatform {
 		this.ipaddress = config.ipaddress;
 		this.lastDiscovery = null;
 		this.items = [];
-		if(config.omit == undefined)
+		if (config.omit == undefined)
 			this.omit = ""
 		else
 			this.omit = config.omit
-		if(config.range == undefined)
+		if (config.range == undefined)
 			this.range = ""
 		else
 			this.range = config.range
@@ -470,15 +470,15 @@ class VantagePlatform {
 			var blindItems = {};
 			var range = this.range
 			var omit = this.omit
-			if(range != ""){
+			if (range != "") {
 				range = range.replace(' ', '');
 				range = range.split(",")
-				if(range.length != 2)
-					range = ["0","999999999"]
+				if (range.length != 2)
+					range = ["0", "999999999"]
 			}
 			else
-				range = ["0","999999999"]
-			if(omit != ""){
+				range = ["0", "999999999"]
+			if (omit != "") {
 				omit = omit.replace(' ', '');
 				omit = omit.split(",")
 			}
@@ -486,8 +486,8 @@ class VantagePlatform {
 			for (var i = 0; i < parsed.Project.Objects.Object.length; i++) {
 				var thisItemKey = Object.keys(parsed.Project.Objects.Object[i])[0];
 				var thisItem = parsed.Project.Objects.Object[i][thisItemKey];
-				if (!omit.includes(thisItem.VID) && (parseInt(thisItem.VID)>= parseInt(range[0])) && (parseInt(thisItem.VID)<= parseInt(range[1])) && 
-				(thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind" || thisItem.ObjectType == "Lutron.Shade_x2F_Blind_Child_CHILD")) {
+				if (!omit.includes(thisItem.VID) && (parseInt(thisItem.VID) >= parseInt(range[0])) && (parseInt(thisItem.VID) <= parseInt(range[1])) &&
+					(thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind" || thisItem.ObjectType == "QubeBlind" || thisItem.ObjectType == "Lutron.Shade_x2F_Blind_Child_CHILD")) {
 					if (thisItem.DeviceCategory == "HVAC" || thisItem.ObjectType == "Thermostat") {
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
@@ -556,7 +556,7 @@ class VantagePlatform {
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
-					if (thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind" || thisItem.ObjectType == "Lutron.Shade_x2F_Blind_Child_CHILD") {
+					if (thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind" || thisItem.ObjectType == "Lutron.Shade_x2F_Blind_Child_CHILD" || thisItem.ObjectType == "QubeBlind") {
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;

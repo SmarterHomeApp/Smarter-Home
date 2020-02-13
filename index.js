@@ -52,6 +52,7 @@ class VantageInfusion {
 					}
 					if (dataItem[0] == "S:TEMP") {
 						//console.log("now lets set the temp!" + parseInt(dataItem[2]));
+						this.emit(sprintf("thermostatDidChange"), parseInt(dataItem[2]));
 						// this.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[2]));
 					}
 					else if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("Thermostat.GetIndoorTemperature")) {

@@ -177,7 +177,7 @@ class VantageInfusion {
 				} catch (e) {
 					return false;
 				}
-				console.log("parse Json")
+				console.log("parse Json: " + types[writeCount])
 				var parsed = JSON.parse(parser.toJson(buffer));
 				if (parsed.smarterHome !== undefined) {
 					if (parsed.smarterHome.IIntrospection !== undefined) {
@@ -232,6 +232,18 @@ class VantageInfusion {
 							configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + types[writeCount] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
 					}
 				}
+				else if (parsed.ILogin != undefined) {
+					if (parsed.ILogin.Login != undefined) {
+						if (parsed.ILogin.Login.return == "true") {
+							console.log("Login successful")
+						}
+						else {
+							console.log("Login failed trying to get data anyways")
+						}
+						buffer = ""
+						configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + types[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+					}
+				}
 				buffer = "";
 			});
 
@@ -251,8 +263,12 @@ class VantageInfusion {
 					}
 				}.bind(this));
 			} else {
-				configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + types[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
-
+				if (this.username != "" && this.password != "") {
+					configuration.write("<ILogin><Login><call><User>" + this.username + "</User><Password>" + this.password + "</Password></call></Login></ILogin>\n")
+				}
+				else {
+					configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + types[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+				}
 				//configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
 			}
 		});

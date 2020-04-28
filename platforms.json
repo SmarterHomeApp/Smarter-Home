@@ -26,6 +26,8 @@
       "notes": "This platform allows you to control your Vantage Infusion loads, thermostats, and blinds through Siri\n\nOptional:\nIf you wish to add loads within a range of VIDs, please enter the range below as \"startVID,endVID\"\nIf you want to omit certain loads, enter the load VIDs seperated by a comma eg: \"15,23,155\"",
       "hiddenFields": {},
       "optional":[
+        "username",
+        "password",
         "range",
         "omit"
       ],

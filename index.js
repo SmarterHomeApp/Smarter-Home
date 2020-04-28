@@ -16,13 +16,15 @@ module.exports = function (homebridge) {
 };
 
 class VantageInfusion {
-	constructor(ipaddress, accessories, usecache, omit, range) {
+	constructor(ipaddress, accessories, usecache, omit, range, username, password) {
 		util.inherits(VantageInfusion, events.EventEmitter);
 		this.ipaddress = ipaddress;
 		this.usecache = usecache || true;
 		this.accessories = accessories || [];
 		this.omit = omit
 		this.range = range
+		this.username = username
+		this.password = password
 		this.command = {};
 		this.interfaces = {};
 		this.StartCommand();
@@ -83,7 +85,9 @@ class VantageInfusion {
 					}
 				}
 			});
-
+			if (this.username != "" && this.password != "") {
+				this.command.write(sprintf("Login %s %s\n", this.username, this.password));
+			}
 			this.command.write(sprintf("STATUS ALL\n"));
 			this.command.write(sprintf("ELENABLE 1 AUTOMATION ON\nELENABLE 1 EVENT ON\nELENABLE 1 STATUS ON\nELENABLE 1 STATUSEX ON\nELENABLE 1 SYSTEM ON\nELLOG AUTOMATION ON\nELLOG EVENT ON\nELLOG STATUS ON\nELLOG STATUSEX ON\nELLOG SYSTEM ON\n"));
 		});
@@ -300,11 +304,11 @@ class VantageInfusion {
 			this.command.write(sprintf("THERMTEMP %s HEAT %s\n", vid, value))
 		else if (mode == 2)
 			this.command.write(sprintf("THERMTEMP %s COOL %s\n", vid, value))
-		else if(mode == 3){
-			if(value > cooling){
+		else if (mode == 3) {
+			if (value > cooling) {
 				this.command.write(sprintf("THERMTEMP %s COOL %s\n", vid, value))
 			}
-			else if (value < heating){
+			else if (value < heating) {
 				this.command.write(sprintf("THERMTEMP %s HEAT %s\n", vid, value))
 			}
 		}
@@ -355,7 +359,15 @@ class VantagePlatform {
 			this.range = ""
 		else
 			this.range = config.range
-		this.infusion = new VantageInfusion(config.ipaddress, this.items, false, this.omit, this.range);
+		if (config.username == undefined)
+			this.username = ""
+		else
+			this.username = config.username
+		if (config.password == undefined)
+			this.password = ""
+		else
+			this.password = config.password
+		this.infusion = new VantageInfusion(config.ipaddress, this.items, false, this.omit, this.range, this.username, this.password);
 		this.infusion.Discover();
 		this.pendingrequests = 0;
 		this.ready = false;
@@ -432,11 +444,11 @@ class VantagePlatform {
 							accessory.thermostatService.getCharacteristic(Characteristic.CurrentHeatingCoolingState).getValue(null, accessory.mode);
 						}
 						else {
-							if(mode == 1){
+							if (mode == 1) {
 								accessory.heating = targetTemp
 								accessory.thermostatService.getCharacteristic(Characteristic.HeatingThresholdTemperature).getValue(null, accessory.heating);
 							}
-							else if(mode == 2){
+							else if (mode == 2) {
 								accessory.cooling = targetTemp
 								accessory.thermostatService.getCharacteristic(Characteristic.CoolingThresholdTemperature).getValue(null, accessory.cooling);
 							}
@@ -733,10 +745,10 @@ class VantageThermostat {
 		this.thermostatService.getCharacteristic(Characteristic.TargetTemperature)
 			.on('set', (level, callback) => {
 				this.targetTemp = parseFloat(level)
-				if(this.mode == 1){
+				if (this.mode == 1) {
 					this.heating = parseFloat(level)
 				}
-				else if(this.mode == 2){
+				else if (this.mode == 2) {
 					this.cooling = parseFloat(level)
 				}
 				this.log(sprintf("setTemperature %s = %s and current mode = %f", this.address, level, this.mode));

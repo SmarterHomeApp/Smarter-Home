@@ -177,7 +177,8 @@ class VantageInfusion {
 				} catch (e) {
 					return false;
 				}
-				console.log("parse Json: " + types[writeCount])
+				if(writeCount < types.length)
+					console.log("parse Json: " + types[writeCount])
 				var parsed = JSON.parse(parser.toJson(buffer));
 				if (parsed.smarterHome !== undefined) {
 					if (parsed.smarterHome.IIntrospection !== undefined) {
@@ -721,7 +722,7 @@ class VantageThermostat {
 		this.thermostatService = new Service.Thermostat(this.name);
 		this.thermostatService.getCharacteristic(Characteristic.CurrentTemperature)
 			.on('get', (callback) => {
-				this.log(sprintf("getTemperature %s = %.1f", this.address, this.temperature));
+				//this.log(sprintf("getTemperature %s = %.1f", this.address, this.temperature));
 				callback(null, this.temperature);
 			});
 

@@ -573,7 +573,7 @@ class VantagePlatform {
 					if (thisItem.ObjectType == "Load" && (thisItem.LoadType == "Incandescent" || thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "Fluor. Magnetic Dim"
 						|| thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Fluor. Electronic Dim"
 						|| thisItem.LoadType == "Magnetic Low Voltage" || thisItem.LoadType == "Electronic Low Voltage" || thisItem.LoadType == "Motor"
-						|| thisItem.LoadType == "Halogen" || thisItem.LoadType == "LED Dim" || thisItem.LoadType == "LED" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "High Voltage Relay"
+						|| thisItem.LoadType == "Halogen" || thisItem.LoadType == "LED Dim" || thisItem.LoadType == "LED non-Dim" || thisItem.LoadType == "LED" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "High Voltage Relay"
 						|| thisItem.DeviceCategory == "Lighting")) {
 
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
@@ -597,7 +597,7 @@ class VantagePlatform {
 							name = name + " VID" + thisItem.VID
 							dict[name.toLowerCase()] = name
 						}
-						if (thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "Motor" || thisItem.DeviceCategory == "Lighting" || thisItem.LoadType == "High Voltage Relay") {
+						if (thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "LED non-Dim" || thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "Motor" || thisItem.DeviceCategory == "Lighting" || thisItem.LoadType == "High Voltage Relay") {
 							if (thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "High Voltage Relay") {
 								this.log(sprintf("New relay added (VID=%s, Name=%s, RELAY)", thisItem.VID, thisItem.Name));
 								this.items.push(new VantageSwitch(this.log, this, name, thisItem.VID, "relay"));

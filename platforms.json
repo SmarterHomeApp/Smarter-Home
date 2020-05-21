@@ -2,7 +2,7 @@
   "Platforms": [
     {
       "platform": "Alexa",
-      "notes": "This platform allows your previously added homekit accessories to now work with Alexa\nTo get started, please create an account here:  https://homebridge.cloudwatch.net/newuser\n Next add the \"homebridge\" skill to your amazon alexa and sign in using the same credentials: https://www.amazon.com/Northern-Man-54-Homebridge/dp/B07B9QMTFQ\nFinally enter those same credentials below and add the accesssory. Once complete ask Alexa to \"Find Devices\" \n\nNote: Alexa does not handle multiple homes. So if you plan on setting up an Alexa in multiple homes, please ensure that your Alexas are registered under different accounts and you sign up with an alternate email",
+      "notes": "This platform allows your previously added homekit accessories to now work with Alexa\n\nTo get started, please create an account here:  https://homebridge.cloudwatch.net/newuser\n\n Next add the \"homebridge\" skill to your amazon alexa and sign in using the same credentials: https://www.amazon.com/Northern-Man-54-Homebridge/dp/B07B9QMTFQ\n\nFinally enter those same credentials below and add the accesssory. Once complete ask Alexa to \"Find Devices\" \n\nNote: Alexa does not handle multiple homes. So if you plan on setting up an Alexa in multiple homes, please ensure that your Alexas are registered under different accounts and you sign up with an alternate email",
       "textFields": [
         "username",
         "password"

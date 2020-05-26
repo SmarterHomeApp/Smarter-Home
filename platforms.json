@@ -55,6 +55,25 @@
       "credits": "This platform was made by rudders, more info can be found on their github: https://github.com/rudders/homebridge-platform-wemo"
     },
     {
+      "platform": "HarmonyHubWebSocket",
+      "textFields": [
+      ],
+      "optional":[
+        "hubName",
+        "hubIP"
+      ],
+      "notes": "This platform allows you to control your Harmony Devices through Siri.\n\nOptional:\nhubName is the name of your hub in harmony app\nIn case both hubName and hubIP are not set, it will discover your hub automatically, providing there is only one",
+      "hiddenFields": {
+        "name": "HubName"
+      },
+      "image": "https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/Images/HarmonyHubWebSocket.png",
+      "commands": [
+        "sudo npm install -g homebridge-harmony"
+      ],
+      "allowMultiple": false,
+      "credits": "This platform was made by nicoduj, more info can be found on their github: https://github.com/nicoduj/homebridge-harmony"
+    },
+    {
       "platform": "LiftMaster2",
       "textFields": [
         "username",

@@ -545,7 +545,7 @@ class VantagePlatform {
 				var thisItemKey = Object.keys(parsed.Project.Objects.Object[i])[0];
 				var thisItem = parsed.Project.Objects.Object[i][thisItemKey];
 				if (!omit.includes(thisItem.VID) && (parseInt(thisItem.VID) >= parseInt(range[0])) && (parseInt(thisItem.VID) <= parseInt(range[1])) &&
-					(thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind" || thisItem.ObjectType == "QubeBlind" || thisItem.ObjectType == "Lutron.Shade_x2F_Blind_Child_CHILD")) {
+					(thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Vantage.VirtualThermostat_PORT" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind" || thisItem.ObjectType == "QubeBlind" || thisItem.ObjectType == "Lutron.Shade_x2F_Blind_Child_CHILD")) {
 					if (thisItem.DeviceCategory == "HVAC" || thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Vantage.VirtualThermostat_PORT") {
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;

@@ -146,7 +146,7 @@ class VantageInfusion {
 			var readObjects = []
 			var writeCount = 0
 			var objectDict = {}
-			var types = ["Area", "Load", "Thermostat","Vantage.VirtualThermostat_PORT", "Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind"]
+			var types = ["Area", "Load", "Thermostat", "Vantage.VirtualThermostat_PORT", "Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind"]
 			configuration.on('data', (data) => {
 				buffer = buffer + data.toString().replace("\ufeff", "");
 
@@ -177,7 +177,7 @@ class VantageInfusion {
 				} catch (e) {
 					return false;
 				}
-				if(writeCount < types.length)
+				if (writeCount < types.length)
 					console.log("parse Json: " + types[writeCount])
 				var parsed = JSON.parse(parser.toJson(buffer));
 				if (parsed.smarterHome !== undefined) {
@@ -208,12 +208,21 @@ class VantageInfusion {
 					else if (parsed.IConfiguration.GetFilterResults != undefined) {
 						var elements = parsed.IConfiguration.GetFilterResults.return.Object
 						if (elements != undefined) {
-							for (var i = 0; i < elements.length; i++) {
-								var element = elements[i][types[writeCount - 1]]
+							if (elements.length == undefined) {
+								var element = elements[types[writeCount - 1]]
 								element["ObjectType"] = types[writeCount - 1]
 								var elemDict = {};
 								elemDict[types[writeCount - 1]] = element
 								readObjects.push(elemDict)
+							}
+							else {
+								for (var i = 0; i < elements.length; i++) {
+									var element = elements[i][types[writeCount - 1]]
+									element["ObjectType"] = types[writeCount - 1]
+									var elemDict = {};
+									elemDict[types[writeCount - 1]] = element
+									readObjects.push(elemDict)
+								}
 							}
 						}
 

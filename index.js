@@ -783,7 +783,7 @@ class VantageThermostat {
 			})
 
 			.on('get', (callback) => {
-				this.log(sprintf("getTargetTemperature %s = %.1f", this.address, this.targetTemp));
+				// this.log(sprintf("getTargetTemperature %s = %.1f", this.address, this.targetTemp));
 				callback(null, this.targetTemp);
 			});
 

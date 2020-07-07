@@ -37,6 +37,10 @@
       "Answer": "No. The device reads the DC file directly from your Vantage Controller"
     },
     {
+      "Question": "What version of Design Center do I need?",
+      "Answer": "The Smarter Home device works with all versions of Design Center. For controllers running version 4.0 and up, you need to make sure TCP ports 2001 and 3001 are enabled in Design Center"
+    },
+    {
       "Question": "What devices are supported",
       "Answer": "The devices supported can be found in the add accessories table of the app. If you would like us to add a new accessory type please send an email to smarterhomeapp@gmail.com with the type of device you would like to add, and we will do our best to add it to the list"
     },

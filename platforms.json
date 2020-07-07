@@ -66,7 +66,7 @@
       "hiddenFields": {},
       "image": "https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/Images/liftmaster.png",
       "commands": [
-        "sudo su - root -c 'npm install -g git+https://github.com/luisiam/homebridge-liftmaster2.git'"
+        "sudo npm install -g homebridge-liftmaster2"
       ],
       "allowMultiple": false,
       "credits": "This platform was made by luisiam, more info can be found on their github: https://github.com/luisiam/homebridge-liftmaster2"

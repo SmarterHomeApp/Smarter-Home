@@ -146,7 +146,7 @@ class VantageInfusion {
 			var readObjects = []
 			var writeCount = 0
 			var objectDict = {}
-			var types = ["Area", "Load", "Thermostat", "Vantage.VirtualThermostat_PORT", "Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind"]
+			var types = ["Area", "Load", "Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT", "Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind"]
 			configuration.on('data', (data) => {
 				buffer = buffer + data.toString().replace("\ufeff", "");
 
@@ -554,8 +554,9 @@ class VantagePlatform {
 				var thisItemKey = Object.keys(parsed.Project.Objects.Object[i])[0];
 				var thisItem = parsed.Project.Objects.Object[i][thisItemKey];
 				if (!omit.includes(thisItem.VID) && (parseInt(thisItem.VID) >= parseInt(range[0])) && (parseInt(thisItem.VID) <= parseInt(range[1])) &&
-					(thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Vantage.VirtualThermostat_PORT" || thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind" || thisItem.ObjectType == "QubeBlind" || thisItem.ObjectType == "Lutron.Shade_x2F_Blind_Child_CHILD")) {
-					if (thisItem.DeviceCategory == "HVAC" || thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Vantage.VirtualThermostat_PORT") {
+					(thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Vantage.HVAC-Interface_Point_Zone_CHILD" || thisItem.ObjectType == "Vantage.VirtualThermostat_PORT" ||
+						thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind" || thisItem.ObjectType == "QubeBlind" || thisItem.ObjectType == "Lutron.Shade_x2F_Blind_Child_CHILD")) {
+					if (thisItem.DeviceCategory == "HVAC" || thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Vantage.VirtualThermostat_PORT" || thisItem.ObjectType == "Vantage.HVAC-Interface_Point_Zone_CHILD") {
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
 						this.log(sprintf("New HVAC added (VID=%s, Name=%s, Thermostat)", thisItem.VID, thisItem.Name));

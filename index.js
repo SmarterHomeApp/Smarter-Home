@@ -663,10 +663,12 @@ class VantagePlatform {
 					i--;
 				}
 			}
+			this.log(sprintf("Found %f devices",this.items.length))
+			if(this.items.length >= 150)
+				this.log(sprintf("Number of devices exceeds Apples limit of 149. Please omit some loads"))
 			this.log.warn("VantagePlatform for InFusion Controller (end configuration store)");
 			this.ready = true;
 			this.callbackPromesedAccessoriesDo();
-			//console.log("done??");
 		});
 	}
 

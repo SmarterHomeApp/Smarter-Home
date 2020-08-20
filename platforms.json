@@ -23,7 +23,7 @@
       "textFields": [
         "ipaddress"
       ],
-      "notes": "This platform allows you to control your Vantage Infusion loads, thermostats, and blinds through Siri or Alexa\n\nOptional:\nIf you wish to add loads within a range of VIDs, please enter the range below as \"startVID,endVID\" eg: 1,1000\nIf you want to omit certain loads, enter the load VIDs seperated by a comma eg: \"15,23,155\"\n\nNote:\nNewer versions of Design Center require a username and password. If you have not set that up, you can leave these fields blank",
+      "notes": "This platform allows you to control your Vantage Infusion loads, thermostats, and blinds through Siri or Alexa\n\nOptional:\nIf you wish to add loads within a range of VIDs, please enter the range below as \"startVID,endVID\" eg: 1,1000\nIf you want to omit certain loads, enter the load VIDs seperated by a comma eg: 15,23,155\n\nNote:\nNewer versions of Design Center require a username and password. If you have not set that up, you can leave these fields blank",
       "hiddenFields": {},
       "optional":[
         "username",

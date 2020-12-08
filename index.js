@@ -664,8 +664,10 @@ class VantagePlatform {
 				}
 			}
 			this.log(sprintf("Found %f devices",this.items.length))
-			if(this.items.length >= 150)
-				this.log(sprintf("Number of devices exceeds Apples limit of 149. Please omit some loads"))
+			if(this.items.length >= 150){
+				this.log(sprintf("Number of devices exceeds Apples limit of 149. Only loading first 149 devices. Please omit some loads"))
+				this.items.splice(149)
+			}
 			this.log.warn("VantagePlatform for InFusion Controller (end configuration store)");
 			this.ready = true;
 			this.callbackPromesedAccessoriesDo();
@@ -857,14 +859,13 @@ class VantageLoad {
 		if (this.type == "dimmer" || this.type == "rgb") {
 			this.lightBulbService.getCharacteristic(Characteristic.Brightness)
 				.on('set', (level, callback) => {
-					this.log(sprintf("setBrightness %s = %d", this.address, level));
+					this.log.debug(sprintf("setBrightness %s = %d", this.address, level));
 					this.bri = parseInt(level);
 					this.power = (this.bri > 0);
 					this.parent.infusion.Load_Dim(this.address, this.power * this.bri);
 					callback(null);
 				})
 				.on('get', (callback) => {
-					//console.log("wtf");
 					this.log.debug(sprintf("getBrightness %s = %d", this.address, this.bri));
 					callback(null, this.bri);
 				});

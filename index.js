@@ -38,59 +38,78 @@ class VantageInfusion {
 	 */
 	StartCommand() {
 		this.command = net.connect({ host: this.ipaddress, port: 3001 }, () => {
-			this.command.on('data', (data) => {
-				/* Data received */
-				var lines = data.toString().split('\n');
-				for (var i = 0; i < lines.length; i++) {
-					var dataItem = lines[i].split(" ");
-					// console.log(dataItem);
-					if (lines[i].startsWith("S:BLIND") || lines[i].startsWith("R:GETBLIND")) {
-						/* Live update about load level (even if it's a RGB load') */
-						this.emit("blindStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
-					}
-					if (lines[i].startsWith("S:LOAD ") || lines[i].startsWith("R:GETLOAD ")) {
-						/* Live update about load level (even if it's a RGB load') */
-						this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
-					}
-					if (dataItem[0] == "S:TEMP") {
-						//console.log("now lets set the temp!" + parseInt(dataItem[2]));
-						this.emit(sprintf("thermostatDidChange"), parseInt(dataItem[2]));
-						// this.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[2]));
-					}
-					else if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("Thermostat.GetIndoorTemperature")) {
-						//console.log("lets get the indoor temp!")
-						this.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[1]), parseFloat(dataItem[2]));
-					}
-					else if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP" || dataItem[0] == 'R:THERMTEMP') {
-						var modeVal = 0;
-						if (dataItem[2].includes("OFF"))
-							modeVal = 0;
-						else if (dataItem[2].includes("HEAT"))
-							modeVal = 1;
-						else if (dataItem[2].includes("COOL"))
-							modeVal = 2;
-						else
-							modeVal = 3;
-						// console.log(parseInt(modeVal));
-						if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP")
-							this.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), -1);
-						else
-							this.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), parseFloat(dataItem[3]));
-					}
-
-
-					/* Non-state feedback */
-					if (lines[i].startsWith("R:INVOKE") && lines[i].indexOf("Object.IsInterfaceSupported")) {
-						this.emit(sprintf("isInterfaceSupportedAnswer-%d-%d", parseInt(dataItem[1]), parseInt(dataItem[4])), parseInt(dataItem[2]));
-					}
-				}
-			});
 			if (this.username != "" && this.password != "") {
 				this.command.write(sprintf("Login %s %s\n", this.username, this.password));
 			}
 			this.command.write(sprintf("STATUS ALL\n"));
 			this.command.write(sprintf("ELENABLE 1 AUTOMATION ON\nELENABLE 1 EVENT ON\nELENABLE 1 STATUS ON\nELENABLE 1 STATUSEX ON\nELENABLE 1 SYSTEM ON\nELLOG AUTOMATION ON\nELLOG EVENT ON\nELLOG STATUS ON\nELLOG STATUSEX ON\nELLOG SYSTEM ON\n"));
 		});
+
+		this.command.on('data', (data) => {
+			/* Data received */
+			var lines = data.toString().split('\n');
+			for (var i = 0; i < lines.length; i++) {
+				var dataItem = lines[i].split(" ");
+				// console.log(dataItem);
+				if (lines[i].startsWith("S:BLIND") || lines[i].startsWith("R:GETBLIND") || (lines[i].startsWith("R:INVOKE") && dataItem[3].includes("Blind"))) {
+					/* Live update about load level (even if it's a RGB load') */
+					this.emit("blindStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
+				}
+				if (lines[i].startsWith("S:LOAD ") || lines[i].startsWith("R:GETLOAD ")) {
+					/* Live update about load level (even if it's a RGB load') */
+					this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
+				}
+				if (dataItem[0] == "S:TEMP") {
+					//console.log("now lets set the temp!" + parseInt(dataItem[2]));
+					this.emit(sprintf("thermostatDidChange"), parseInt(dataItem[2]));
+					// this.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[2]));
+				}
+				else if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("Thermostat.GetIndoorTemperature")) {
+					//console.log("lets get the indoor temp!")
+					this.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[1]), parseFloat(dataItem[2]));
+				}
+				else if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP" || dataItem[0] == 'R:THERMTEMP') {
+					var modeVal = 0;
+					if (dataItem[2].includes("OFF"))
+						modeVal = 0;
+					else if (dataItem[2].includes("HEAT"))
+						modeVal = 1;
+					else if (dataItem[2].includes("COOL"))
+						modeVal = 2;
+					else
+						modeVal = 3;
+					// console.log(parseInt(modeVal));
+					if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP")
+						this.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), -1);
+					else
+						this.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), parseFloat(dataItem[3]));
+				}
+				
+				/* Non-state feedback */
+				if (lines[i].startsWith("R:INVOKE") && lines[i].indexOf("Object.IsInterfaceSupported")) {
+					this.emit(sprintf("isInterfaceSupportedAnswer-%d-%d", parseInt(dataItem[1]), parseInt(dataItem[4])), parseInt(dataItem[2]));
+				}
+			}
+		});
+
+		this.command.on("close", () => {
+			console.log("\n\n\n\nConnection closed\n\n\n\n")
+			reconnect()
+		})
+
+		this.command.on("end", () => {
+			console.log("Connection ended")
+			//reconnect()
+		})
+
+		this.command.on("error", console.error)
+	}
+
+	reconnect() {
+		setTimeout(() => {
+			this.command.removeAllListeners() // the important line that enables you to reopen a connection
+			StartCommand()
+		}, 1000)
 	}
 
 	getLoadStatus(vid) {
@@ -278,8 +297,8 @@ class VantageInfusion {
 				}
 				else {
 					configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + types[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+					//configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
 				}
-				//configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
 			}
 		});
 	}
@@ -663,8 +682,8 @@ class VantagePlatform {
 					i--;
 				}
 			}
-			this.log(sprintf("Found %f devices",this.items.length))
-			if(this.items.length >= 150){
+			this.log(sprintf("Found %f devices", this.items.length))
+			if (this.items.length >= 150) {
 				this.log(sprintf("Number of devices exceeds Apples limit of 149. Only loading first 149 devices. Please omit some loads"))
 				this.items.splice(149)
 			}
@@ -937,7 +956,7 @@ class VantageBlind {
 				callback(null);
 			})
 			.on('get', (callback) => {
-				this.log.debug(sprintf("geTargetPos %s = %s", this.address, this.pos));
+				this.log.debug(sprintf("getTargetPos %s = %s", this.address, this.pos));
 				callback(null, this.pos);
 			});
 

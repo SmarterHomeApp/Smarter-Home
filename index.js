@@ -84,7 +84,7 @@ class VantageInfusion {
 					else
 						this.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), parseFloat(dataItem[3]));
 				}
-				
+
 				/* Non-state feedback */
 				if (lines[i].startsWith("R:INVOKE") && lines[i].indexOf("Object.IsInterfaceSupported")) {
 					this.emit(sprintf("isInterfaceSupportedAnswer-%d-%d", parseInt(dataItem[1]), parseInt(dataItem[4])), parseInt(dataItem[2]));
@@ -386,6 +386,16 @@ class VantageInfusion {
 
 }
 
+function convertToIP(ipaddress) {
+	var result = ""
+	var vals = ipaddress.split(".")
+	for (var i = 0; i < vals.length; i++) {
+		result += parseInt(vals[i]).toString()
+		if (i < 3)
+			result += "."
+	}
+	return result
+}
 
 class VantagePlatform {
 
@@ -393,7 +403,7 @@ class VantagePlatform {
 		this.log = log;
 		this.config = config || {};
 		this.api = api;
-		this.ipaddress = config.ipaddress;
+		this.ipaddress = convertToIP(config.ipaddress)
 		this.lastDiscovery = null;
 		this.items = [];
 		if (config.omit == undefined)
@@ -412,7 +422,7 @@ class VantagePlatform {
 			this.password = ""
 		else
 			this.password = config.password
-		this.infusion = new VantageInfusion(config.ipaddress, this.items, false, this.omit, this.range, this.username, this.password);
+		this.infusion = new VantageInfusion(this.ipaddress, this.items, false, this.omit, this.range, this.username, this.password);
 		this.infusion.Discover();
 		this.pendingrequests = 0;
 		this.ready = false;

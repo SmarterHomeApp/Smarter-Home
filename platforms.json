@@ -36,8 +36,8 @@
         "sudo rm /tmp/vantage.dc",
         "sudo rm /var/log/homebridge.log",
         "sudo rm /var/log/homebridge.err",
-        "sudo wget https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/index.js",
-        "sudo mv index.js /usr/lib/node_modules/homebridge-vantage/index.js"
+        "sudo wget https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/indexSSL.js",
+        "sudo mv indexSSL.js /usr/lib/node_modules/homebridge-vantage/index.js"
       ],
       "allowMultiple": false,
       "credits": ""

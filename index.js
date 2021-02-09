@@ -1,8 +1,13 @@
 var net = require('net');
+var tls = require('tls');
 var sprintf = require("sprintf-js").sprintf, inherits = require("util").inherits, Promise = require('promise');
 var parser = require('xml2json'), libxmljs = require("libxmljs"), sleep = require('sleep');
 var extend = require('node.extend'), events = require('events'), util = require('util'), fs = require('fs');
 var Accessory, Characteristic, Service, UUIDGen;
+var objecTypes = ["Area", "Load", "Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT", "Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind"]
+var typeThermo = ["Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT"]
+var typeBlind = ["Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind"]
+var useBackup = false;
 
 module.exports = function (homebridge) {
 	Service = homebridge.hap.Service;
@@ -15,8 +20,31 @@ module.exports = function (homebridge) {
 	homebridge.registerPlatform("homebridge-vantage", "VantageControls", VantagePlatform);
 };
 
+var portIsUsable = function (port, ipaddress, callback) {
+	var returnVal = false
+	var command = net.connect({ host: ipaddress, port: port }, () => {
+		command.write(sprintf("STATUS ALL\n"));
+	});
+	command.setTimeout(5e3, () => command.destroy());
+	command.once('connect', () => command.setTimeout(0));
+	command.on('data', (data) => {
+		returnVal = true
+		callback(true)
+		command.destroy();
+	});
+	command.on("close", () => {
+		if (!returnVal)
+			callback(false)
+		command.destroy();
+	})
+	command.on("end", () => {
+		command.destroy();
+	})
+	command.on("error", console.error)
+};
+
 class VantageInfusion {
-	constructor(ipaddress, accessories, usecache, omit, range, username, password) {
+	constructor(ipaddress, accessories, usecache, omit, range, username, password, isInsecure) {
 		util.inherits(VantageInfusion, events.EventEmitter);
 		this.ipaddress = ipaddress;
 		this.usecache = usecache || true;
@@ -27,7 +55,10 @@ class VantageInfusion {
 		this.password = password
 		this.command = {};
 		this.interfaces = {};
-		this.StartCommand();
+		if (isInsecure)
+			this.StartCommand();
+		else
+			this.StartCommandSSL();
 	}
 
 	/**
@@ -92,24 +123,70 @@ class VantageInfusion {
 			}
 		});
 
-		this.command.on("close", () => {
-			console.log("\n\n\n\nConnection closed\n\n\n\n")
-			reconnect()
-		})
-
-		this.command.on("end", () => {
-			console.log("Connection ended")
-			//reconnect()
-		})
-
 		this.command.on("error", console.error)
 	}
 
-	reconnect() {
-		setTimeout(() => {
-			this.command.removeAllListeners() // the important line that enables you to reopen a connection
-			StartCommand()
-		}, 1000)
+	StartCommandSSL() {
+		const options = {
+			rejectUnauthorized: false,
+			requestCert: true
+		};
+		var self = this
+		const socket = tls.connect(3010, this.ipaddress, options, function () {
+			if (self.username != "" && self.password != "") {
+				socket.write(sprintf("Login %s %s\n", self.username, self.password));
+			}
+			socket.write(sprintf("STATUS ALL\n"));
+			socket.write(sprintf("ELENABLE 1 AUTOMATION ON\nELENABLE 1 EVENT ON\nELENABLE 1 STATUS ON\nELENABLE 1 STATUSEX ON\nELENABLE 1 SYSTEM ON\nELLOG AUTOMATION ON\nELLOG EVENT ON\nELLOG STATUS ON\nELLOG STATUSEX ON\nELLOG SYSTEM ON\n"));
+		}.bind(this));
+
+		socket.on('data', (data) => {
+			/* Data received */
+			var lines = data.toString().split('\n');
+			for (var i = 0; i < lines.length; i++) {
+				var dataItem = lines[i].split(" ");
+				// console.log(dataItem);
+				if (lines[i].startsWith("S:BLIND") || lines[i].startsWith("R:GETBLIND") || (lines[i].startsWith("R:INVOKE") && dataItem[3].includes("Blind"))) {
+					/* Live update about load level (even if it's a RGB load') */
+					self.emit("blindStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
+				}
+				if (lines[i].startsWith("S:LOAD ") || lines[i].startsWith("R:GETLOAD ")) {
+					/* Live update about load level (even if it's a RGB load') */
+					self.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
+				}
+				if (dataItem[0] == "S:TEMP") {
+					//console.log("now lets set the temp!" + parseInt(dataItem[2]));
+					self.emit(sprintf("thermostatDidChange"), parseInt(dataItem[2]));
+					// self.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[2]));
+				}
+				else if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("Thermostat.GetIndoorTemperature")) {
+					//console.log("lets get the indoor temp!")
+					self.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[1]), parseFloat(dataItem[2]));
+				}
+				else if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP" || dataItem[0] == 'R:THERMTEMP') {
+					var modeVal = 0;
+					if (dataItem[2].includes("OFF"))
+						modeVal = 0;
+					else if (dataItem[2].includes("HEAT"))
+						modeVal = 1;
+					else if (dataItem[2].includes("COOL"))
+						modeVal = 2;
+					else
+						modeVal = 3;
+					// console.log(parseInt(modeVal));
+					if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP")
+						self.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), -1);
+					else
+						self.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), parseFloat(dataItem[3]));
+				}
+
+				/* Non-state feedback */
+				if (lines[i].startsWith("R:INVOKE") && lines[i].indexOf("Object.IsInterfaceSupported")) {
+					self.emit(sprintf("isInterfaceSupportedAnswer-%d-%d", parseInt(dataItem[1]), parseInt(dataItem[4])), parseInt(dataItem[2]));
+				}
+			}
+		});
+		this.command = socket
 	}
 
 	getLoadStatus(vid) {
@@ -165,7 +242,6 @@ class VantageInfusion {
 			var readObjects = []
 			var writeCount = 0
 			var objectDict = {}
-			var types = ["Area", "Load", "Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT", "Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind"]
 			configuration.on('data', (data) => {
 				buffer = buffer + data.toString().replace("\ufeff", "");
 
@@ -196,8 +272,8 @@ class VantageInfusion {
 				} catch (e) {
 					return false;
 				}
-				if (writeCount < types.length)
-					console.log("parse Json: " + types[writeCount])
+				if (writeCount < objecTypes.length)
+					console.log("parse Json: " + objecTypes[writeCount])
 				var parsed = JSON.parse(parser.toJson(buffer));
 				if (parsed.smarterHome !== undefined) {
 					if (parsed.smarterHome.IIntrospection !== undefined) {
@@ -228,25 +304,25 @@ class VantageInfusion {
 						var elements = parsed.IConfiguration.GetFilterResults.return.Object
 						if (elements != undefined) {
 							if (elements.length == undefined) {
-								var element = elements[types[writeCount - 1]]
-								element["ObjectType"] = types[writeCount - 1]
+								var element = elements[objecTypes[writeCount - 1]]
+								element["ObjectType"] = objecTypes[writeCount - 1]
 								var elemDict = {};
-								elemDict[types[writeCount - 1]] = element
+								elemDict[objecTypes[writeCount - 1]] = element
 								readObjects.push(elemDict)
 							}
 							else {
 								for (var i = 0; i < elements.length; i++) {
-									var element = elements[i][types[writeCount - 1]]
-									element["ObjectType"] = types[writeCount - 1]
+									var element = elements[i][objecTypes[writeCount - 1]]
+									element["ObjectType"] = objecTypes[writeCount - 1]
 									var elemDict = {};
-									elemDict[types[writeCount - 1]] = element
+									elemDict[objecTypes[writeCount - 1]] = element
 									readObjects.push(elemDict)
 								}
 							}
 						}
 
 						buffer = ""
-						if (writeCount >= types.length) {
+						if (writeCount >= objecTypes.length) {
 							var result = {}
 							result["Project"] = {}
 							result["Project"]["Objects"] = {}
@@ -258,7 +334,7 @@ class VantageInfusion {
 							configuration.destroy();
 						}
 						else
-							configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + types[writeCount] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+							configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[writeCount] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
 					}
 				}
 				else if (parsed.ILogin != undefined) {
@@ -270,7 +346,10 @@ class VantageInfusion {
 							console.log("Login failed trying to get data anyways")
 						}
 						buffer = ""
-						configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + types[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+						if (useBackup)
+							configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
+						else
+							configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
 					}
 				}
 				buffer = "";
@@ -296,8 +375,171 @@ class VantageInfusion {
 					configuration.write("<ILogin><Login><call><User>" + this.username + "</User><Password>" + this.password + "</Password></call></Login></ILogin>\n")
 				}
 				else {
-					configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + types[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
-					//configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
+					if (useBackup)
+						configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
+					else
+						configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+				}
+			}
+		});
+	}
+
+	DiscoverSSL() {
+		const options = {
+			rejectUnauthorized: false,
+			requestCert: true
+		};
+		var self = this
+		var configuration = tls.connect(2010, this.ipaddress, options, function () {
+			/**
+			 * List interfaces, list configuration and then check if a specific interface 
+			 * is supported by the recognized devices. 
+			 */
+			console.log("load dc file")
+
+			var buffer = "";
+			var xmlResult = ""
+			var readObjects = []
+			var writeCount = 0
+			var objectDict = {}
+			configuration.on('data', (data) => {
+				buffer = buffer + data.toString().replace("\ufeff", "");
+
+				try {
+					buffer = buffer.replace('<?File Encode="Base64" /', '<File>');
+					buffer = buffer.replace('?>', '</File>');
+
+					if (buffer.includes("</File>")) {
+						console.log("end");
+						var start = buffer.split("<File>")
+						var end = buffer.split("</File>")
+
+						buffer = buffer.match("<File>" + "(.*?)" + "</File>");
+						buffer = buffer[1]
+						var newtext = new Buffer(buffer, 'base64');
+						newtext = newtext.toString()
+						newtext = newtext.replace(/[\r\n]/g, '');
+						var init = newtext.split("<Objects>")
+						newtext = newtext.match("<Objects>" + "(.*?)" + "</Objects>");
+						if (newtext == null) {
+							console.log("null");
+						}
+						xmlResult = new Buffer(init[0] + "<Objects>" + newtext[1] + "</Objects></Project>");
+						xmlResult = xmlResult.toString('base64');
+						buffer = "<smarterHome>" + start[0] + "<File>" + xmlResult + "</File>" + end[end.length - 1] + "</smarterHome>"
+					}
+					libxmljs.parseXml(buffer);
+				} catch (e) {
+					return false;
+				}
+				if (writeCount < objecTypes.length)
+					console.log("parse Json: " + objecTypes[writeCount])
+				var parsed = JSON.parse(parser.toJson(buffer));
+				if (parsed.smarterHome !== undefined) {
+					if (parsed.smarterHome.IIntrospection !== undefined) {
+						var interfaces = parsed.smarterHome.IIntrospection.GetInterfaces.return.Interface;
+						for (var i = 0; i < interfaces.length; i++) {
+							self.interfaces[interfaces[i].Name] = interfaces[i].IID;
+						}
+					}
+					if (parsed.smarterHome.IBackup !== undefined) {
+						var xmlconfiguration = Buffer.from(parsed.smarterHome.IBackup.GetFile.return.File, 'base64').toString("ascii"); // Ta-da
+						fs.writeFileSync("/tmp/vantage.dc", xmlconfiguration); /* TODO: create a platform-independent temp file */
+						self.emit("endDownloadConfiguration", xmlconfiguration);
+						configuration.destroy();
+					}
+				}
+				else if (parsed.IConfiguration != undefined) {
+					if (parsed.IConfiguration.OpenFilter != undefined) {
+						var objectValue = parsed.IConfiguration.OpenFilter.return
+						if (objectDict[objectValue] == undefined) {
+							buffer = ""
+							objectDict[objectValue] = objectValue
+							writeCount++
+							configuration.write("<IConfiguration><GetFilterResults><call><Count>1000</Count><WholeObject>true</WholeObject><hFilter>" + objectValue + "</hFilter></call></GetFilterResults></IConfiguration>\n")
+						}
+
+					}
+					else if (parsed.IConfiguration.GetFilterResults != undefined) {
+						var elements = parsed.IConfiguration.GetFilterResults.return.Object
+						if (elements != undefined) {
+							if (elements.length == undefined) {
+								var element = elements[objecTypes[writeCount - 1]]
+								element["ObjectType"] = objecTypes[writeCount - 1]
+								var elemDict = {};
+								elemDict[objecTypes[writeCount - 1]] = element
+								readObjects.push(elemDict)
+							}
+							else {
+								for (var i = 0; i < elements.length; i++) {
+									var element = elements[i][objecTypes[writeCount - 1]]
+									element["ObjectType"] = objecTypes[writeCount - 1]
+									var elemDict = {};
+									elemDict[objecTypes[writeCount - 1]] = element
+									readObjects.push(elemDict)
+								}
+							}
+						}
+
+						buffer = ""
+						if (writeCount >= objecTypes.length) {
+							var result = {}
+							result["Project"] = {}
+							result["Project"]["Objects"] = {}
+							result["Project"]["Objects"]["Object"] = readObjects
+							var options = { sanitize: true };
+							result = parser.toXml(result, options)
+							fs.writeFileSync("/tmp/vantage.dc", result); /* TODO: create a platform-independent temp file */
+							self.emit("endDownloadConfiguration", result);
+							configuration.destroy();
+						}
+						else
+							configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[writeCount] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+					}
+				}
+				else if (parsed.ILogin != undefined) {
+					if (parsed.ILogin.Login != undefined) {
+						if (parsed.ILogin.Login.return == "true") {
+							console.log("Login successful")
+						}
+						else {
+							console.log("Login failed trying to get data anyways")
+						}
+						buffer = ""
+						if (useBackup)
+							configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
+						else
+							configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+					}
+				}
+				buffer = "";
+			});
+
+			/* Aehm, async method becomes sync... */
+			//configuration.write("<IIntrospection><GetInterfaces><call></call></GetInterfaces></IIntrospection>\n");
+
+			if (fs.existsSync('/tmp/vantage.dc') && self.usecache) {
+				fs.readFile('/tmp/vantage.dc', 'utf8', function (err, data) {
+					if (!err) {
+						self.emit("endDownloadConfiguration", data);
+					}
+				}.bind(self));
+			} else if (fs.existsSync('/home/pi/vantage.dc') && self.usecache) {
+				fs.readFile('/home/pi/vantage.dc', 'utf8', function (err, data) {
+					if (!err) {
+						self.emit("endDownloadConfiguration", data);
+					}
+				}.bind(self));
+			} else {
+				if (self.username != "" && self.password != "") {
+					configuration.write("<ILogin><Login><call><User>" + self.username + "</User><Password>" + self.password + "</Password></call></Login></ILogin>\n")
+				}
+				else {
+					if (useBackup)
+						configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
+					else
+						configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+
 				}
 			}
 		});
@@ -422,12 +664,25 @@ class VantagePlatform {
 			this.password = ""
 		else
 			this.password = config.password
-		this.infusion = new VantageInfusion(this.ipaddress, this.items, false, this.omit, this.range, this.username, this.password);
-		this.infusion.Discover();
+		portIsUsable(3001, this.ipaddress, function (returnValue) { //default to insecure port: 3001 true, 3010 false
+			if (returnValue)
+				console.log("Using insecure port: 3001");
+			else
+				console.log("Using SSL port: 3010");
+			this.initialize(returnValue)
+		}.bind(this));
 		this.pendingrequests = 0;
 		this.ready = false;
 		this.callbackPromesedAccessories = undefined;
 		this.getAccessoryCallback = null;
+	}
+
+	initialize(isInsecure) {
+		this.infusion = new VantageInfusion(this.ipaddress, this.items, false, this.omit, this.range, this.username, this.password, isInsecure);
+		if (isInsecure)
+			this.infusion.Discover();
+		else
+			this.infusion.DiscoverSSL();
 
 		this.log.info("VantagePlatform for InFusion Controller at " + this.ipaddress);
 
@@ -583,9 +838,8 @@ class VantagePlatform {
 				var thisItemKey = Object.keys(parsed.Project.Objects.Object[i])[0];
 				var thisItem = parsed.Project.Objects.Object[i][thisItemKey];
 				if (!omit.includes(thisItem.VID) && (parseInt(thisItem.VID) >= parseInt(range[0])) && (parseInt(thisItem.VID) <= parseInt(range[1])) &&
-					(thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Vantage.HVAC-Interface_Point_Zone_CHILD" || thisItem.ObjectType == "Vantage.VirtualThermostat_PORT" ||
-						thisItem.ObjectType == "Load" || thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind" || thisItem.ObjectType == "QubeBlind" || thisItem.ObjectType == "Lutron.Shade_x2F_Blind_Child_CHILD")) {
-					if (thisItem.DeviceCategory == "HVAC" || thisItem.ObjectType == "Thermostat" || thisItem.ObjectType == "Vantage.VirtualThermostat_PORT" || thisItem.ObjectType == "Vantage.HVAC-Interface_Point_Zone_CHILD") {
+					(objecTypes.includes(thisItem.ObjectType))) {
+					if (thisItem.DeviceCategory == "HVAC" || typeThermo.includes(thisItem.ObjectType)) {
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;
 						this.log(sprintf("New HVAC added (VID=%s, Name=%s, Thermostat)", thisItem.VID, thisItem.Name));
@@ -653,7 +907,7 @@ class VantagePlatform {
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
-					if (thisItem.ObjectType == "Blind" || thisItem.ObjectType == "RelayBlind" || thisItem.ObjectType == "Lutron.Shade_x2F_Blind_Child_CHILD" || thisItem.ObjectType == "QubeBlind") {
+					if (typeBlind.includes(thisItem.ObjectType)) {
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
 						this.pendingrequests = this.pendingrequests + 1;

@@ -929,8 +929,8 @@ class VantagePlatform {
 						if (thisItem.ObjectType == "RelayBlind") {
 							blindItems[thisItem.OpenLoad] = thisItem.OpenLoad
 							blindItems[thisItem.CloseLoad] = thisItem.CloseLoad
-							if (thisItem.PowerLoad != "0")
-								blindItems[thisItem.PowerLoad] = thisItem.PowerLoad
+							// if (thisItem.PowerLoad != "0")
+							// 	blindItems[thisItem.PowerLoad] = thisItem.PowerLoad
 						}
 						// var name = "VID" + thisItem.VID + " " + thisItem.Name
 						this.log(sprintf("New Blind added (VID=%s, Name=%s, BLIND)", thisItem.VID, thisItem.Name));

@@ -8,6 +8,7 @@ var objecTypes = ["Area", "Load", "Thermostat", "Vantage.HVAC-Interface_Point_Zo
 var typeThermo = ["Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT"]
 var typeBlind = ["Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind"]
 var useBackup = false;
+var useSecure = false
 
 module.exports = function (homebridge) {
 	Service = homebridge.hap.Service;
@@ -55,7 +56,7 @@ class VantageInfusion {
 		this.password = password
 		this.command = {};
 		this.interfaces = {};
-		if (isInsecure)
+		if (isInsecure && !useSecure)
 			this.StartCommand();
 		else
 			this.StartCommandSSL();
@@ -679,7 +680,7 @@ class VantagePlatform {
 
 	initialize(isInsecure) {
 		this.infusion = new VantageInfusion(this.ipaddress, this.items, false, this.omit, this.range, this.username, this.password, isInsecure);
-		if (isInsecure)
+		if (isInsecure && !useSecure)
 			this.infusion.Discover();
 		else
 			this.infusion.DiscoverSSL();

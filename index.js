@@ -21,10 +21,10 @@ module.exports = function (homebridge) {
 	homebridge.registerPlatform("homebridge-vantage", "VantageControls", VantagePlatform);
 };
 
-var portIsUsable = function (port, ipaddress, callback) {
+var portIsUsable = function (port, ipaddress, text, callback) {
 	var returnVal = false
 	var command = net.connect({ host: ipaddress, port: port }, () => {
-		command.write(sprintf("STATUS ALL\n"));
+		command.write(sprintf(text));
 	});
 	command.setTimeout(5e3, () => command.destroy());
 	command.once('connect', () => command.setTimeout(0));
@@ -665,12 +665,20 @@ class VantagePlatform {
 			this.password = ""
 		else
 			this.password = config.password
-		portIsUsable(3001, this.ipaddress, function (returnValue) { //default to insecure port: 3001 true, 3010 false
-			if (returnValue)
+		portIsUsable(3001, this.ipaddress, "STATUS ALL\n", function (return3001Value) { //default to insecure port: 3001 true, 3010 false
+			if (return3001Value)
 				console.log("Using insecure port: 3001");
 			else
 				console.log("Using SSL port: 3010");
-			this.initialize(returnValue)
+
+			portIsUsable(2001, this.ipaddress, "<IIntrospection><GetInterfaces><call></call></GetInterfaces></IIntrospection>\n", function (return2001Value) {
+				if (return2001Value)
+					console.log("Using insecure port: 2001");
+				else
+					console.log("Using SSL port: 2010");
+				this.initialize(return3001Value, return2001Value)
+			}.bind(this));
+			// this.initialize(returnValue)
 		}.bind(this));
 		this.pendingrequests = 0;
 		this.ready = false;
@@ -678,9 +686,9 @@ class VantagePlatform {
 		this.getAccessoryCallback = null;
 	}
 
-	initialize(isInsecure) {
-		this.infusion = new VantageInfusion(this.ipaddress, this.items, false, this.omit, this.range, this.username, this.password, isInsecure);
-		if (isInsecure && !useSecure)
+	initialize(is3001Insecure, is2001Insecure) {
+		this.infusion = new VantageInfusion(this.ipaddress, this.items, false, this.omit, this.range, this.username, this.password, is3001Insecure);
+		if (is2001Insecure && !useSecure)
 			this.infusion.Discover();
 		else
 			this.infusion.DiscoverSSL();

@@ -70,6 +70,21 @@
       ],
       "allowMultiple": false,
       "credits": "This platform was made by hjdhjd, more info can be found on their github: https://github.com/hjdhjd/homebridge-myq2"
+    },
+    {
+      "platform": "SensiboAC",
+      "textFields": [
+        "username",
+        "password"
+      ],
+      "notes": "This platform allows you to control your Sensibo through Siri",
+      "hiddenFields": {},
+      "image": "https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/Images/sensibo.png",
+      "commands": [
+        "sudo npm install -g homebridge-sensibo-ac"
+      ],
+      "allowMultiple": false,
+      "credits": "This platform was made by nitaybz, more info can be found on their github: https://github.com/nitaybz/homebridge-sensibo-ac"
     }
   ]
 }

@@ -243,38 +243,42 @@ class VantageInfusion {
 			var readObjects = []
 			var writeCount = 0
 			var objectDict = {}
+			var controller = 1;
+			var shouldbreak = false
 			configuration.on('data', (data) => {
 				buffer = buffer + data.toString().replace("\ufeff", "");
 
 				try {
-					buffer = buffer.replace('<?File Encode="Base64" /', '<File>');
-					buffer = buffer.replace('?>', '</File>');
+					if (useBackup) {
+						buffer = buffer.replace('<?File Encode="Base64" /', '<File>');
+						buffer = buffer.replace('?>', '</File>');
 
-					if (buffer.includes("</File>")) {
-						console.log("end");
-						var start = buffer.split("<File>")
-						var end = buffer.split("</File>")
+						if (buffer.includes("</File>")) {
+							console.log("end");
+							var start = buffer.split("<File>")
+							var end = buffer.split("</File>")
 
-						buffer = buffer.match("<File>" + "(.*?)" + "</File>");
-						buffer = buffer[1]
-						var newtext = new Buffer(buffer, 'base64');
-						newtext = newtext.toString()
-						newtext = newtext.replace(/[\r\n]/g, '');
-						var init = newtext.split("<Objects>")
-						newtext = newtext.match("<Objects>" + "(.*?)" + "</Objects>");
-						if (newtext == null) {
-							console.log("null");
+							buffer = buffer.match("<File>" + "(.*?)" + "</File>");
+							buffer = buffer[1]
+							var newtext = new Buffer(buffer, 'base64');
+							newtext = newtext.toString()
+							newtext = newtext.replace(/[\r\n]/g, '');
+							var init = newtext.split("<Objects>")
+							newtext = newtext.match("<Objects>" + "(.*?)" + "</Objects>");
+							if (newtext == null) {
+								console.log("null");
+							}
+							xmlResult = new Buffer(init[0] + "<Objects>" + newtext[1] + "</Objects></Project>");
+							xmlResult = xmlResult.toString('base64');
+							buffer = "<smarterHome>" + start[0] + "<File>" + xmlResult + "</File>" + end[end.length - 1] + "</smarterHome>"
 						}
-						xmlResult = new Buffer(init[0] + "<Objects>" + newtext[1] + "</Objects></Project>");
-						xmlResult = xmlResult.toString('base64');
-						buffer = "<smarterHome>" + start[0] + "<File>" + xmlResult + "</File>" + end[end.length - 1] + "</smarterHome>"
 					}
 					libxmljs.parseXml(buffer);
 				} catch (e) {
 					return false;
 				}
 				if (writeCount < objecTypes.length)
-					console.log("parse Json: " + objecTypes[writeCount])
+					console.log("parse Json: " + objecTypes[writeCount] + " on controller: " + controller.toString())
 				var parsed = JSON.parse(parser.toJson(buffer));
 				if (parsed.smarterHome !== undefined) {
 					if (parsed.smarterHome.IIntrospection !== undefined) {
@@ -292,8 +296,11 @@ class VantageInfusion {
 				}
 				else if (parsed.IConfiguration != undefined) {
 					if (parsed.IConfiguration.OpenFilter != undefined) {
+						if (!buffer.includes("<?Master " + controller.toString() + "?>")) {
+							shouldbreak = true
+						}
 						var objectValue = parsed.IConfiguration.OpenFilter.return
-						if (objectDict[objectValue] == undefined) {
+						if (objectDict[objectValue] == undefined && !shouldbreak) {
 							buffer = ""
 							objectDict[objectValue] = objectValue
 							writeCount++
@@ -303,7 +310,7 @@ class VantageInfusion {
 					}
 					else if (parsed.IConfiguration.GetFilterResults != undefined) {
 						var elements = parsed.IConfiguration.GetFilterResults.return.Object
-						if (elements != undefined) {
+						if (elements != undefined && !shouldbreak) {
 							if (elements.length == undefined) {
 								var element = elements[objecTypes[writeCount - 1]]
 								element["ObjectType"] = objecTypes[writeCount - 1]
@@ -324,18 +331,21 @@ class VantageInfusion {
 
 						buffer = ""
 						if (writeCount >= objecTypes.length) {
-							var result = {}
-							result["Project"] = {}
-							result["Project"]["Objects"] = {}
-							result["Project"]["Objects"]["Object"] = readObjects
-							var options = { sanitize: true };
-							result = parser.toXml(result, options)
-							fs.writeFileSync("/tmp/vantage.dc", result); /* TODO: create a platform-independent temp file */
-							this.emit("endDownloadConfiguration", result);
-							configuration.destroy();
+							controller++
+							writeCount = 0
 						}
-						else
-							configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[writeCount] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+						configuration.write("<?Master " + controller.toString() + "?><IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[writeCount] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+					}
+					if (shouldbreak) {
+						var result = {}
+						result["Project"] = {}
+						result["Project"]["Objects"] = {}
+						result["Project"]["Objects"]["Object"] = readObjects
+						var options = { sanitize: true };
+						result = parser.toXml(result, options)
+						fs.writeFileSync("/tmp/vantage.dc", result); /* TODO: create a platform-independent temp file */
+						this.emit("endDownloadConfiguration", result);
+						configuration.destroy();
 					}
 				}
 				else if (parsed.ILogin != undefined) {
@@ -350,7 +360,7 @@ class VantageInfusion {
 						if (useBackup)
 							configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
 						else
-							configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+							configuration.write("<?Master " + controller.toString() + "?><IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
 					}
 				}
 				buffer = "";
@@ -379,7 +389,7 @@ class VantageInfusion {
 					if (useBackup)
 						configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
 					else
-						configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+						configuration.write("<?Master " + controller.toString() + "?><IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
 				}
 			}
 		});
@@ -403,38 +413,42 @@ class VantageInfusion {
 			var readObjects = []
 			var writeCount = 0
 			var objectDict = {}
+			var controller = 1;
+			var shouldbreak = false
 			configuration.on('data', (data) => {
 				buffer = buffer + data.toString().replace("\ufeff", "");
 
 				try {
-					buffer = buffer.replace('<?File Encode="Base64" /', '<File>');
-					buffer = buffer.replace('?>', '</File>');
+					if (useBackup) {
+						buffer = buffer.replace('<?File Encode="Base64" /', '<File>');
+						buffer = buffer.replace('?>', '</File>');
 
-					if (buffer.includes("</File>")) {
-						console.log("end");
-						var start = buffer.split("<File>")
-						var end = buffer.split("</File>")
+						if (buffer.includes("</File>")) {
+							console.log("end");
+							var start = buffer.split("<File>")
+							var end = buffer.split("</File>")
 
-						buffer = buffer.match("<File>" + "(.*?)" + "</File>");
-						buffer = buffer[1]
-						var newtext = new Buffer(buffer, 'base64');
-						newtext = newtext.toString()
-						newtext = newtext.replace(/[\r\n]/g, '');
-						var init = newtext.split("<Objects>")
-						newtext = newtext.match("<Objects>" + "(.*?)" + "</Objects>");
-						if (newtext == null) {
-							console.log("null");
+							buffer = buffer.match("<File>" + "(.*?)" + "</File>");
+							buffer = buffer[1]
+							var newtext = new Buffer(buffer, 'base64');
+							newtext = newtext.toString()
+							newtext = newtext.replace(/[\r\n]/g, '');
+							var init = newtext.split("<Objects>")
+							newtext = newtext.match("<Objects>" + "(.*?)" + "</Objects>");
+							if (newtext == null) {
+								console.log("null");
+							}
+							xmlResult = new Buffer(init[0] + "<Objects>" + newtext[1] + "</Objects></Project>");
+							xmlResult = xmlResult.toString('base64');
+							buffer = "<smarterHome>" + start[0] + "<File>" + xmlResult + "</File>" + end[end.length - 1] + "</smarterHome>"
 						}
-						xmlResult = new Buffer(init[0] + "<Objects>" + newtext[1] + "</Objects></Project>");
-						xmlResult = xmlResult.toString('base64');
-						buffer = "<smarterHome>" + start[0] + "<File>" + xmlResult + "</File>" + end[end.length - 1] + "</smarterHome>"
 					}
 					libxmljs.parseXml(buffer);
 				} catch (e) {
 					return false;
 				}
 				if (writeCount < objecTypes.length)
-					console.log("parse Json: " + objecTypes[writeCount])
+					console.log("parse Json: " + objecTypes[writeCount] + " on controller: " + controller.toString())
 				var parsed = JSON.parse(parser.toJson(buffer));
 				if (parsed.smarterHome !== undefined) {
 					if (parsed.smarterHome.IIntrospection !== undefined) {
@@ -452,8 +466,11 @@ class VantageInfusion {
 				}
 				else if (parsed.IConfiguration != undefined) {
 					if (parsed.IConfiguration.OpenFilter != undefined) {
+						if (!buffer.includes("<?Master " + controller.toString() + "?>")) {
+							shouldbreak = true
+						}
 						var objectValue = parsed.IConfiguration.OpenFilter.return
-						if (objectDict[objectValue] == undefined) {
+						if (objectDict[objectValue] == undefined && !shouldbreak) {
 							buffer = ""
 							objectDict[objectValue] = objectValue
 							writeCount++
@@ -463,7 +480,7 @@ class VantageInfusion {
 					}
 					else if (parsed.IConfiguration.GetFilterResults != undefined) {
 						var elements = parsed.IConfiguration.GetFilterResults.return.Object
-						if (elements != undefined) {
+						if (elements != undefined && !shouldbreak) {
 							if (elements.length == undefined) {
 								var element = elements[objecTypes[writeCount - 1]]
 								element["ObjectType"] = objecTypes[writeCount - 1]
@@ -484,18 +501,21 @@ class VantageInfusion {
 
 						buffer = ""
 						if (writeCount >= objecTypes.length) {
-							var result = {}
-							result["Project"] = {}
-							result["Project"]["Objects"] = {}
-							result["Project"]["Objects"]["Object"] = readObjects
-							var options = { sanitize: true };
-							result = parser.toXml(result, options)
-							fs.writeFileSync("/tmp/vantage.dc", result); /* TODO: create a platform-independent temp file */
-							self.emit("endDownloadConfiguration", result);
-							configuration.destroy();
+							controller++
+							writeCount = 0
 						}
-						else
-							configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[writeCount] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+						configuration.write("<?Master " + controller.toString() + "?><IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[writeCount] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+					}
+					if (shouldbreak) {
+						var result = {}
+						result["Project"] = {}
+						result["Project"]["Objects"] = {}
+						result["Project"]["Objects"]["Object"] = readObjects
+						var options = { sanitize: true };
+						result = parser.toXml(result, options)
+						fs.writeFileSync("/tmp/vantage.dc", result); /* TODO: create a platform-independent temp file */
+						self.emit("endDownloadConfiguration", result);
+						configuration.destroy();
 					}
 				}
 				else if (parsed.ILogin != undefined) {
@@ -510,7 +530,7 @@ class VantageInfusion {
 						if (useBackup)
 							configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
 						else
-							configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
+							configuration.write("<?Master " + controller.toString() + "?><IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
 					}
 				}
 				buffer = "";
@@ -539,8 +559,7 @@ class VantageInfusion {
 					if (useBackup)
 						configuration.write("<IBackup><GetFile><call>Backup\\Project.dc</call></GetFile></IBackup>\n");
 					else
-						configuration.write("<IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
-
+						configuration.write("<?Master " + controller.toString() + "?><IConfiguration><OpenFilter><call><Objects><ObjectType>" + objecTypes[0] + "</ObjectType></Objects></call></OpenFilter></IConfiguration>\n")
 				}
 			}
 		});

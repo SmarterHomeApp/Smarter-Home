@@ -788,20 +788,20 @@ class VantagePlatform {
 								else if (accessory.temperature >= accessory.cooling)
 									accessory.current = 2
 							}
-							console.log("mode: " + mode + " currstate: " + accessory.current + " heat: " + accessory.heating + " cool: " + accessory.cooling)
+							// console.log("mode: " + mode + " currstate: " + accessory.current + " heat: " + accessory.heating + " cool: " + accessory.cooling)
 							accessory.mode = mode;
 							accessory.thermostatService.getCharacteristic(Characteristic.CurrentHeatingCoolingState).getValue(null, accessory.current);
 							accessory.thermostatService.getCharacteristic(Characteristic.TargetHeatingCoolingState).getValue(null, accessory.mode);
 
 						}
 						else {
-							accessory.targetTemp = targetTemp
+							accessory.targetTemp = Math.min(38, targetTemp)
 							if (mode == 1) {
-								accessory.heating = targetTemp
+								accessory.heating = Math.min(25, targetTemp)
 								accessory.thermostatService.getCharacteristic(Characteristic.HeatingThresholdTemperature).getValue(null, accessory.heating);
 							}
 							else if (mode == 2) {
-								accessory.cooling = targetTemp
+								accessory.cooling = Math.min(35, targetTemp)
 								accessory.thermostatService.getCharacteristic(Characteristic.CoolingThresholdTemperature).getValue(null, accessory.cooling);
 							}
 							//if ((accessory.mode == 1 && mode == 1) || (accessory.mode == 2 && mode == 2)) {
@@ -831,6 +831,10 @@ class VantagePlatform {
 				//console.log(accessory)
 				if (accessory.address == vid) {
 					accessory.temperature = parseFloat(value);
+					if(accessory.temperature > 100){
+						accessory.temperature = 100
+						console.log("this accessory: " + vid + " is most likely not working. You should omit this device")
+					}
 					//console.log(accessory)
 					if (accessory.thermostatService !== undefined) {
 						/* Is it ready? */

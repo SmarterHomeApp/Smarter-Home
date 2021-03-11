@@ -5,8 +5,8 @@ var parser = require('xml2json'), libxmljs = require("libxmljs"), sleep = requir
 var events = require('events'), util = require('util'), fs = require('fs');
 var Accessory, Characteristic, Service, UUIDGen;
 var typeThermo = ["Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT"]
-var typeBlind = ["Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind"]
-var objecTypes = ["Area", "Load"].concat(typeThermo.concat(typeBlind))
+var typeBlind = ["Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind", "ESI.RQShadeChannel_CHILD"]
+var objecTypes = ["Area", "Load","Jandy.Aqualink_RS_Pump_CHILD","Jandy.Aqualink_RS_Auxiliary_CHILD"].concat(typeThermo.concat(typeBlind))
 var useBackup = false;
 var useSecure = false
 
@@ -904,7 +904,7 @@ class VantagePlatform {
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
-					if (thisItem.ObjectType == "Load") {
+					if (thisItem.ObjectType == "Load" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD") {
 
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
@@ -927,8 +927,8 @@ class VantagePlatform {
 							name = name + " VID" + thisItem.VID
 							dict[name.toLowerCase()] = name
 						}
-						if (thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "LED non-Dim" || thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "Motor" || thisItem.DeviceCategory == "Lighting" || thisItem.LoadType == "High Voltage Relay") {
-							if (thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "High Voltage Relay") {
+						if (thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD" || thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "LED non-Dim" || thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "Motor" || thisItem.DeviceCategory == "Lighting" || thisItem.LoadType == "High Voltage Relay") {
+							if (thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD"  || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "High Voltage Relay") {
 								this.log(sprintf("New relay added (VID=%s, Name=%s, RELAY)", thisItem.VID, thisItem.Name));
 								this.items.push(new VantageSwitch(this.log, this, name, thisItem.VID, "relay"));
 							}
@@ -1095,6 +1095,13 @@ class VantageThermostat {
 		this.thermostatService.getCharacteristic(Characteristic.TargetTemperature)
 			.on('set', (level, callback) => {
 				this.targetTemp = parseFloat(level)
+				if (this.mode == 0){
+					if(this.targetTemp > this.temperature)
+						this.mode = 1
+					else if(this.targetTemp < this.temperature)
+						this.mode = 2
+					this.current = this.mode
+				}
 				if (this.mode == 1) {
 					this.heating = parseFloat(level)
 				}
@@ -1298,7 +1305,7 @@ class VantageSwitch {
 		//console.log(this.lightBulbService); //here
 		this.switchService.getCharacteristic(Characteristic.On)
 			.on('set', (level, callback) => {
-				this.log.debug(sprintf("setPower %s = %s", this.address, level));
+				this.log(sprintf("setPower %s = %s", this.address, level));
 				this.power = (level > 0);
 				if (this.power && this.bri == 0) {
 					this.bri = 100;

@@ -6,7 +6,7 @@ var events = require('events'), util = require('util'), fs = require('fs');
 var Accessory, Characteristic, Service, UUIDGen;
 var typeThermo = ["Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT"]
 var typeBlind = ["Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind", "ESI.RQShadeChannel_CHILD"]
-var objecTypes = ["Area", "Load","Jandy.Aqualink_RS_Pump_CHILD","Jandy.Aqualink_RS_Auxiliary_CHILD"].concat(typeThermo.concat(typeBlind))
+var objecTypes = ["Area", "Load", "Jandy.Aqualink_RS_Pump_CHILD", "Jandy.Aqualink_RS_Auxiliary_CHILD"].concat(typeThermo.concat(typeBlind))
 var useBackup = false;
 var useSecure = false
 
@@ -297,7 +297,13 @@ class VantageInfusion {
 				else if (parsed.IConfiguration != undefined) {
 					if (parsed.IConfiguration.OpenFilter != undefined) {
 						if (!buffer.includes("<?Master " + controller.toString() + "?>")) {
-							shouldbreak = true
+							if (controller == 1) {
+								var tmpStr = buffer.slice(9);
+								var res = tmpStr.split("?");
+								controller = parseInt(res[0])
+							}
+							else
+								shouldbreak = true
 						}
 						var objectValue = parsed.IConfiguration.OpenFilter.return
 						if (objectDict[objectValue] == undefined && !shouldbreak) {
@@ -467,7 +473,13 @@ class VantageInfusion {
 				else if (parsed.IConfiguration != undefined) {
 					if (parsed.IConfiguration.OpenFilter != undefined) {
 						if (!buffer.includes("<?Master " + controller.toString() + "?>")) {
-							shouldbreak = true
+							if (controller == 1) {
+								var tmpStr = buffer.slice(9);
+								var res = tmpStr.split("?");
+								controller = parseInt(res[0])
+							}
+							else
+								shouldbreak = true
 						}
 						var objectValue = parsed.IConfiguration.OpenFilter.return
 						if (objectDict[objectValue] == undefined && !shouldbreak) {
@@ -831,7 +843,7 @@ class VantagePlatform {
 				//console.log(accessory)
 				if (accessory.address == vid) {
 					accessory.temperature = parseFloat(value);
-					if(accessory.temperature > 100){
+					if (accessory.temperature > 100) {
 						accessory.temperature = 100
 						console.log("this accessory: " + vid + " is most likely not working. You should omit this device")
 					}
@@ -928,7 +940,7 @@ class VantagePlatform {
 							dict[name.toLowerCase()] = name
 						}
 						if (thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD" || thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "LED non-Dim" || thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "Motor" || thisItem.DeviceCategory == "Lighting" || thisItem.LoadType == "High Voltage Relay") {
-							if (thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD"  || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "High Voltage Relay") {
+							if (thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "High Voltage Relay") {
 								this.log(sprintf("New relay added (VID=%s, Name=%s, RELAY)", thisItem.VID, thisItem.Name));
 								this.items.push(new VantageSwitch(this.log, this, name, thisItem.VID, "relay"));
 							}
@@ -1095,10 +1107,10 @@ class VantageThermostat {
 		this.thermostatService.getCharacteristic(Characteristic.TargetTemperature)
 			.on('set', (level, callback) => {
 				this.targetTemp = parseFloat(level)
-				if (this.mode == 0){
-					if(this.targetTemp > this.temperature)
+				if (this.mode == 0) {
+					if (this.targetTemp > this.temperature)
 						this.mode = 1
-					else if(this.targetTemp < this.temperature)
+					else if (this.targetTemp < this.temperature)
 						this.mode = 2
 					this.current = this.mode
 				}

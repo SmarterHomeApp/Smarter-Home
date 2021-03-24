@@ -1088,6 +1088,12 @@ class VantageThermostat {
 		this.thermostatService.getCharacteristic(Characteristic.TargetHeatingCoolingState)
 			.on('set', (mode, callback) => {
 				this.mode = mode
+				if (mode == 1)
+					this.targetTemp = this.heating
+				else if (mode == 2)
+					this.targetTemp = this.cooling
+				else if (mode == 3)
+					this.targetTemp = (this.temperature <= this.heating) ? this.heating : this.cooling
 				this.log(sprintf("setTargetHeatingCoolingState %s = %s", this.address, mode));
 				this.parent.infusion.Thermostat_SetTargetState(this.address, this.mode)
 				callback(null);

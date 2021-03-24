@@ -816,9 +816,13 @@ class VantagePlatform {
 								accessory.cooling = Math.min(35, targetTemp)
 								accessory.thermostatService.getCharacteristic(Characteristic.CoolingThresholdTemperature).getValue(null, accessory.cooling);
 							}
-							//if ((accessory.mode == 1 && mode == 1) || (accessory.mode == 2 && mode == 2)) {
+							if (accessory.mode == 1)
+								accessory.targetTemp = accessory.heating
+							else if (accessory.mode == 2)
+								accessory.targetTemp = accessory.cooling
+							else if (accessory.mode == 3)
+								accessory.targetTemp = (accessory.temperature <= accessory.heating) ? accessory.heating : accessory.cooling
 							accessory.thermostatService.getCharacteristic(Characteristic.TargetTemperature).getValue(null, accessory.targetTemp);
-							//}
 						}
 					}
 				}
@@ -830,6 +834,7 @@ class VantagePlatform {
 				if (accessory.type == "thermostat") {
 					if (accessory.thermostatService !== undefined) {
 						this.infusion.Thermostat_GetIndoorTemperature(accessory.address);
+						this.infusion.Thermostat_GetState(accessory.address);
 						this.infusion.Thermostat_GetHeating(accessory.address);
 						this.infusion.Thermostat_GetCooling(accessory.address);
 						this.infusion.Thermostat_GetState(accessory.address);
@@ -1145,6 +1150,7 @@ class VantageThermostat {
 
 
 		this.parent.infusion.Thermostat_GetIndoorTemperature(this.address);
+		this.parent.infusion.Thermostat_GetState(this.address);
 		this.parent.infusion.Thermostat_GetHeating(this.address);
 		this.parent.infusion.Thermostat_GetCooling(this.address);
 		this.parent.infusion.Thermostat_GetState(this.address);

@@ -10,7 +10,8 @@
       "hiddenFields": {
         "name": "Alexa",
         "pin": "342-52-220",
-        "refresh": 600
+        "refresh": 600,
+        "blind" : true
       },
       "commands": [
       ],

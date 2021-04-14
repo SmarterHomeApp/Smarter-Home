@@ -5,7 +5,7 @@ var parser = require('xml2json'), libxmljs = require("libxmljs"), sleep = requir
 var events = require('events'), util = require('util'), fs = require('fs');
 var Accessory, Characteristic, Service, UUIDGen;
 var typeThermo = ["Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT"]
-var typeBlind = ["Blind", "RelayBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind", "ESI.RQShadeChannel_CHILD"]
+var typeBlind = ["Blind", "RelayBlind", "QISBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind", "ESI.RQShadeChannel_CHILD"]
 var objecTypes = ["Area", "Load", "Jandy.Aqualink_RS_Pump_CHILD", "Jandy.Aqualink_RS_Auxiliary_CHILD"].concat(typeThermo.concat(typeBlind))
 var useBackup = false;
 var useSecure = false

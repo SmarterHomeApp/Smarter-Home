@@ -86,6 +86,21 @@
       ],
       "allowMultiple": false,
       "credits": "This platform was made by nitaybz, more info can be found on their github: https://github.com/nitaybz/homebridge-sensibo-ac"
+    },
+    {
+      "platform": "HarmonyHub",
+      "textFields": [
+      ],
+      "notes": "This platform allows you to control your Harmony Hub through Siri.\nSimply click \"Add Device\" below and the platform will automatically find your Harmony devices",
+      "hiddenFields": {
+        "name": "homebridge-harmonyhub-plugin"
+      },
+      "image": "https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/Images/logitechHarmony.png",
+      "commands": [
+        "sudo npm install -g homebridge-harmonyhub-plugin"
+      ],
+      "allowMultiple": false,
+      "credits": "This platform was made by materik, more info can be found on their github: https://github.com/materik/homebridge-harmonyhub-plugin"
     }
   ]
 }

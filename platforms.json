@@ -102,6 +102,20 @@
       ],
       "allowMultiple": true,
       "credits": "This platform was made by materik, more info can be found on their github: https://github.com/materik/homebridge-harmonyhub-plugin"
+    },
+    {
+      "platform": "ScreenLogic",
+      "textFields": [
+      ],
+      "notes": "This platform allows you to control your Pentair Screenlogic through Siri.",
+      "hiddenFields": {
+      },
+      "image": "https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/Images/Pentair.png",
+      "commands": [
+        "sudo npm install -g homebridge-screenlogic"
+      ],
+      "allowMultiple": true,
+      "credits": "This platform was made by schemers, more info can be found on their github: https://github.com/schemers/homebridge-screenlogic#readme"
     }
   ]
 }

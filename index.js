@@ -48,7 +48,7 @@ class VantageInfusion {
 	constructor(ipaddress, accessories, usecache, omit, range, username, password, isInsecure) {
 		util.inherits(VantageInfusion, events.EventEmitter);
 		this.ipaddress = ipaddress;
-		this.usecache = usecache || true;
+		this.usecache = usecache;
 		this.accessories = accessories || [];
 		this.omit = omit
 		this.range = range
@@ -679,6 +679,10 @@ class VantagePlatform {
 		this.ipaddress = convertToIP(config.ipaddress)
 		this.lastDiscovery = null;
 		this.items = [];
+		if (config.usecache == undefined)
+			this.usecache = true
+		else
+			this.usecache = config.usecache
 		if (config.omit == undefined)
 			this.omit = ""
 		else
@@ -717,7 +721,7 @@ class VantagePlatform {
 	}
 
 	initialize(is3001Insecure, is2001Insecure) {
-		this.infusion = new VantageInfusion(this.ipaddress, this.items, false, this.omit, this.range, this.username, this.password, is3001Insecure);
+		this.infusion = new VantageInfusion(this.ipaddress, this.items, this.usecache, this.omit, this.range, this.username, this.password, is3001Insecure);
 		if (is2001Insecure && !useSecure)
 			this.infusion.Discover();
 		else

@@ -67,7 +67,7 @@
       "hiddenFields": {},
       "image": "https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/Images/liftmaster.png",
       "commands": [
-        "sudo npm install -g homebridge-myq2"
+        "sudo npm install -g homebridge-myq"
       ],
       "allowMultiple": false,
       "credits": "This platform was made by hjdhjd, more info can be found on their github: https://github.com/hjdhjd/homebridge-myq2"

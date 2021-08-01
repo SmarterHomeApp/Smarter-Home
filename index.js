@@ -56,7 +56,8 @@ class VantageInfusion {
 		this.password = password
 		this.command = {};
 		this.interfaces = {};
-		if (isInsecure && !useSecure)
+		this.isInsecure = isInsecure
+		if (this.isInsecure && !useSecure)
 			this.StartCommand();
 		else
 			this.StartCommandSSL();
@@ -73,6 +74,7 @@ class VantageInfusion {
 			if (this.username != "" && this.password != "") {
 				this.command.write(sprintf("Login %s %s\n", this.username, this.password));
 			}
+			console.log("connected")
 			this.command.write(sprintf("STATUS ALL\n"));
 			this.command.write(sprintf("ELENABLE 1 AUTOMATION ON\nELENABLE 1 EVENT ON\nELENABLE 1 STATUS ON\nELENABLE 1 STATUSEX ON\nELENABLE 1 SYSTEM ON\nELLOG AUTOMATION ON\nELLOG EVENT ON\nELLOG STATUS ON\nELLOG STATUSEX ON\nELLOG SYSTEM ON\n"));
 		});
@@ -124,7 +126,30 @@ class VantageInfusion {
 			}
 		});
 
+		this.command.on("close", () => {
+			console.log("\n\nPort 3001 has closed!!\n\n");
+			this.reconnect()
+		})
+
+		this.command.on("end", () => {
+			console.log("Port 3001 has ended!!");
+			// this.reconnect()
+		})
+
 		this.command.on("error", console.error)
+	}
+
+	// function that reconnect the client to the server
+	reconnect() {
+		console.log("Attempting reconnect!");
+		this.command.removeAllListeners()
+		this.command.destroy();
+		setTimeout(() => {
+			if (this.isInsecure && !useSecure)
+				this.StartCommand()
+			else
+				this.StartCommandSSL()
+		}, 5000)
 	}
 
 	StartCommandSSL() {
@@ -187,6 +212,21 @@ class VantageInfusion {
 				}
 			}
 		});
+
+		socket.on('close', () => {
+			console.log("\nPort 3010 has closed!!\n");
+			socket.removeAllListeners()
+			socket.destroy()
+			self.reconnect()
+		});
+
+		socket.on('end', () => {
+			console.log("Port 3010 has ended !!");
+			// self.reconnect()
+		});
+
+		socket.on("error", console.error)
+
 		this.command = socket
 	}
 
@@ -712,7 +752,6 @@ class VantagePlatform {
 					console.log("Using SSL port: 2010");
 				this.initialize(return3001Value, return2001Value)
 			}.bind(this));
-			// this.initialize(returnValue)
 		}.bind(this));
 		this.pendingrequests = 0;
 		this.ready = false;
@@ -1333,7 +1372,7 @@ class VantageSwitch {
 		//console.log(this.lightBulbService); //here
 		this.switchService.getCharacteristic(Characteristic.On)
 			.on('set', (level, callback) => {
-				this.log(sprintf("setPower %s = %s", this.address, level));
+				this.log.debug(sprintf("setPower %s = %s", this.address, level));
 				this.power = (level > 0);
 				if (this.power && this.bri == 0) {
 					this.bri = 100;

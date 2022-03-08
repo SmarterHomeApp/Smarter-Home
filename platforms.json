@@ -58,21 +58,6 @@
       "credits": "This platform was made by rudders, more info can be found on their github: https://github.com/rudders/homebridge-platform-wemo"
     },
     {
-      "platform": "myQ",
-      "textFields": [
-        "email",
-        "password"
-      ],
-      "notes": "This platform allows you to control your lift master gates and garage doors through Siri",
-      "hiddenFields": {},
-      "image": "https://raw.githubusercontent.com/SmarterHomeApp/Smarter-Home/master/Images/liftmaster.png",
-      "commands": [
-        "sudo npm install -g homebridge-myq"
-      ],
-      "allowMultiple": false,
-      "credits": "This platform was made by hjdhjd, more info can be found on their github: https://github.com/hjdhjd/homebridge-myq2"
-    },
-    {
       "platform": "SensiboAC",
       "textFields": [
         "username",

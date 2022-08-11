@@ -5,8 +5,8 @@ var parser = require('xml2json'), libxmljs = require("libxmljs"), sleep = requir
 var events = require('events'), util = require('util'), fs = require('fs');
 var Accessory, Characteristic, Service, UUIDGen;
 var typeThermo = ["Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT"]
-var typeBlind = ["Blind", "RelayBlind", "QISBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind", "ESI.RQShadeChannel_CHILD","QMotion.QIS_Channel_CHILD"]
-var objecTypes = ["Area", "Load", "Jandy.Aqualink_RS_Pump_CHILD", "Jandy.Aqualink_RS_Auxiliary_CHILD"].concat(typeThermo.concat(typeBlind))
+var typeBlind = ["Blind", "RelayBlind", "QISBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind", "ESI.RQShadeChannel_CHILD", "QMotion.QIS_Channel_CHILD"]
+var objecTypes = ["Area", "Load", "Vantage.DDGColorLoad", "Jandy.Aqualink_RS_Pump_CHILD", "Jandy.Aqualink_RS_Auxiliary_CHILD"].concat(typeThermo.concat(typeBlind))
 var useBackup = false;
 var useSecure = false
 
@@ -92,6 +92,10 @@ class VantageInfusion {
 				if (lines[i].startsWith("S:LOAD ") || lines[i].startsWith("R:GETLOAD ")) {
 					/* Live update about load level (even if it's a RGB load') */
 					this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
+				}
+				if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("RGBLoad.GetHSL")) {
+					/* Live update about load level (even if it's a RGB load') */
+					this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]), parseInt(dataItem[4]));
 				}
 				if (dataItem[0] == "S:TEMP") {
 					//console.log("now lets set the temp!" + parseInt(dataItem[2]));
@@ -180,6 +184,10 @@ class VantageInfusion {
 					/* Live update about load level (even if it's a RGB load') */
 					self.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
 				}
+				if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("RGBLoad.GetHSL")) {
+					/* Live update about load level (even if it's a RGB load') */
+					this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]), parseInt(dataItem[4]));
+				}
 				if (dataItem[0] == "S:TEMP") {
 					//console.log("now lets set the temp!" + parseInt(dataItem[2]));
 					self.emit(sprintf("thermostatDidChange"), parseInt(dataItem[2]));
@@ -232,6 +240,10 @@ class VantageInfusion {
 
 	getLoadStatus(vid) {
 		this.command.write(sprintf("GETLOAD %s\n", vid));
+	}
+
+	getLoadHSL(vid, val) {
+		this.command.write(sprintf("INVOKE %s RGBLoad.GetHSL %s\n", vid, val));
 	}
 
 	/**
@@ -620,9 +632,8 @@ class VantageInfusion {
 	/**
 	 * Send the set HSL color request to the controller 
 	 */
-	RGBLoad_DissolveHSL(vid, h, s, l, time) {
-		var thisTime = time || 500;
-		this.command.write(sprintf("INVOKE %s RGBLoad.DissolveHSL %s %s %s %s\n", vid, h, s, l * 1000, thisTime))
+	RGBLoad_DissolveHSL(vid, h, s, l) {
+		this.command.write(sprintf("INVOKE %s RGBLoad.SetHSL %s %s %s %s\n", vid, h, s, l))
 	}
 
 	Thermostat_GetOutdoorTemperature(vid) {
@@ -768,7 +779,7 @@ class VantagePlatform {
 
 		this.log.info("VantagePlatform for InFusion Controller at " + this.ipaddress);
 
-		this.infusion.on('loadStatusChange', (vid, value) => {
+		this.infusion.on('loadStatusChange', (vid, value, command) => {
 			this.items.forEach(function (accessory) {
 				if (accessory.address == vid) {
 					if (accessory.type == "relay") {
@@ -781,11 +792,29 @@ class VantagePlatform {
 							accessory.switchService.getCharacteristic(Characteristic.On).getValue(null, accessory.power);
 						}
 					}
+					else if (accessory.type == "rgb" && command != undefined) {
+						this.log(sprintf("rgbStatusChange (VID=%s, Name=%s, Val:%d, HSL:%d)", vid, accessory.name, value, command));
+						if (command == 0)
+							accessory.hue = parseInt(value)
+						if (command == 1)
+							accessory.sat = parseInt(value)
+						if (command == 2)
+							accessory.bri = parseInt(value)
+						this.log(sprintf("rgbStatusChange (VID=%s, Name=%s, Val:%d, HSL:%d, H:%d, S:%d, L:%d)", vid, accessory.name, value, command, accessory.hue, accessory.sat, accessory.bri));
+						if (accessory.switchService !== undefined) {
+							/* Is it ready? */
+							accessory.lightBulbService.getCharacteristic(Characteristic.Brightness).getValue(null, accessory.bri);
+							accessory.lightBulbService.getCharacteristic(Characteristic.Saturation).getValue(null, accessory.sat);
+							accessory.lightBulbService.getCharacteristic(Characteristic.Hue).getValue(null, accessory.hue);
+						}
+					}
 					else {
 						this.log(sprintf("loadStatusChange (VID=%s, Name=%s, Bri:%d)", vid, accessory.name, value));
 						accessory.bri = parseInt(value);
 						accessory.power = ((accessory.bri) > 0);
-						//console.log(accessory);
+						if (accessory.type == "rgb") {
+							this.log(sprintf("rgbStatusChange (VID=%s, Name=%s, H:%d, S:%d, L:%d)", vid, accessory.name, accessory.hue, accessory.sat, accessory.bri));
+						}
 						if (accessory.lightBulbService !== undefined) {
 							/* Is it ready? */
 							accessory.lightBulbService.getCharacteristic(Characteristic.On).getValue(null, accessory.power);
@@ -964,7 +993,7 @@ class VantagePlatform {
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
-					if (thisItem.ObjectType == "Load" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD") {
+					if (thisItem.ObjectType == "Load" || thisItem.ObjectType == "Vantage.DDGColorLoad" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD") {
 
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
@@ -998,8 +1027,14 @@ class VantagePlatform {
 							}
 						}
 						else {
-							this.log(sprintf("New load added (VID=%s, Name=%s, DIMMER)", thisItem.VID, thisItem.Name));
-							this.items.push(new VantageLoad(this.log, this, name, thisItem.VID, "dimmer"));
+							if (thisItem.ObjectType == "Vantage.DDGColorLoad") {
+								this.log(sprintf("New load added (VID=%s, Name=%s, RGB)", thisItem.VID, thisItem.Name));
+								this.items.push(new VantageLoad(this.log, this, name, thisItem.VID, "rgb"));
+							}
+							else {
+								this.log(sprintf("New load added (VID=%s, Name=%s, DIMMER)", thisItem.VID, thisItem.Name));
+								this.items.push(new VantageLoad(this.log, this, name, thisItem.VID, "dimmer"));
+							}
 						}
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
@@ -1255,11 +1290,16 @@ class VantageLoad {
 					this.log.debug(sprintf("setBrightness %s = %d", this.address, level));
 					this.bri = parseInt(level);
 					this.power = (this.bri > 0);
-					this.parent.infusion.Load_Dim(this.address, this.power * this.bri);
+					if (this.type == "rgb")
+						this.parent.infusion.RGBLoad_DissolveHSL(this.address, this.hue, this.sat, this.bri)
+					else 
+						this.parent.infusion.Load_Dim(this.address, this.power * this.bri);
 					callback(null);
 				})
 				.on('get', (callback) => {
 					this.log.debug(sprintf("getBrightness %s = %d", this.address, this.bri));
+					if (this.type == "rgb")
+						this.log.debug(sprintf("getHSL %s = %d, %d, %d", this.address, this.hue, this.sat, this.bri));
 					callback(null, this.bri);
 				});
 		}
@@ -1273,6 +1313,7 @@ class VantageLoad {
 					callback(null);
 				})
 				.on('get', (callback) => {
+					this.log.debug(sprintf("getHSL %s = %d, %d, %d", this.address, this.hue, this.sat, this.bri));
 					callback(null, this.sat);
 				});
 			this.lightBulbService.getCharacteristic(Characteristic.Hue)
@@ -1283,8 +1324,12 @@ class VantageLoad {
 					callback(null);
 				})
 				.on('get', (callback) => {
+					this.log.debug(sprintf("getHSL %s = %d, %d, %d", this.address, this.hue, this.sat, this.bri));
 					callback(null, this.hue);
 				});
+			this.parent.infusion.getLoadHSL(this.address, "hue");
+			this.parent.infusion.getLoadHSL(this.address, "saturation");
+			this.parent.infusion.getLoadHSL(this.address, "lightness");
 		}
 
 		this.parent.infusion.getLoadStatus(this.address);
@@ -1387,5 +1432,63 @@ class VantageSwitch {
 
 		this.parent.infusion.getLoadStatus(this.address);
 		return [service, this.switchService];
+	}
+}
+
+//https://github.com/homebridge/HAP-NodeJS/blob/81652da554137d818d049f6f245e88efec43b1c5/src/lib/definitions/ServiceDefinitions.ts#L1438
+class VantageSpeaker {
+	constructor(log, parent, name, vid, type) {
+		this.displayName = name;
+		this.UUID = UUIDGen.generate(vid);
+		this.name = name;
+		this.parent = parent;
+		this.address = vid;
+		this.log = log;
+		this.pos = 100;
+		this.type = type;
+		this.posState = 2; //decreasing=0, increasing=1, stopped=2
+	}
+
+	getServices() {
+		var service = new Service.AccessoryInformation();
+		service.setCharacteristic(Characteristic.Name, this.name)
+			.setCharacteristic(Characteristic.Manufacturer, "Vantage Controls")
+			.setCharacteristic(Characteristic.Model, "Speaker")
+			.setCharacteristic(Characteristic.SerialNumber, "VID " + this.address);
+
+		this.speakerService = new Service.SmartSpeaker(this.name);
+
+		this.speakerService.getCharacteristic(Characteristic.CurrentMediaState)
+			.on('get', (callback) => {
+				this.log.debug(sprintf("getPos %s = %s", this.address, this.pos));
+				callback(null, this.pos);
+			});
+
+		this.speakerService.getCharacteristic(Characteristic.TargetMediaState)
+			.on('set', (pos, callback) => {
+				this.log.debug(sprintf("setPos %s = %s", this.address, pos));
+				this.pos = pos
+				this.parent.infusion.setBlindPos(this.address, this.pos);
+				callback(null);
+			})
+			.on('get', (callback) => {
+				this.log.debug(sprintf("getTargetPos %s = %s", this.address, this.pos));
+				callback(null, this.pos);
+			});
+
+		this.speakerService.getCharacteristic(Characteristic.Volume)
+			.on('get', (callback) => {
+				this.log.debug(sprintf("getBlindState %s = %s", this.address, this.posState));
+				callback(null, this.posState);
+			});
+
+		this.speakerService.getCharacteristic(Characteristic.Mute)
+			.on('get', (callback) => {
+				this.log.debug(sprintf("getBlindState %s = %s", this.address, this.posState));
+				callback(null, this.posState);
+			});
+
+		this.parent.infusion.getSpeakerStatus(this.address);
+		return [service, this.speakerService];
 	}
 }

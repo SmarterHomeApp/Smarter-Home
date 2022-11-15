@@ -881,7 +881,7 @@ class VantagePlatform {
 						else {
 							accessory.targetTemp = Math.min(38, targetTemp)
 							if (mode == 1) {
-								accessory.heating = Math.min(25, targetTemp)
+								accessory.heating = Math.min(30, targetTemp)
 								accessory.thermostatService.getCharacteristic(Characteristic.HeatingThresholdTemperature).getValue(null, accessory.heating);
 							}
 							else if (mode == 2) {
@@ -1291,9 +1291,8 @@ class VantageLoad {
 					this.bri = parseInt(level);
 					this.power = (this.bri > 0);
 					if (this.type == "rgb")
-						this.parent.infusion.RGBLoad_DissolveHSL(this.address, this.hue, this.sat, this.bri)
-					else 
-						this.parent.infusion.Load_Dim(this.address, this.power * this.bri);
+						this.parent.infusion.RGBLoad_DissolveHSL(this.address, this.hue, this.sat, this.power * this.bri)
+					this.parent.infusion.Load_Dim(this.address, this.power * this.bri);
 					callback(null);
 				})
 				.on('get', (callback) => {

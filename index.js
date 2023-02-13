@@ -4,7 +4,7 @@ var sprintf = require("sprintf-js").sprintf, inherits = require("util").inherits
 var parser = require('xml2json'), libxmljs = require("libxmljs"), sleep = require('sleep');
 var events = require('events'), util = require('util'), fs = require('fs');
 var Accessory, Characteristic, Service, UUIDGen;
-var typeThermo = ["Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT","Tekmar.tN4_Gateway_482_Zone_-_Slab_Only_CHILD","Tekmar.tN4_Gateway_482_Zone_CHILD"]
+var typeThermo = ["Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT", "Tekmar.tN4_Gateway_482_Zone_-_Slab_Only_CHILD", "Tekmar.tN4_Gateway_482_Zone_CHILD"]
 var typeBlind = ["Blind", "RelayBlind", "QISBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind", "ESI.RQShadeChannel_CHILD", "QMotion.QIS_Channel_CHILD"]
 var objecTypes = ["Area", "Load", "Vantage.DDGColorLoad", "Jandy.Aqualink_RS_Pump_CHILD", "Jandy.Aqualink_RS_Auxiliary_CHILD"].concat(typeThermo.concat(typeBlind))
 var useBackup = false;
@@ -87,9 +87,9 @@ class VantageInfusion {
 				// console.log(dataItem);
 				try {
 					if (lines[i].startsWith("S:BLIND") || lines[i].startsWith("R:GETBLIND") || (lines[i].startsWith("R:INVOKE") && dataItem[3].includes("Blind"))) {
-					/* Live update about load level (even if it's a RGB load') */
-					this.emit("blindStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
-				}
+						/* Live update about load level (even if it's a RGB load') */
+						this.emit("blindStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
+					}
 				} catch (error) {
 					console.log("unable to update blind status")
 				}
@@ -182,9 +182,9 @@ class VantageInfusion {
 				// console.log(dataItem);
 				try {
 					if (lines[i].startsWith("S:BLIND") || lines[i].startsWith("R:GETBLIND") || (lines[i].startsWith("R:INVOKE") && dataItem[3].includes("Blind"))) {
-					/* Live update about load level (even if it's a RGB load') */
-					this.emit("blindStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
-				}
+						/* Live update about load level (even if it's a RGB load') */
+						this.emit("blindStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
+					}
 				} catch (error) {
 					console.log("unable to update blind status")
 				}

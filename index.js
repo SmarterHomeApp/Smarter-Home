@@ -85,9 +85,13 @@ class VantageInfusion {
 			for (var i = 0; i < lines.length; i++) {
 				var dataItem = lines[i].split(" ");
 				// console.log(dataItem);
-				if (lines[i].startsWith("S:BLIND") || lines[i].startsWith("R:GETBLIND") || (lines[i].startsWith("R:INVOKE") && dataItem[3].includes("Blind"))) {
+				try {
+					if (lines[i].startsWith("S:BLIND") || lines[i].startsWith("R:GETBLIND") || (lines[i].startsWith("R:INVOKE") && dataItem[3].includes("Blind"))) {
 					/* Live update about load level (even if it's a RGB load') */
 					this.emit("blindStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
+				}
+				} catch (error) {
+					console.log("unable to update blind status")
 				}
 				if (lines[i].startsWith("S:LOAD ") || lines[i].startsWith("R:GETLOAD ")) {
 					/* Live update about load level (even if it's a RGB load') */

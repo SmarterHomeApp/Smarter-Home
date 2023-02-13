@@ -4,7 +4,7 @@ var sprintf = require("sprintf-js").sprintf, inherits = require("util").inherits
 var parser = require('xml2json'), libxmljs = require("libxmljs"), sleep = require('sleep');
 var events = require('events'), util = require('util'), fs = require('fs');
 var Accessory, Characteristic, Service, UUIDGen;
-var typeThermo = ["Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT","Tekmar.tN4_Gateway_482_Zone_-_Slab_Only_CHILD"]
+var typeThermo = ["Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT","Tekmar.tN4_Gateway_482_Zone_-_Slab_Only_CHILD","Tekmar.tN4_Gateway_482_Zone_CHILD"]
 var typeBlind = ["Blind", "RelayBlind", "QISBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind", "ESI.RQShadeChannel_CHILD", "QMotion.QIS_Channel_CHILD"]
 var objecTypes = ["Area", "Load", "Vantage.DDGColorLoad", "Jandy.Aqualink_RS_Pump_CHILD", "Jandy.Aqualink_RS_Auxiliary_CHILD"].concat(typeThermo.concat(typeBlind))
 var useBackup = false;

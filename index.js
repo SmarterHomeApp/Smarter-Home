@@ -90,41 +90,41 @@ class VantageInfusion {
 						/* Live update about load level (even if it's a RGB load') */
 						this.emit("blindStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
 					}
+					if (lines[i].startsWith("S:LOAD ") || lines[i].startsWith("R:GETLOAD ")) {
+						/* Live update about load level (even if it's a RGB load') */
+						this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
+					}
+					if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("RGBLoad.GetHSL")) {
+						/* Live update about load level (even if it's a RGB load') */
+						this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]), parseInt(dataItem[4]));
+					}
+					if (dataItem[0] == "S:TEMP") {
+						//console.log("now lets set the temp!" + parseInt(dataItem[2]));
+						this.emit(sprintf("thermostatDidChange"), parseInt(dataItem[2]));
+						// this.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[2]));
+					}
+					else if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("Thermostat.GetIndoorTemperature")) {
+						//console.log("lets get the indoor temp!")
+						this.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[1]), parseFloat(dataItem[2]));
+					}
+					else if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP" || dataItem[0] == 'R:THERMTEMP') {
+						var modeVal = 0;
+						if (dataItem[2].includes("OFF"))
+							modeVal = 0;
+						else if (dataItem[2].includes("HEAT"))
+							modeVal = 1;
+						else if (dataItem[2].includes("COOL"))
+							modeVal = 2;
+						else
+							modeVal = 3;
+						// console.log(parseInt(modeVal));
+						if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP")
+							this.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), -1);
+						else
+							this.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), parseFloat(dataItem[3]));
+					}
 				} catch (error) {
-					console.log("unable to update blind status")
-				}
-				if (lines[i].startsWith("S:LOAD ") || lines[i].startsWith("R:GETLOAD ")) {
-					/* Live update about load level (even if it's a RGB load') */
-					this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
-				}
-				if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("RGBLoad.GetHSL")) {
-					/* Live update about load level (even if it's a RGB load') */
-					this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]), parseInt(dataItem[4]));
-				}
-				if (dataItem[0] == "S:TEMP") {
-					//console.log("now lets set the temp!" + parseInt(dataItem[2]));
-					this.emit(sprintf("thermostatDidChange"), parseInt(dataItem[2]));
-					// this.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[2]));
-				}
-				else if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("Thermostat.GetIndoorTemperature")) {
-					//console.log("lets get the indoor temp!")
-					this.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[1]), parseFloat(dataItem[2]));
-				}
-				else if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP" || dataItem[0] == 'R:THERMTEMP') {
-					var modeVal = 0;
-					if (dataItem[2].includes("OFF"))
-						modeVal = 0;
-					else if (dataItem[2].includes("HEAT"))
-						modeVal = 1;
-					else if (dataItem[2].includes("COOL"))
-						modeVal = 2;
-					else
-						modeVal = 3;
-					// console.log(parseInt(modeVal));
-					if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP")
-						this.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), -1);
-					else
-						this.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), parseFloat(dataItem[3]));
+					console.log("unable to update status")
 				}
 
 				/* Non-state feedback */
@@ -185,41 +185,41 @@ class VantageInfusion {
 						/* Live update about load level (even if it's a RGB load') */
 						this.emit("blindStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
 					}
+					if (lines[i].startsWith("S:LOAD ") || lines[i].startsWith("R:GETLOAD ")) {
+						/* Live update about load level (even if it's a RGB load') */
+						self.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
+					}
+					if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("RGBLoad.GetHSL")) {
+						/* Live update about load level (even if it's a RGB load') */
+						this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]), parseInt(dataItem[4]));
+					}
+					if (dataItem[0] == "S:TEMP") {
+						//console.log("now lets set the temp!" + parseInt(dataItem[2]));
+						self.emit(sprintf("thermostatDidChange"), parseInt(dataItem[2]));
+						// self.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[2]));
+					}
+					else if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("Thermostat.GetIndoorTemperature")) {
+						//console.log("lets get the indoor temp!")
+						self.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[1]), parseFloat(dataItem[2]));
+					}
+					else if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP" || dataItem[0] == 'R:THERMTEMP') {
+						var modeVal = 0;
+						if (dataItem[2].includes("OFF"))
+							modeVal = 0;
+						else if (dataItem[2].includes("HEAT"))
+							modeVal = 1;
+						else if (dataItem[2].includes("COOL"))
+							modeVal = 2;
+						else
+							modeVal = 3;
+						// console.log(parseInt(modeVal));
+						if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP")
+							self.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), -1);
+						else
+							self.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), parseFloat(dataItem[3]));
+					}
 				} catch (error) {
-					console.log("unable to update blind status")
-				}
-				if (lines[i].startsWith("S:LOAD ") || lines[i].startsWith("R:GETLOAD ")) {
-					/* Live update about load level (even if it's a RGB load') */
-					self.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]));
-				}
-				if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("RGBLoad.GetHSL")) {
-					/* Live update about load level (even if it's a RGB load') */
-					this.emit("loadStatusChange", parseInt(dataItem[1]), parseInt(dataItem[2]), parseInt(dataItem[4]));
-				}
-				if (dataItem[0] == "S:TEMP") {
-					//console.log("now lets set the temp!" + parseInt(dataItem[2]));
-					self.emit(sprintf("thermostatDidChange"), parseInt(dataItem[2]));
-					// self.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[2]));
-				}
-				else if (dataItem[0] == "R:INVOKE" && dataItem[3].includes("Thermostat.GetIndoorTemperature")) {
-					//console.log("lets get the indoor temp!")
-					self.emit(sprintf("thermostatIndoorTemperatureChange"), parseInt(dataItem[1]), parseFloat(dataItem[2]));
-				}
-				else if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP" || dataItem[0] == 'R:THERMTEMP') {
-					var modeVal = 0;
-					if (dataItem[2].includes("OFF"))
-						modeVal = 0;
-					else if (dataItem[2].includes("HEAT"))
-						modeVal = 1;
-					else if (dataItem[2].includes("COOL"))
-						modeVal = 2;
-					else
-						modeVal = 3;
-					// console.log(parseInt(modeVal));
-					if (dataItem[0] == "S:THERMOP" || dataItem[0] == "R:GETTHERMOP")
-						self.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), -1);
-					else
-						self.emit(sprintf("thermostatIndoorModeChange"), parseInt(dataItem[1]), parseInt(modeVal), parseFloat(dataItem[3]));
+					console.log("unable to update status")
 				}
 
 				/* Non-state feedback */

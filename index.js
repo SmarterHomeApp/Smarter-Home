@@ -4,9 +4,9 @@ var sprintf = require("sprintf-js").sprintf, inherits = require("util").inherits
 var parser = require('xml2json'), libxmljs = require("libxmljs"), sleep = require('sleep');
 var events = require('events'), util = require('util'), fs = require('fs');
 var Accessory, Characteristic, Service, UUIDGen;
-var typeThermo = ["Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT", "Tekmar.tN4_Gateway_482_Zone_-_Slab_Only_CHILD", "Tekmar.tN4_Gateway_482_Zone_CHILD"]
+var typeThermo = ["Thermostat", "Vantage.HVAC-Interface_Point_Zone_CHILD", "Vantage.VirtualThermostat_PORT", "Tekmar.tN4_Gateway_482_Zone_-_Slab_Only_CHILD", "Tekmar.tN4_Gateway_482_Zone_CHILD", "Legrand.MH_HVAC_Control_CHILD"]
 var typeBlind = ["Blind", "RelayBlind", "QISBlind", "Lutron.Shade_x2F_Blind_Child_CHILD", "QubeBlind", "ESI.RQShadeChannel_CHILD", "QMotion.QIS_Channel_CHILD","Somfy.UAI-RS485-Motor_CHILD"]
-var objecTypes = ["Area", "Load", "Vantage.DDGColorLoad", "Jandy.Aqualink_RS_Pump_CHILD", "Jandy.Aqualink_RS_Auxiliary_CHILD"].concat(typeThermo.concat(typeBlind))
+var objecTypes = ["Area", "Load", "Vantage.DDGColorLoad", "Legrand.MH_Relay_CHILD", "Legrand.MH_Dimmer_CHILD", "Jandy.Aqualink_RS_Pump_CHILD", "Jandy.Aqualink_RS_Auxiliary_CHILD"].concat(typeThermo.concat(typeBlind))
 var useBackup = false;
 var useSecure = false
 
@@ -1001,7 +1001,7 @@ class VantagePlatform {
 						this.pendingrequests = this.pendingrequests - 1;
 						this.callbackPromesedAccessoriesDo();
 					}
-					if (thisItem.ObjectType == "Load" || thisItem.ObjectType == "Vantage.DDGColorLoad" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD") {
+					if (thisItem.ObjectType == "Load" || thisItem.ObjectType == "Vantage.DDGColorLoad" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD" || thisItem.ObjectType == "Legrand.MH_Relay_CHILD" || thisItem.ObjectType == "Legrand.MH_Dimmer_CHILD") {
 
 						//this.log.warn(sprintf("New light asked (VID=%s, Name=%s, ---)", thisItem.VID, thisItem.Name));
 						if (thisItem.DName !== undefined && thisItem.DName != "" && (typeof thisItem.DName === 'string')) thisItem.Name = thisItem.DName;
@@ -1024,7 +1024,7 @@ class VantagePlatform {
 							name = name + " VID" + thisItem.VID
 							dict[name.toLowerCase()] = name
 						}
-						if (thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD" || thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "LED non-Dim" || thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "Motor" || thisItem.DeviceCategory == "Lighting" || thisItem.LoadType == "High Voltage Relay") {
+						if (thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD" || thisItem.LoadType == "Fluor. Mag non-Dim" || thisItem.LoadType == "LED non-Dim" || thisItem.LoadType == "Fluor. Electronic non-Dim" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "Motor" || thisItem.LoadType == "High Voltage Relay" || thisItem.ObjectType == "Legrand.MH_Relay_CHILD") {
 							if (thisItem.ObjectType == "Jandy.Aqualink_RS_Pump_CHILD" || thisItem.ObjectType == "Jandy.Aqualink_RS_Auxiliary_CHILD" || thisItem.LoadType == "Low Voltage Relay" || thisItem.LoadType == "High Voltage Relay") {
 								this.log(sprintf("New relay added (VID=%s, Name=%s, RELAY)", thisItem.VID, thisItem.Name));
 								this.items.push(new VantageSwitch(this.log, this, name, thisItem.VID, "relay"));

@@ -1,0 +1,1753 @@
+<Project>
+        <Objects>
+                <Object>
+                        <Area VID="6" Master="18" MTime="2024-10-17T05:06:25.451" Name="John Villa" DName="John Villa" ObjectTypeName="Area" Area="0" Location="0" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="85" Master="18" MTime="2024-10-17T05:06:25.492" Name="GF" DName="GF" ObjectTypeName="Area" Area="6" Location="0" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="87" Master="18" MTime="2024-10-17T05:06:25.493" Name="FF" DName="FF" ObjectTypeName="Area" Area="6" Location="1" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="89" Master="18" MTime="2024-10-17T05:06:25.494" Name="Family Dining" DName="Family Dining" ObjectTypeName="Area" Area="85" Location="0" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="91" Master="18" MTime="2024-10-17T05:06:25.494" Name="Family Living" DName="Family Living" ObjectTypeName="Area" Area="85" Location="1" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="93" Master="18" MTime="2024-10-17T05:06:25.495" Name="Elsa Room" DName="Elsa Room" ObjectTypeName="Area" Area="85" Location="2" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="95" Master="18" MTime="2024-10-17T05:06:25.496" Name="Formal Living" DName="Formal Living" ObjectTypeName="Area" Area="85" Location="3" EnclosureArea="95" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="97" Master="18" MTime="2024-10-17T05:06:25.497" Name="Master Bed" DName="Master Bed" ObjectTypeName="Area" Area="87" Location="0" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="99" Master="18" MTime="2024-10-17T05:06:25.498" Name="Tara Room" DName="Tara Room" ObjectTypeName="Area" Area="87" Location="1" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="101" Master="18" MTime="2024-10-17T05:06:25.499" Name="Abey Room" DName="Abey Room" ObjectTypeName="Area" Area="87" Location="2" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="103" Master="18" MTime="2024-10-17T05:06:25.499" Name="Aria Room" DName="Aria Room" ObjectTypeName="Area" Area="87" Location="3" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="105" Master="18" MTime="2024-10-17T05:06:25.500" Name="Guest Room" DName="Guest Room" ObjectTypeName="Area" Area="87" Location="4" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="107" Master="18" MTime="2024-10-17T05:06:25.501" Name="Appa Room" DName="Appa Room" ObjectTypeName="Area" Area="87" Location="5" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="109" Master="18" MTime="2024-10-17T05:06:25.502" Name="Family Living" DName="Family Living" ObjectTypeName="Area" Area="87" Location="6" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="580" Master="18" MTime="2024-10-17T05:06:25.563" Name="Formal dining" DName="Formal dining" ObjectTypeName="Area" Area="85" Location="4" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="665" Master="18" MTime="2024-10-17T05:06:25.576" Name="Reading corner" DName="Reading corner" ObjectTypeName="Area" Area="85" Location="5" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="699" Master="18" MTime="2024-10-17T05:06:25.579" Name="Office" DName="Office" ObjectTypeName="Area" Area="85" Location="6" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="720" Master="18" MTime="2024-10-17T05:06:25.581" Name="Powder room 1" DName="Powder room 1" ObjectTypeName="Area" Area="85" Location="7" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="722" Master="18" MTime="2024-10-17T05:06:25.582" Name="Powder room 2" DName="Powder room 2" ObjectTypeName="Area" Area="85" Location="8" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="724" Master="18" MTime="2024-10-17T05:06:25.582" Name="Kitchen" DName="Kitchen" ObjectTypeName="Area" Area="85" Location="9" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="726" Master="18" MTime="2024-10-17T05:06:25.583" Name="Kitchen store" DName="Kitchen store" ObjectTypeName="Area" Area="85" Location="12" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="728" Master="18" MTime="2024-10-17T05:06:25.584" Name="Service stairs" DName="Service stairs" ObjectTypeName="Area" Area="85" Location="10" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="749" Master="18" MTime="2024-10-17T05:06:25.594" Name="Study room" DName="Study room" ObjectTypeName="Area" Area="85" Location="11" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="790" Master="18" MTime="2024-10-17T05:06:25.602" Name="BF" DName="BF" ObjectTypeName="Area" Area="6" Location="2" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="792" Master="18" MTime="2024-10-17T05:06:25.602" Name="Corridor" DName="Corridor" ObjectTypeName="Area" Area="790" Location="0" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="794" Master="18" MTime="2024-10-17T05:06:25.603" Name="Bathroom" DName="Bathroom" ObjectTypeName="Area" Area="790" Location="1" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Area VID="796" Master="18" MTime="2024-10-17T05:06:25.604" Name="Garage" DName="Garage" ObjectTypeName="Area" Area="790" Location="2" EnclosureArea="0" ObjectType="Area">
+                                <Model></Model>
+                                <Note></Note>
+                                <AreaType></AreaType>
+                        </Area>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="300" Master="18" MTime="2024-10-17T05:06:25.505" Name="Cove Light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="91" Log="None" AmbientCode="3" LightPoint="12" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="1">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="301" Master="18" MTime="2024-10-17T05:06:25.505" Name="Chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="91" Log="None" AmbientCode="3" LightPoint="13" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="2">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="307" Master="18" MTime="2024-10-17T05:06:25.506" Name="Wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="91" Log="None" AmbientCode="3" LightPoint="14" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="3">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="309" Master="18" MTime="2024-10-17T05:06:25.506" Name="Chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="89" Log="None" AmbientCode="7" LightPoint="13" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="4">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="311" Master="18" MTime="2024-10-17T05:06:25.507" Name="chandelier 2" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="89" Log="None" AmbientCode="2" LightPoint="12" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="5">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="313" Master="18" MTime="2024-10-17T05:06:25.507" Name="Wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="89" Log="None" AmbientCode="2" LightPoint="13" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="6">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="318" Master="18" MTime="2024-10-17T05:06:25.508" Name="Bed lamp" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="93" Log="None" AmbientCode="3" LightPoint="6" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="8">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="321" Master="18" MTime="2024-10-17T05:06:25.510" Name="Cove light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="93" Log="None" AmbientCode="3" LightPoint="7" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="9">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="322" Master="18" MTime="2024-10-17T05:06:25.511" Name="Chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="93" Log="None" AmbientCode="3" LightPoint="8" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="10">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="350" Master="18" MTime="2024-10-17T05:06:25.512" Name="Wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="109" Log="None" AmbientCode="4" LightPoint="8" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="11">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="351" Master="18" MTime="2024-10-17T05:06:25.512" Name="Cove light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="109" Log="None" AmbientCode="4" LightPoint="9" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="12">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="359" Master="18" MTime="2024-10-17T05:06:25.516" Name="Cove light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="107" Log="None" AmbientCode="4" LightPoint="12" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="13">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="360" Master="18" MTime="2024-10-17T05:06:25.517" Name="Chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="107" Log="None" AmbientCode="4" LightPoint="15" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="14">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="361" Master="18" MTime="2024-10-17T05:06:25.517" Name="Dress cupboard" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="107" Log="None" AmbientCode="5" LightPoint="0" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="15">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="362" Master="18" MTime="2024-10-17T05:06:25.518" Name="Bathroom spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="107" Log="None" AmbientCode="5" LightPoint="1" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="16">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="385" Master="18" MTime="2024-10-17T05:06:25.523" Name="Cove light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="4" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="17">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="386" Master="18" MTime="2024-10-17T05:06:25.524" Name="Chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="1" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="18">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="387" Master="18" MTime="2024-10-17T05:06:25.525" Name="Bath decorative chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="7" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="19">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="388" Master="18" MTime="2024-10-17T05:06:25.525" Name="Shower spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="8" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="20">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="389" Master="18" MTime="2024-10-17T05:06:25.526" Name="Bathroom spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="9" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="21">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="390" Master="18" MTime="2024-10-17T05:06:25.526" Name="Bathroom down light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="10" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="22">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="391" Master="18" MTime="2024-10-17T05:06:25.527" Name="Shower spot 2" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="11" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="23">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="392" Master="18" MTime="2024-10-17T05:06:25.528" Name="Toilet spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="12" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="24">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="393" Master="18" MTime="2024-10-17T05:06:25.529" Name="Store spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="11" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="25">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="394" Master="18" MTime="2024-10-17T05:06:25.529" Name="Center chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="14" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="26">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="395" Master="18" MTime="2024-10-17T05:06:25.530" Name="Bed lamp" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="15" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="27">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="396" Master="18" MTime="2024-10-17T05:06:25.530" Name="Dressing cupboard" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="1" LightPoint="0" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="28">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="397" Master="18" MTime="2024-10-17T05:06:25.531" Name="Toilet mirror light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="1" LightPoint="1" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="29">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="398" Master="18" MTime="2024-10-17T05:06:25.531" Name="Bathroom wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="15" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="30">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="420" Master="18" MTime="2024-10-17T05:06:25.535" Name="Cove light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="101" Log="None" AmbientCode="6" LightPoint="15" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="31">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="421" Master="18" MTime="2024-10-17T05:06:25.536" Name="Bed lamp" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="101" Log="None" AmbientCode="7" LightPoint="0" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="32">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                                        </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="422" Master="18" MTime="2024-10-17T05:06:25.536" Name="Down light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="101" Log="None" AmbientCode="7" LightPoint="1" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="33">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="423" Master="18" MTime="2024-10-17T05:06:25.537" Name="Bedside wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="101" Log="None" AmbientCode="7" LightPoint="2" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="34">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="424" Master="18" MTime="2024-10-17T05:06:25.538" Name="Sitting wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="101" Log="None" AmbientCode="7" LightPoint="3" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="35">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="425" Master="18" MTime="2024-10-17T05:06:25.538" Name="Bathroom wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="101" Log="None" AmbientCode="7" LightPoint="4" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="36">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="426" Master="18" MTime="2024-10-17T05:06:25.540" Name="Shower strip" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="101" Log="None" AmbientCode="7" LightPoint="5" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="37">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="427" Master="18" MTime="2024-10-17T05:06:25.541" Name="Dressing cupboard" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="101" Log="None" AmbientCode="7" LightPoint="6" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="38">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="444" Master="18" MTime="2024-10-17T05:06:25.544" Name="Cove light 1" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="99" Log="None" AmbientCode="7" LightPoint="7" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="39">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="445" Master="18" MTime="2024-10-17T05:06:25.545" Name="Cove light 2" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="99" Log="None" AmbientCode="7" LightPoint="8" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="40">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="446" Master="18" MTime="2024-10-17T05:06:25.545" Name="Bathroom spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="99" Log="None" AmbientCode="1" LightPoint="6" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="41">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="447" Master="18" MTime="2024-10-17T05:06:25.546" Name="Shower room spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="99" Log="None" AmbientCode="1" LightPoint="7" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="42">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="448" Master="18" MTime="2024-10-17T05:06:25.547" Name="Bath chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="99" Log="None" AmbientCode="7" LightPoint="9" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="43">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="449" Master="18" MTime="2024-10-17T05:06:25.548" Name="Bed lamp" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="99" Log="None" AmbientCode="7" LightPoint="10" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="44">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="450" Master="18" MTime="2024-10-17T05:06:25.549" Name="Dressing cupboard" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="99" Log="None" AmbientCode="7" LightPoint="11" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="45">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="451" Master="18" MTime="2024-10-17T05:06:25.549" Name="Shower strip" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="99" Log="None" AmbientCode="7" LightPoint="12" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="46">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="472" Master="18" MTime="2024-10-17T05:06:25.551" Name="Cove light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="103" Log="None" AmbientCode="5" LightPoint="8" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="47">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="473" Master="18" MTime="2024-10-17T05:06:25.551" Name="Chanelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="103" Log="None" AmbientCode="5" LightPoint="15" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="48">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="474" Master="18" MTime="2024-10-17T05:06:25.552" Name="Shower spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="103" Log="None" AmbientCode="5" LightPoint="14" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="49">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="475" Master="18" MTime="2024-10-17T05:06:25.553" Name="Toilet strip" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="103" Log="None" AmbientCode="5" LightPoint="13" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="50">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="476" Master="18" MTime="2024-10-17T05:06:25.554" Name="Bedroom wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="103" Log="None" AmbientCode="5" LightPoint="11" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="51">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="477" Master="18" MTime="2024-10-17T05:06:25.554" Name="Dress cupboard" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="103" Log="None" AmbientCode="5" LightPoint="12" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="52">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="478" Master="18" MTime="2024-10-17T05:06:25.555" Name="Bathroom strip" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="103" Log="None" AmbientCode="5" LightPoint="10" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="53">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="479" Master="18" MTime="2024-10-17T05:06:25.555" Name="Bathroom spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="103" Log="None" AmbientCode="5" LightPoint="9" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="54">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="480" Master="18" MTime="2024-10-17T05:06:25.556" Name="Toilet spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="103" Log="None" AmbientCode="6" LightPoint="0" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="55">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="481" Master="18" MTime="2024-10-17T05:06:25.556" Name="Bathroom chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="103" Log="None" AmbientCode="6" LightPoint="1" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="56">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="496" Master="18" MTime="2024-10-17T05:06:25.559" Name="Chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="105" Log="None" AmbientCode="6" LightPoint="4" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="57">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="497" Master="18" MTime="2024-10-17T05:06:25.559" Name="Bed lamp" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="105" Log="None" AmbientCode="6" LightPoint="5" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="58">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="498" Master="18" MTime="2024-10-17T05:06:25.560" Name="Bathroom spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="105" Log="None" AmbientCode="6" LightPoint="6" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="59">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="499" Master="18" MTime="2024-10-17T05:06:25.560" Name="Toilet spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="105" Log="None" AmbientCode="6" LightPoint="7" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="60">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="500" Master="18" MTime="2024-10-17T05:06:25.561" Name="Shower spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="105" Log="None" AmbientCode="6" LightPoint="8" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="61">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="501" Master="18" MTime="2024-10-17T05:06:25.561" Name="Wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="105" Log="None" AmbientCode="6" LightPoint="9" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="62">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="502" Master="18" MTime="2024-10-17T05:06:25.562" Name="Bathroom strip light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="105" Log="None" AmbientCode="6" LightPoint="10" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="63">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="582" Master="18" MTime="2024-10-17T05:06:25.565" Name="Cove light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="580" Log="None" AmbientCode="9" LightPoint="3" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="64">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="583" Master="18" MTime="2024-10-17T05:06:25.566" Name="Chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="580" Log="None" AmbientCode="9" LightPoint="2" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="65">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="584" Master="18" MTime="2024-10-17T05:06:25.566" Name="Wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="580" Log="None" AmbientCode="9" LightPoint="1" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="66">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="585" Master="18" MTime="2024-10-17T05:06:25.567" Name="Wall spare" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="580" Log="None" AmbientCode="9" LightPoint="0" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="67">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="588" Master="18" MTime="2024-10-17T05:06:25.569" Name="Cove light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="95" Log="None" AmbientCode="4" LightPoint="2" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="68">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="589" Master="18" MTime="2024-10-17T05:06:25.569" Name="Chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="95" Log="None" AmbientCode="4" LightPoint="1" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="69">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="590" Master="18" MTime="2024-10-17T05:06:25.570" Name="Wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="95" Log="None" AmbientCode="4" LightPoint="3" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="70">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="591" Master="18" MTime="2024-10-17T05:06:25.571" Name="Wall spare" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="95" Log="None" AmbientCode="7" LightPoint="14" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="71">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="618" Master="18" MTime="2024-10-17T05:06:25.574" Name="Spot and cove" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="89" Log="None" AmbientCode="9" LightPoint="13" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="72">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="619" Master="18" MTime="2024-10-17T05:06:25.574" Name="Dinna dress cupboard" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="97" Log="None" AmbientCode="9" LightPoint="12" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="73">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="639" Master="18" MTime="2024-10-17T05:06:25.575" Name="Shower area spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="101" Log="None" AmbientCode="10" LightPoint="14" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="74">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="667" Master="18" MTime="2024-10-17T05:06:25.576" Name="Wall light reading corner" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="665" Log="None" AmbientCode="8" LightPoint="13" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="75">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="701" Master="18" MTime="2024-10-17T05:06:25.579" Name="Cove light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="699" Log="None" AmbientCode="8" LightPoint="5" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="76">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="702" Master="18" MTime="2024-10-17T05:06:25.580" Name="Chandelier office" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="699" Log="None" AmbientCode="8" LightPoint="4" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="77">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="730" Master="18" MTime="2024-10-17T05:06:25.585" Name="Chandelier powder room1" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="720" Log="None" AmbientCode="4" LightPoint="6" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="78">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="733" Master="18" MTime="2024-10-17T05:06:25.588" Name="Chandelier powder room2" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="722" Log="None" AmbientCode="8" LightPoint="2" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="79">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="736" Master="18" MTime="2024-10-17T05:06:25.590" Name="Chandelier service stairs" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="728" Log="None" AmbientCode="9" LightPoint="8" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="80">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="737" Master="18" MTime="2024-10-17T05:06:25.592" Name="Wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="724" Log="None" AmbientCode="2" LightPoint="7" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="81">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="739" Master="18" MTime="2024-10-17T05:06:25.593" Name="Entrance spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="726" Log="None" AmbientCode="2" LightPoint="9" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="82">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="753" Master="18" MTime="2024-10-17T05:06:25.596" Name="Cove light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="749" Log="None" AmbientCode="8" LightPoint="8" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="83">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="754" Master="18" MTime="2024-10-17T05:06:25.597" Name="Wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="749" Log="None" AmbientCode="8" LightPoint="11" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="84">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="755" Master="18" MTime="2024-10-17T05:06:25.598" Name="Entrance spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="749" Log="None" AmbientCode="8" LightPoint="10" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="85">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="756" Master="18" MTime="2024-10-17T05:06:25.599" Name="Bathroom spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="749" Log="None" AmbientCode="8" LightPoint="12" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="86">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="757" Master="18" MTime="2024-10-17T05:06:25.599" Name="Shower spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="749" Log="None" AmbientCode="8" LightPoint="9" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="87">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="769" Master="18" MTime="2024-10-17T05:06:25.600" Name="Shower spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="93" Log="None" AmbientCode="3" LightPoint="0" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="88">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="770" Master="18" MTime="2024-10-17T05:06:25.600" Name="Toilet spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="93" Log="None" AmbientCode="3" LightPoint="1" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="89">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="771" Master="18" MTime="2024-10-17T05:06:25.601" Name="Shower area strip" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="93" Log="None" AmbientCode="3" LightPoint="3" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="90">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="772" Master="18" MTime="2024-10-17T05:06:25.601" Name="Toilet strip light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="93" Log="None" AmbientCode="3" LightPoint="3" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="91">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="800" Master="18" MTime="2024-10-17T05:06:25.607" Name="Wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="794" Log="None" AmbientCode="9" LightPoint="6" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="92">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="801" Master="18" MTime="2024-10-17T05:06:25.608" Name="Lift wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="792" Log="None" AmbientCode="9" LightPoint="15" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="93">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="802" Master="18" MTime="2024-10-17T05:06:25.608" Name="Right celing light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="796" Log="None" AmbientCode="10" LightPoint="7" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="94">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="803" Master="18" MTime="2024-10-17T05:06:25.609" Name="Left ceiling light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="796" Log="None" AmbientCode="10" LightPoint="8" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="95">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="804" Master="18" MTime="2024-10-17T05:06:25.609" Name="Right floor light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="796" Log="None" AmbientCode="10" LightPoint="9" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="96">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="806" Master="18" MTime="2024-10-17T05:06:25.610" Name="Left floor light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="796" Log="None" AmbientCode="10" LightPoint="10" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="98">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Relay_CHILD VID="1501" Master="18" MTime="2024-10-17T05:06:25.610" Name="Game room spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="1499" Log="None" AmbientCode="10" LightPoint="10" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="98">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                 <Object>
+                        <Legrand.MH_Relay_CHILD VID="1502" Master="18" MTime="2024-10-17T05:06:25.610" Name="Game room wall light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Relay_CHILD" Area="1499" Log="None" AmbientCode="10" LightPoint="10" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Relay_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="98">49</Parent>
+                        </Legrand.MH_Relay_CHILD>
+                </Object>
+                 <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="1503" Master="18" MTime="2024-10-17T05:06:25.610" Name="Game room chandelier 1" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="1499" Log="None" AmbientCode="10" LightPoint="10" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="98">49</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                 <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="1505" Master="18" MTime="2024-10-17T05:06:25.610" Name="Game room chandelier 2" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="1499" Log="None" AmbientCode="10" LightPoint="10" LocalBus="0" PUL="false" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="98">49</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="63" Master="18" MTime="2024-10-17T05:06:25.491" Name="Spot Light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="89" Log="None" AmbientCode="2" LightPoint="11" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="2">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="298" Master="18" MTime="2024-10-17T05:06:25.504" Name="Spot 1" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="91" Log="None" AmbientCode="3" LightPoint="10" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="3">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="299" Master="18" MTime="2024-10-17T05:06:25.504" Name="Spot 2" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="91" Log="None" AmbientCode="3" LightPoint="11" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="4">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="319" Master="18" MTime="2024-10-17T05:06:25.509" Name="Spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="93" Log="None" AmbientCode="3" LightPoint="5" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="5">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="320" Master="18" MTime="2024-10-17T05:06:25.510" Name="Dressing spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="93" Log="None" AmbientCode="3" LightPoint="4" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="6">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="323" Master="18" MTime="2024-10-17T05:06:25.511" Name="Bathroom spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="93" Log="None" AmbientCode="2" LightPoint="15" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="7">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="352" Master="18" MTime="2024-10-17T05:06:25.513" Name="Spot 1" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="109" Log="None" AmbientCode="4" LightPoint="10" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="8">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="353" Master="18" MTime="2024-10-17T05:06:25.515" Name="Spot 2" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="109" Log="None" AmbientCode="4" LightPoint="11" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="9">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="364" Master="18" MTime="2024-10-17T05:06:25.518" Name="Spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="107" Log="None" AmbientCode="4" LightPoint="13" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="10">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="365" Master="18" MTime="2024-10-17T05:06:25.519" Name="Dressing spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="107" Log="None" AmbientCode="4" LightPoint="14" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="11">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="381" Master="18" MTime="2024-10-17T05:06:25.519" Name="Spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="2" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="12">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="382" Master="18" MTime="2024-10-17T05:06:25.521" Name="Down light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="3" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="13">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="383" Master="18" MTime="2024-10-17T05:06:25.521" Name="Bathroom entrance spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="5" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="14">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="384" Master="18" MTime="2024-10-17T05:06:25.522" Name="Dressing spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="97" Log="None" AmbientCode="0" LightPoint="6" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="15">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="416" Master="18" MTime="2024-10-17T05:06:25.532" Name="Spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="101" Log="None" AmbientCode="6" LightPoint="11" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="16">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="417" Master="18" MTime="2024-10-17T05:06:25.533" Name="Dressing spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="101" Log="None" AmbientCode="6" LightPoint="12" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="17">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="418" Master="18" MTime="2024-10-17T05:06:25.534" Name="Entrance spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="101" Log="None" AmbientCode="6" LightPoint="13" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="18">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="419" Master="18" MTime="2024-10-17T05:06:25.534" Name="Bathroom spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="101" Log="None" AmbientCode="6" LightPoint="14" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="19">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="441" Master="18" MTime="2024-10-17T05:06:25.542" Name="Spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="99" Log="None" AmbientCode="1" LightPoint="3" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="20">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="442" Master="18" MTime="2024-10-17T05:06:25.542" Name="Entrance spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="99" Log="None" AmbientCode="1" LightPoint="4" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="21">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="443" Master="18" MTime="2024-10-17T05:06:25.543" Name="Dress spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="99" Log="None" AmbientCode="1" LightPoint="5" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="22">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="470" Master="18" MTime="2024-10-17T05:06:25.550" Name="Spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="103" Log="None" AmbientCode="3" LightPoint="9" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="23">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="471" Master="18" MTime="2024-10-17T05:06:25.550" Name="Dress spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="103" Log="None" AmbientCode="5" LightPoint="7" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="24">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="494" Master="18" MTime="2024-10-17T05:06:25.557" Name="Spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="105" Log="None" AmbientCode="6" LightPoint="2" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="25">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="495" Master="18" MTime="2024-10-17T05:06:25.558" Name="Entrance spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="105" Log="None" AmbientCode="6" LightPoint="3" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="26">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="586" Master="18" MTime="2024-10-17T05:06:25.568" Name="Formal dining spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="580" Log="None" AmbientCode="4" LightPoint="4" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="27">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="587" Master="18" MTime="2024-10-17T05:06:25.568" Name="F.D hallway spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="580" Log="None" AmbientCode="4" LightPoint="5" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="28">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="592" Master="18" MTime="2024-10-17T05:06:25.572" Name="Formal living spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="95" Log="None" AmbientCode="4" LightPoint="0" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="29">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="593" Master="18" MTime="2024-10-17T05:06:25.572" Name="F.L hallway spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="95" Log="None" AmbientCode="3" LightPoint="15" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="30">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="621" Master="18" MTime="2024-10-17T05:06:25.575" Name="Dinna dress spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="97" Log="None" AmbientCode="9" LightPoint="11" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="31">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="681" Master="18" MTime="2024-10-17T05:06:25.578" Name="Spot light reading corner" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="665" Log="None" AmbientCode="8" LightPoint="14" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="1">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="682" Master="18" MTime="2024-10-17T05:06:25.578" Name="Spot light 2 Reading corner" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="665" Log="None" AmbientCode="8" LightPoint="15" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="32">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="703" Master="18" MTime="2024-10-17T05:06:25.580" Name="Spot light office" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="699" Log="None" AmbientCode="8" LightPoint="3" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="33">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="731" Master="18" MTime="2024-10-17T05:06:25.586" Name="Spot powder room 1" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="720" Log="None" AmbientCode="7" LightPoint="15" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="34">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="732" Master="18" MTime="2024-10-17T05:06:25.587" Name="Spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="728" Log="None" AmbientCode="8" LightPoint="0" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="35">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="734" Master="18" MTime="2024-10-17T05:06:25.589" Name="Spot powder room2" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="722" Log="None" AmbientCode="8" LightPoint="1" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="36">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="738" Master="18" MTime="2024-10-17T05:06:25.592" Name="Spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="724" Log="None" AmbientCode="2" LightPoint="6" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="37">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="740" Master="18" MTime="2024-10-17T05:06:25.594" Name="Spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="726" Log="None" AmbientCode="2" LightPoint="8" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="38">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="751" Master="18" MTime="2024-10-17T05:06:25.595" Name="Spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="749" Log="None" AmbientCode="8" LightPoint="7" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="39">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="752" Master="18" MTime="2024-10-17T05:06:25.596" Name="Chandelier" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="749" Log="None" AmbientCode="8" LightPoint="6" LocalBus="0" PowerProfile="0" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="40">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="798" Master="18" MTime="2024-10-17T05:06:25.605" Name="Spot light" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="792" Log="None" AmbientCode="9" LightPoint="14" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="41">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="799" Master="18" MTime="2024-10-17T05:06:25.606" Name="Spot light bathroom" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="794" Log="None" AmbientCode="10" LightPoint="0" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="42">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="807" Master="18" MTime="2024-10-17T05:06:25.611" Name="Center spot" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="796" Log="None" AmbientCode="10" LightPoint="11" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="43">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <Legrand.MH_Dimmer_CHILD VID="840" Master="18" MTime="2024-10-17T05:06:25.612" Name="Hallway spot family dining" DeviceCategory="Lighting" ObjectTypeName="Legrand.MH_Dimmer_CHILD" Area="89" Log="None" AmbientCode="2" LightPoint="10" LocalBus="0" PowerProfile="8" PUL="false" Type="Dimmer100" ObjectType="Legrand.MH_Dimmer_CHILD">
+                                <Model></Model>
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Version></Version>
+                                <Parent Position="44">50</Parent>
+                        </Legrand.MH_Dimmer_CHILD>
+                </Object>
+                <Object>
+                        <EqCtrl VID="55" Master="18" MTime="2024-10-17T05:06:26.792" Type="Thermostat" Name="HVAC Control" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="89" SerialNumber="5495945" Bus="21" Activate="316" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Time">0</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="970" Master="18" MTime="2024-10-17T05:06:26.844" Type="Thermostat" Name="Aria Room" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="103" SerialNumber="5495885" Bus="21" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="992" Master="18" MTime="2024-10-17T05:06:26.859" Type="Thermostat" Name="Abey Room" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="101" SerialNumber="5495921" Bus="22" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="1001" Master="18" MTime="2024-10-17T05:06:26.872" Type="Thermostat" Name="Tara Bed" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="99" SerialNumber="5495926" Bus="22" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="1010" Master="18" MTime="2024-10-17T05:06:26.884" Type="Thermostat" Name="Master Bedroom" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="101" SerialNumber="5495919" Bus="22" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="1019" Master="18" MTime="2024-10-17T05:06:26.898" Type="Thermostat" Name="Appa Bed" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="107" SerialNumber="5495948" Bus="22" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="1028" Master="18" MTime="2024-10-17T05:06:26.911" Type="Thermostat" Name="Guest Bed" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="105" SerialNumber="5495946" Bus="22" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="1037" Master="18" MTime="2024-10-17T05:06:26.924" Type="Thermostat" Name="Game Room" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="107" SerialNumber="5495920" Bus="22" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="1046" Master="18" MTime="2024-10-17T05:06:26.939" Type="Thermostat" Name="Nurse Room" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="109" SerialNumber="5496036" Bus="22" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="1055" Master="18" MTime="2024-10-17T05:06:26.951" Type="Thermostat" Name="Office Room" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="699" SerialNumber="5495922" Bus="21" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="1064" Master="18" MTime="2024-10-17T05:06:26.951" Type="Thermostat" Name="Elsa Room" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="93" SerialNumber="5495922" Bus="21" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="1506" Master="18" MTime="2024-10-17T05:06:26.951" Type="Thermostat" Name="FF Family living" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="109" SerialNumber="5495922" Bus="21" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="1515" Master="18" MTime="2024-10-17T05:06:26.951" Type="Thermostat" Name="FF Hallway" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="87" SerialNumber="5495922" Bus="21" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="1524" Master="18" MTime="2024-10-17T05:06:26.951" Type="Thermostat" Name="Family dining" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="89" SerialNumber="5495922" Bus="21" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+                <Object>
+                        <EqCtrl VID="1533" Master="18" MTime="2024-10-17T05:06:26.951" Type="Thermostat" Name="Formal dining" Model="EqCtrlV2" ObjectTypeName="EqCtrl" Area="580" SerialNumber="5495922" Bus="21" Activate="0" Pages="3" Style="25" Zone="0" ObjectType="EqCtrl">
+                                <Note></Note>
+                                <DName></DName>
+                                <Location></Location>
+                                <Header Type="Thermostat">55</Header>
+                        </EqCtrl>
+                </Object>
+        </Objects>
+</Project>

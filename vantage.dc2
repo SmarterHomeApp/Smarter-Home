@@ -4,7 +4,7 @@
 			<Area>
 				<VID>6</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.681</MTime>
+				<MTime>2026-05-07T21:41:45.734</MTime>
 				<Name>Hind</Name>
 				<Model></Model>
 				<Note>Job Name: Hind</Note>
@@ -21,7 +21,7 @@
 			<Area>
 				<VID>70</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.709</MTime>
+				<MTime>2026-05-07T21:41:45.770</MTime>
 				<Name>Main Floor</Name>
 				<Model></Model>
 				<Note></Note>
@@ -38,7 +38,7 @@
 			<Area>
 				<VID>72</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.711</MTime>
+				<MTime>2026-05-07T21:41:45.770</MTime>
 				<Name>Lower Floor</Name>
 				<Model></Model>
 				<Note></Note>
@@ -55,7 +55,7 @@
 			<Area>
 				<VID>74</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.711</MTime>
+				<MTime>2026-05-07T21:41:45.771</MTime>
 				<Name>Upper Floor</Name>
 				<Model></Model>
 				<Note></Note>
@@ -72,7 +72,7 @@
 			<Area>
 				<VID>76</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.712</MTime>
+				<MTime>2026-05-07T21:41:45.771</MTime>
 				<Name>Exterior</Name>
 				<Model></Model>
 				<Note></Note>
@@ -89,7 +89,7 @@
 			<Area>
 				<VID>78</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.712</MTime>
+				<MTime>2026-05-07T21:41:45.771</MTime>
 				<Name>Kitchen</Name>
 				<Model></Model>
 				<Note></Note>
@@ -106,7 +106,7 @@
 			<Area>
 				<VID>80</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.712</MTime>
+				<MTime>2026-05-07T21:41:45.771</MTime>
 				<Name>Living Room</Name>
 				<Model></Model>
 				<Note></Note>
@@ -123,7 +123,7 @@
 			<Area>
 				<VID>84</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.712</MTime>
+				<MTime>2026-05-07T21:41:45.771</MTime>
 				<Name>Lower Hall</Name>
 				<Model></Model>
 				<Note></Note>
@@ -140,8 +140,8 @@
 			<Area>
 				<VID>86</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.713</MTime>
-				<Name>Office/Guest</Name>
+				<MTime>2026-05-07T21:41:45.772</MTime>
+				<Name>Office Guest</Name>
 				<Model></Model>
 				<Note></Note>
 				<DName>Office/Guest</DName>
@@ -157,7 +157,7 @@
 			<Area>
 				<VID>88</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.713</MTime>
+				<MTime>2026-05-07T21:41:45.772</MTime>
 				<Name>Family Room</Name>
 				<Model></Model>
 				<Note></Note>
@@ -174,7 +174,7 @@
 			<Area>
 				<VID>90</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.713</MTime>
+				<MTime>2026-05-07T21:41:45.772</MTime>
 				<Name>Master Bedroom</Name>
 				<Model></Model>
 				<Note></Note>
@@ -191,7 +191,7 @@
 			<Area>
 				<VID>92</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.713</MTime>
+				<MTime>2026-05-07T21:41:45.772</MTime>
 				<Name>Ensuite</Name>
 				<Model></Model>
 				<Note></Note>
@@ -208,7 +208,7 @@
 			<Area>
 				<VID>94</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.714</MTime>
+				<MTime>2026-05-07T21:41:45.773</MTime>
 				<Name>Avery</Name>
 				<Model></Model>
 				<Note></Note>
@@ -225,7 +225,7 @@
 			<Area>
 				<VID>96</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.714</MTime>
+				<MTime>2026-05-07T21:41:45.773</MTime>
 				<Name>Mckinley</Name>
 				<Model></Model>
 				<Note></Note>
@@ -242,7 +242,7 @@
 			<Area>
 				<VID>154</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.717</MTime>
+				<MTime>2026-05-07T21:41:45.799</MTime>
 				<Name>Dining</Name>
 				<Model></Model>
 				<Note></Note>
@@ -259,7 +259,7 @@
 			<Area>
 				<VID>164</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.717</MTime>
+				<MTime>2026-05-07T21:41:45.803</MTime>
 				<Name>Bathroom</Name>
 				<Model></Model>
 				<Note></Note>
@@ -276,7 +276,7 @@
 			<Area>
 				<VID>191</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.719</MTime>
+				<MTime>2026-05-07T21:41:45.811</MTime>
 				<Name>Upper Hall</Name>
 				<Model></Model>
 				<Note></Note>
@@ -293,7 +293,7 @@
 			<Area>
 				<VID>236</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.722</MTime>
+				<MTime>2026-05-07T21:41:45.832</MTime>
 				<Name>Den</Name>
 				<Model></Model>
 				<Note></Note>
@@ -310,11 +310,11 @@
 			<Area>
 				<VID>242</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.723</MTime>
-				<Name>Bathroom</Name>
+				<MTime>2026-05-07T21:41:45.835</MTime>
+				<Name>Bathroom2</Name>
 				<Model></Model>
 				<Note></Note>
-				<DName>Bathroom</DName>
+				<DName>Bathroom2</DName>
 				<ObjectTypeName>Area</ObjectTypeName>
 				<Area>191</Area>
 				<Location>0</Location>
@@ -327,7 +327,7 @@
 			<Area>
 				<VID>271</VID>
 				<Master>45</Master>
-				<MTime>2025-02-08T00:24:44.725</MTime>
+				<MTime>2026-05-07T21:41:45.848</MTime>
 				<Name>Hidden</Name>
 				<Model></Model>
 				<Note></Note>
@@ -339,6 +339,1167 @@
 				<EnclosureArea>0</EnclosureArea>
 				<ObjectType>Area</ObjectType>
 			</Area>
+		</Object>
+		<Object>
+			<Load>
+				<VID>54</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.761</MTime>
+				<Name>Xmas Lights</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Xmas Lights</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>76</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A4</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>High Voltage Relay</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>9</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>61</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.765</MTime>
+				<Name>Soffit Pots</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Soffit Pots</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>76</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A5</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Auto</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>100</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.774</MTime>
+				<Name>Living Pots</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Living Pots</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>80</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A1</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Auto</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>110</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.778</MTime>
+				<Name>Living Hall Pots</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Living Hall Pots</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>80</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A2</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Auto</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>120</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.786</MTime>
+				<Name>Family Pots</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Family Pots</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>88</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A3</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Auto</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>129</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.790</MTime>
+				<Name>Exterior Patio</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Exterior Patio</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>76</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A6</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Auto</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>138</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.793</MTime>
+				<Name>Island Pendants</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Island Pendants</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>78</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A7</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>LED Dim</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>527</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Auto</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>147</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.797</MTime>
+				<Name>Dining Pendant</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Dining Pendant</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>154</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A8</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Auto</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>158</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.800</MTime>
+				<Name>Dining Hutch</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Dining Hutch</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>154</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A9</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Auto</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>168</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.803</MTime>
+				<Name>Bath Fan</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Bath Fan</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>164</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A10</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>High Voltage Relay</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>9</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Auto</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>186</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.808</MTime>
+				<Name>Office Ceiling</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Office Ceiling</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>86</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A12</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>199</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.812</MTime>
+				<Name>Upper Hall Pots</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Upper Hall Pots</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>191</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A13</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>LED Dim</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>527</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>206</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.815</MTime>
+				<Name>Entry Pot</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Entry Pot</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>90</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A14</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>212</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.818</MTime>
+				<Name>Outer 4 Pots</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Outer 4 Pots</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>90</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A15</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>218</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.821</MTime>
+				<Name>SLAVE</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>SLAVE</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>90</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A16</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>224</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.825</MTime>
+				<Name>Shower Pots</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Shower Pots</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>92</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A17</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>231</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.828</MTime>
+				<Name>Sitting Pots</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Sitting Pots</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>90</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A18</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>240</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.832</MTime>
+				<Name>Ceiling Light</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Ceiling Light</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>236</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A19</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>246</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.836</MTime>
+				<Name>Vanity</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Vanity</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>242</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A20</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>LED Dim</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>527</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>255</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.839</MTime>
+				<Name>Ceiling</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Ceiling</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>94</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A23</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>260</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.842</MTime>
+				<Name>Ceiling</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Ceiling</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>96</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A24</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>267</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.845</MTime>
+				<Name>BBQ</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>BBQ</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>76</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A25</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>275</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.851</MTime>
+				<Name>Entry Inside Pendant</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Entry Inside Pendant</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>84</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A26</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>280</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.854</MTime>
+				<Name>Entry Ext Pendant</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Entry Ext Pendant</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>76</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A27</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>284</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.857</MTime>
+				<Name>Washroom Pots</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Washroom Pots</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>164</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A28</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>291</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.864</MTime>
+				<Name>Laundry</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Laundry</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>84</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A30</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>295</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.868</MTime>
+				<Name>Closet</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Closet</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>84</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A31</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>299</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.871</MTime>
+				<Name>Kitchen Pots</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Kitchen Pots</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>78</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A32</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>302</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.874</MTime>
+				<Name>Art Pots</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName></DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>80</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A33</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>LED Dim</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>527</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>306</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.879</MTime>
+				<Name>Landscape</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Landscape</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>76</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A34</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>309</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.882</MTime>
+				<Name>Kitchen Coffee Bar</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Kitchen Coffee Bar</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>78</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A35</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>313</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.886</MTime>
+				<Name>Ensuite Pot</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Ensuite Pot</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>92</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A36</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>316</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.889</MTime>
+				<Name>Ensuite Vanity</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Ensuite Vanity</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>92</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A37</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>328</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.898</MTime>
+				<Name>Lower Hall Pots</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Lower Hall Pots</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>84</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A11</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>347</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.901</MTime>
+				<Name>Ensuite Fan</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName></DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>92</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A44</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>High Voltage Relay</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>9</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>350</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.905</MTime>
+				<Name>Master Center Pendant</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Master Center Pendant</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>90</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A45</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>354</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.909</MTime>
+				<Name>Bath Fan</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Bath Fan</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>242</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A46</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>High Voltage Relay</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>9</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>696</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.920</MTime>
+				<Name>Living Lamp</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName></DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>80</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A21</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>697</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.923</MTime>
+				<Name>Station Load 2</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName></DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>80</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A22</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>699</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.926</MTime>
+				<Name>Family Lamp</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Family Lamp</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>88</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber></ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>700</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.930</MTime>
+				<Name>Station Load 4</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName></DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>88</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A38</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>702</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.933</MTime>
+				<Name>Master Lamp</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName>Master Lamp</DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>90</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A39</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
+		</Object>
+		<Object>
+			<Load>
+				<VID>703</VID>
+				<Master>45</Master>
+				<MTime>2026-05-07T21:41:45.937</MTime>
+				<Name>Station Load 6</Name>
+				<Model></Model>
+				<Note></Note>
+				<DName></DName>
+				<Schedule.Table></Schedule.Table>
+				<Preset.Table></Preset.Table>
+				<ObjectTypeName>Load</ObjectTypeName>
+				<Area>90</Area>
+				<Location></Location>
+				<Parent>[object Object]</Parent>
+				<ContractorNumber>A40</ContractorNumber>
+				<FixtureDefinition>0</FixtureDefinition>
+				<LoadType>Incandescent</LoadType>
+				<FixturePower>100</FixturePower>
+				<FixtureQuantity>1</FixtureQuantity>
+				<Power>100</Power>
+				<PowerProfile>8</PowerProfile>
+				<OverrideLevel>100</OverrideLevel>
+				<DimmingConfig>Manual</DimmingConfig>
+				<ObjectType>Load</ObjectType>
+			</Load>
 		</Object>
 	</Objects>
 </Project>

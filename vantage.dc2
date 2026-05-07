@@ -885,10 +885,10 @@
 				<VID>260</VID>
 				<Master>45</Master>
 				<MTime>2026-05-07T21:41:45.842</MTime>
-				<Name>Ceiling</Name>
+				<Name>Ceiling2</Name>
 				<Model></Model>
 				<Note></Note>
-				<DName>Ceiling</DName>
+				<DName>Ceiling2</DName>
 				<Schedule.Table></Schedule.Table>
 				<Preset.Table></Preset.Table>
 				<ObjectTypeName>Load</ObjectTypeName>
@@ -1317,10 +1317,10 @@
 				<VID>354</VID>
 				<Master>45</Master>
 				<MTime>2026-05-07T21:41:45.909</MTime>
-				<Name>Bath Fan</Name>
+				<Name>Bath Fan2</Name>
 				<Model></Model>
 				<Note></Note>
-				<DName>Bath Fan</DName>
+				<DName>Bath Fan2</DName>
 				<Schedule.Table></Schedule.Table>
 				<Preset.Table></Preset.Table>
 				<ObjectTypeName>Load</ObjectTypeName>
